@@ -48,15 +48,8 @@ export class ProcessComponent implements OnInit {
    * Etapa atualmente ativa/selecionada
    * Controla qual etapa está expandida e destacada
    */
-  public etapaAtiva: number = 1;
+  public etapaAtiva: number = 0;
 
-  /**
-   * Estatísticas gerais do processo
-   * Informações que demonstram a eficiência do processo
-   */
-  public tempoTotalProcesso: string = '2-4 semanas';
-  public especialistasEnvolvidos: number = 3;
-  public garantiaProcesso: string = '100%';
 
   /**
    * Dados detalhados de todas as etapas do processo

@@ -36,7 +36,7 @@
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   color: var(--royal-blue);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;    
 }
 
 /**
@@ -81,7 +81,7 @@
     var(--sand) 100%
   );
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 0;
 }
 
 /* ===================================
@@ -98,7 +98,7 @@
   align-items: center;
   margin-bottom: 3rem;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
 }
 
 /**
@@ -176,7 +176,7 @@
   z-index: 3;
   margin: 0 2rem;
   box-shadow: var(--shadow-lg);
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
 }
 
 /**
@@ -187,35 +187,12 @@
   font-weight: 700;
   color: var(--white);
   font-family: var(--font-display);
-  transition: var(--transition-fast);
+  transition: var(--transition-fast) !important;
 }
 
-/**
- * Indicador de progresso animado
- */
-.indicador-progresso {
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    var(--sand) 0deg,
-    var(--royal-blue) 180deg,
-    var(--sand) 360deg
-  );
-  opacity: 0;
-  transition: var(--transition-normal);
-}
 
-.etapa-processo.ativa .indicador-progresso {
-  opacity: 1;
-  animation: rotacao 3s linear infinite;
-}
 
-@keyframes rotacao {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+
 
 /* ===================================
    CONTEÚDO DA ETAPA
@@ -233,7 +210,7 @@
   border-radius: 15px;
   box-shadow: var(--shadow-md);
   border: 2px solid transparent;
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
   position: relative;
 }
 
@@ -326,7 +303,7 @@
   margin-bottom: 0.75rem;
   padding: 0.5rem;
   border-radius: 8px;
-  transition: var(--transition-fast);
+  transition: var(--transition-fast) !important;
 }
 
 .lista-atividades li:hover {
@@ -378,7 +355,7 @@
   color: var(--royal-blue);
   font-size: 1.5rem;
   box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
 }
 
 /* ===================================
@@ -420,7 +397,7 @@
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: var(--shadow-sm);
-  transition: var(--transition-fast);
+  transition: var(--transition-fast) !important;
 }
 
 .estatistica-item:hover {
@@ -523,7 +500,7 @@
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
   text-decoration: none;
   font-size: 1rem;
 }
@@ -547,7 +524,7 @@
   border-radius: 25px;
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-normal);
+  transition: var(--transition-normal) !important;
   text-decoration: none;
   font-size: 1rem;
 }
