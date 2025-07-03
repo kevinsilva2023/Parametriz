@@ -101,7 +101,7 @@
     width: 35px;
     height: 3px;
     background: var(--white);
-    transition: var(--transition-fast);
+    transition: var(--transition-fast) !important;
   }
 
   &.active {
