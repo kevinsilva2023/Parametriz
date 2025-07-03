@@ -1,0 +1,747 @@
+/* ===================================
+   SEÇÃO DE CONTATO - ESTILOS
+   =================================== */
+
+/**
+ * Container principal da seção de contato
+ * Fundo gradiente sutil para destacar o formulário
+ */
+.secao-contato {
+  background: linear-gradient(135deg, var(--royal-blue) 0%, var(--royal-blue-dark) 100%);
+  padding: 5rem 0;
+  position: relative;
+  color: var(--white);
+}
+
+/* ===================================
+   CABEÇALHO DA SEÇÃO
+   =================================== */
+
+/**
+ * Cabeçalho centralizado da seção
+ */
+.cabecalho-secao {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Título principal da seção
+ */
+.titulo-secao {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Subtítulo da seção
+ */
+.subtitulo-secao {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+/* ===================================
+   GRID PRINCIPAL DE CONTATO
+   =================================== */
+
+/**
+ * Layout em grid responsivo: formulário + informações
+ */
+.grid-contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* ===================================
+   ÁREA DO FORMULÁRIO
+   =================================== */
+
+/**
+ * Container da área do formulário
+ */
+.area-formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Card que contém o formulário
+ */
+.card-formulario {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-xl);
+  color: var(--gray-800);
+  position: relative;
+  overflow: hidden;
+}
+
+/**
+ * Efeito decorativo no card
+ */
+.card-formulario::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+/**
+ * Título do formulário
+ */
+.titulo-formulario {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 0.5rem;
+}
+
+/**
+ * Descrição do formulário
+ */
+.descricao-formulario {
+  color: var(--gray-600);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ===================================
+   FORMULÁRIO DE CONTATO
+   =================================== */
+
+/**
+ * Container principal do formulário
+ */
+.formulario-contato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/**
+ * Linha do formulário (pode conter múltiplos campos)
+ */
+.linha-formulario {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/**
+ * Grupo de campo individual
+ */
+.grupo-campo {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Label dos campos
+ */
+.label-campo {
+  font-weight: 600;
+  color: var(--gray-700);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/**
+ * Campos de entrada (input, select, textarea)
+ */
+.campo-entrada {
+  padding: 1rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: var(--transition-fast);
+  background: var(--white);
+  color: var(--gray-800);
+  font-family: inherit;
+}
+
+.campo-entrada:focus {
+  outline: none;
+  border-color: var(--royal-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+.campo-entrada:invalid:not(:focus) {
+  border-color: #ef4444;
+}
+
+/**
+ * Campo textarea específico
+ */
+.campo-textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+/**
+ * Placeholder styling
+ */
+.campo-entrada::placeholder {
+  color: var(--gray-400);
+}
+
+/* ===================================
+   VALIDAÇÃO E MENSAGENS DE ERRO
+   =================================== */
+
+/**
+ * Mensagens de erro dos campos
+ */
+.mensagem-erro {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.mensagem-erro::before {
+  content: '⚠';
+  font-size: 0.75rem;
+}
+
+/**
+ * Campo com erro
+ */
+.campo-entrada.ng-invalid.ng-touched {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+/**
+ * Campo válido
+ */
+.campo-entrada.ng-valid.ng-touched {
+  border-color: #10b981;
+}
+
+/* ===================================
+   CHECKBOX DE CONSENTIMENTO
+   =================================== */
+
+/**
+ * Grupo do checkbox
+ */
+.grupo-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+/**
+ * Checkbox customizado
+ */
+.grupo-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--royal-blue);
+}
+
+/**
+ * Label do checkbox
+ */
+.label-checkbox {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  cursor: pointer;
+  margin: 0;
+}
+
+/**
+ * Link da política de privacidade
+ */
+.link-politica {
+  color: var(--royal-blue);
+  text-decoration: underline;
+  transition: var(--transition-fast);
+}
+
+.link-politica:hover {
+  color: var(--royal-blue-dark);
+}
+
+/* ===================================
+   BOTÃO DE ENVIO
+   =================================== */
+
+/**
+ * Botão principal de envio
+ */
+.botao-enviar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  min-height: 56px;
+}
+
+.botao-enviar:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-royal);
+}
+
+/**
+ * Estado desabilitado do botão
+ */
+.botao-enviar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/**
+ * Estado de carregamento
+ */
+.botao-enviar.carregando {
+  background: var(--gray-400);
+}
+
+/* ===================================
+   MENSAGEM DE SUCESSO
+   =================================== */
+
+/**
+ * Container da mensagem de sucesso
+ */
+.mensagem-sucesso {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.mensagem-sucesso i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.mensagem-sucesso h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.mensagem-sucesso p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===================================
+   ÁREA DE INFORMAÇÕES
+   =================================== */
+
+/**
+ * Container das informações de contato
+ */
+.area-informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/**
+ * Card das informações
+ */
+.card-informacoes {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  color: var(--white);
+}
+
+/* ===================================
+   LOGO DA EMPRESA
+   =================================== */
+
+/**
+ * Container do logo
+ */
+.logo-empresa {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo-empresa img {
+  max-width: 200px;
+  height: auto;
+  filter: brightness(0) invert(1); /* Torna o logo branco */
+}
+
+/* ===================================
+   LISTA DE INFORMAÇÕES
+   =================================== */
+
+/**
+ * Container da lista de informações
+ */
+.lista-informacoes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/**
+ * Item individual de informação
+ */
+.item-informacao {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/**
+ * Ícone da informação
+ */
+.icone-informacao {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-secondary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--royal-blue);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/**
+ * Conteúdo da informação
+ */
+.conteudo-informacao {
+  flex: 1;
+}
+
+.conteudo-informacao h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--sand);
+}
+
+.conteudo-informacao p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.conteudo-informacao a {
+  color: var(--sand);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.conteudo-informacao a:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* ===================================
+   REDES SOCIAIS
+   =================================== */
+
+/**
+ * Seção de redes sociais
+ */
+.redes-sociais {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1.5rem;
+}
+
+.redes-sociais h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--sand);
+}
+
+/**
+ * Lista de links das redes
+ */
+.lista-redes {
+  display: flex;
+  gap: 1rem;
+}
+
+/**
+ * Link individual de rede social
+ */
+.link-rede {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.link-rede:hover {
+  background: var(--sand);
+  color: var(--royal-blue);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   ÁREA DO MAPA
+   =================================== */
+
+/**
+ * Container do mapa
+ */
+.area-mapa {
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/**
+ * Placeholder do mapa
+ */
+.mapa-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: var(--white);
+}
+
+.mapa-placeholder:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mapa-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--sand);
+}
+
+.mapa-placeholder p {
+  font-weight: 600;
+  margin: 0;
+}
+
+.mapa-placeholder small {
+  opacity: 0.8;
+  margin-top: 0.25rem;
+}
+
+/* ===================================
+   SEÇÃO FAQ RÁPIDO
+   =================================== */
+
+/**
+ * Container da seção FAQ
+ */
+.secao-faq-rapido {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2.5rem;
+}
+
+/**
+ * Título do FAQ
+ */
+.titulo-faq {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/**
+ * Grid do FAQ
+ */
+.grid-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/**
+ * Item individual do FAQ
+ */
+.item-faq {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.item-faq:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.item-faq.ativo {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/**
+ * Pergunta do FAQ
+ */
+.pergunta-faq {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+.pergunta-faq h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pergunta-faq i {
+  color: var(--sand);
+  transition: var(--transition-fast);
+}
+
+.item-faq.ativo .pergunta-faq i {
+  transform: rotate(180deg);
+}
+
+/**
+ * Resposta do FAQ
+ */
+.resposta-faq {
+  padding: 0 1.5rem 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.resposta-faq p {
+  margin: 0;
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+
+/**
+ * Adaptações para tablets (768px e abaixo)
+ */
+@media (max-width: 768px) {
+  .grid-contato {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .linha-formulario {
+    flex-direction: column;
+  }
+  
+  .grupo-campo {
+    min-width: auto;
+  }
+  
+  .lista-redes {
+    justify-content: center;
+  }
+  
+  .logo-empresa img {
+    max-width: 150px;
+  }
+}
+
+/**
+ * Adaptações para smartphones (480px e abaixo)
+ */
+@media (max-width: 480px) {
+  .secao-contato {
+    padding: 3rem 0;
+  }
+  
+  .card-formulario,
+  .card-informacoes,
+  .secao-faq-rapido {
+    padding: 1.5rem;
+  }
+  
+  .titulo-secao,
+  .titulo-faq {
+    font-size: 2rem;
+  }
+  
+  .item-informacao {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .lista-redes {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .area-mapa {
+    height: 150px;
+  }
+}
+

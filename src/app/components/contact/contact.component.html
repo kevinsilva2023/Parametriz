@@ -1,0 +1,358 @@
+<!-- Seção de Contato -->
+<!-- Formulário de contato e informações da empresa -->
+<!-- Layout com formulário à esquerda e informações à direita -->
+<section id="contact" class="secao-contato">
+  <div class="container">
+    
+    <!-- Cabeçalho da Seção -->
+    <!-- Título e descrição do contato -->
+    <div class="cabecalho-secao">
+      <h2 class="titulo-secao">Entre em Contato</h2>
+      <p class="subtitulo-secao">Pronto para transformar seus processos contábeis? Fale conosco!</p>
+    </div>
+    
+    <!-- Grid Principal de Contato -->
+    <!-- Layout responsivo: formulário + informações -->
+    <div class="grid-contato">
+      
+      <!-- Formulário de Contato -->
+      <div class="area-formulario">
+        
+        <!-- Card do Formulário -->
+        <div class="card-formulario">
+          <h3 class="titulo-formulario">Solicite uma Proposta</h3>
+          <p class="descricao-formulario">
+            Preencha o formulário e nossa equipe entrará em contato em até 24 horas.
+          </p>
+          
+          <!-- Formulário Principal -->
+          <form class="formulario-contato" (ngSubmit)="enviarFormulario()" #formContato="ngForm">
+            
+            <!-- Linha 1: Nome e Email -->
+            <div class="linha-formulario">
+              
+              <!-- Campo Nome -->
+              <div class="grupo-campo">
+                <label for="nome" class="label-campo">Nome Completo *</label>
+                <input type="text" 
+                       id="nome" 
+                       name="nome"
+                       class="campo-entrada"
+                       [(ngModel)]="dadosFormulario.nome"
+                       #nomeField="ngModel"
+                       required
+                       minlength="2"
+                       placeholder="Seu nome completo">
+                
+                <!-- Mensagens de Erro -->
+                <div class="mensagem-erro" *ngIf="nomeField.invalid && nomeField.touched">
+                  <span *ngIf="nomeField.errors?.['required']">Nome é obrigatório</span>
+                  <span *ngIf="nomeField.errors?.['minlength']">Nome deve ter pelo menos 2 caracteres</span>
+                </div>
+              </div>
+              
+              <!-- Campo Email -->
+              <div class="grupo-campo">
+                <label for="email" class="label-campo">Email *</label>
+                <input type="email" 
+                       id="email" 
+                       name="email"
+                       class="campo-entrada"
+                       [(ngModel)]="dadosFormulario.email"
+                       #emailField="ngModel"
+                       required
+                       email
+                       placeholder="seu@email.com">
+                
+                <!-- Mensagens de Erro -->
+                <div class="mensagem-erro" *ngIf="emailField.invalid && emailField.touched">
+                  <span *ngIf="emailField.errors?.['required']">Email é obrigatório</span>
+                  <span *ngIf="emailField.errors?.['email']">Email deve ser válido</span>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Linha 2: Telefone e Empresa -->
+            <div class="linha-formulario">
+              
+              <!-- Campo Telefone -->
+              <div class="grupo-campo">
+                <label for="telefone" class="label-campo">Telefone *</label>
+                <input type="tel" 
+                       id="telefone" 
+                       name="telefone"
+                       class="campo-entrada"
+                       [(ngModel)]="dadosFormulario.telefone"
+                       #telefoneField="ngModel"
+                       required
+                       pattern="[0-9\s\(\)\-\+]+"
+                       placeholder="(11) 99999-9999"
+                       (input)="formatarTelefone($event)">
+                
+                <!-- Mensagens de Erro -->
+                <div class="mensagem-erro" *ngIf="telefoneField.invalid && telefoneField.touched">
+                  <span *ngIf="telefoneField.errors?.['required']">Telefone é obrigatório</span>
+                  <span *ngIf="telefoneField.errors?.['pattern']">Telefone deve ser válido</span>
+                </div>
+              </div>
+              
+              <!-- Campo Empresa -->
+              <div class="grupo-campo">
+                <label for="empresa" class="label-campo">Empresa *</label>
+                <input type="text" 
+                       id="empresa" 
+                       name="empresa"
+                       class="campo-entrada"
+                       [(ngModel)]="dadosFormulario.empresa"
+                       #empresaField="ngModel"
+                       required
+                       placeholder="Nome da sua empresa">
+                
+                <!-- Mensagens de Erro -->
+                <div class="mensagem-erro" *ngIf="empresaField.invalid && empresaField.touched">
+                  <span *ngIf="empresaField.errors?.['required']">Empresa é obrigatória</span>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Linha 3: Serviço de Interesse -->
+            <div class="linha-formulario">
+              
+              <!-- Campo Serviço -->
+              <div class="grupo-campo">
+                <label for="servico" class="label-campo">Serviço de Interesse</label>
+                <select id="servico" 
+                        name="servico"
+                        class="campo-entrada"
+                        [(ngModel)]="dadosFormulario.servicoInteresse">
+                  <option value="">Selecione um serviço</option>
+                  <option value="parametrizacao">Parametrização de Sistemas</option>
+                  <option value="consultoria">Consultoria Especializada</option>
+                  <option value="automacao">Automação Inteligente</option>
+                  <option value="todos">Todos os Serviços</option>
+                </select>
+              </div>
+              
+            </div>
+            
+            <!-- Linha 4: Mensagem -->
+            <div class="linha-formulario">
+              
+              <!-- Campo Mensagem -->
+              <div class="grupo-campo">
+                <label for="mensagem" class="label-campo">Mensagem</label>
+                <textarea id="mensagem" 
+                          name="mensagem"
+                          class="campo-entrada campo-textarea"
+                          [(ngModel)]="dadosFormulario.mensagem"
+                          rows="4"
+                          placeholder="Conte-nos mais sobre suas necessidades..."></textarea>
+              </div>
+              
+            </div>
+            
+            <!-- Checkbox de Consentimento -->
+            <div class="linha-formulario">
+              <div class="grupo-checkbox">
+                <input type="checkbox" 
+                       id="consentimento" 
+                       name="consentimento"
+                       [(ngModel)]="dadosFormulario.consentimento"
+                       #consentimentoField="ngModel"
+                       required>
+                <label for="consentimento" class="label-checkbox">
+                  Concordo em receber comunicações da Parametriz e aceito a 
+                  <a href="#" class="link-politica">Política de Privacidade</a> *
+                </label>
+                
+                <!-- Mensagem de Erro -->
+                <div class="mensagem-erro" *ngIf="consentimentoField.invalid && consentimentoField.touched">
+                  <span>É necessário aceitar os termos</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Botão de Envio -->
+            <div class="linha-formulario">
+              <button type="submit" 
+                      class="botao-enviar"
+                      [disabled]="formContato.invalid || enviandoFormulario"
+                      [class.carregando]="enviandoFormulario">
+                
+                <!-- Ícone de Loading -->
+                <i class="fas fa-spinner fa-spin" *ngIf="enviandoFormulario"></i>
+                
+                <!-- Ícone Normal -->
+                <i class="fas fa-paper-plane" *ngIf="!enviandoFormulario"></i>
+                
+                <!-- Texto do Botão -->
+                <span>{{ enviandoFormulario ? 'Enviando...' : 'Enviar Mensagem' }}</span>
+              </button>
+            </div>
+            
+          </form>
+          
+          <!-- Mensagem de Sucesso -->
+          <div class="mensagem-sucesso" *ngIf="formularioEnviado" [@slideInOut]>
+            <i class="fas fa-check-circle"></i>
+            <h4>Mensagem Enviada com Sucesso!</h4>
+            <p>Nossa equipe entrará em contato em até 24 horas.</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <!-- Informações de Contato -->
+      <div class="area-informacoes">
+        
+        <!-- Card de Informações -->
+        <div class="card-informacoes">
+          
+          <!-- Logo da Empresa -->
+          <div class="logo-empresa">
+            <img src="assets/parametriz-logo-2.png" alt="Parametriz - Soluções Tecnológicas">
+          </div>
+          
+          <!-- Informações de Contato -->
+          <div class="lista-informacoes">
+            
+            <!-- Endereço -->
+            <div class="item-informacao">
+              <div class="icone-informacao">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="conteudo-informacao">
+                <h4>Endereço</h4>
+                <p>Av. Paulista, 1000 - Sala 1001<br>
+                   Bela Vista, São Paulo - SP<br>
+                   CEP: 01310-100</p>
+              </div>
+            </div>
+            
+            <!-- Telefone -->
+            <div class="item-informacao">
+              <div class="icone-informacao">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="conteudo-informacao">
+                <h4>Telefone</h4>
+                <p><a href="tel:+5511999999999">(11) 99999-9999</a></p>
+                <p><a href="tel:+551133333333">(11) 3333-3333</a></p>
+              </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="item-informacao">
+              <div class="icone-informacao">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="conteudo-informacao">
+                <h4>Email</h4>
+                <p><a href="mailto:contato@parametriz.com.br">contato@parametriz.com.br</a></p>
+                <p><a href="mailto:vendas@parametriz.com.br">vendas@parametriz.com.br</a></p>
+              </div>
+            </div>
+            
+            <!-- Horário de Funcionamento -->
+            <div class="item-informacao">
+              <div class="icone-informacao">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="conteudo-informacao">
+                <h4>Horário de Atendimento</h4>
+                <p>Segunda a Sexta: 8h às 18h<br>
+                   Sábado: 8h às 12h<br>
+                   Suporte 24/7 para clientes</p>
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Redes Sociais -->
+          <div class="redes-sociais">
+            <h4>Siga-nos</h4>
+            <div class="lista-redes">
+              <a href="#" class="link-rede" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="link-rede" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="link-rede" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="link-rede" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Mapa (Placeholder) -->
+        <div class="area-mapa">
+          <div class="mapa-placeholder">
+            <i class="fas fa-map"></i>
+            <p>Mapa Interativo</p>
+            <small>Clique para abrir no Google Maps</small>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Seção de FAQ Rápido -->
+    <!-- Perguntas frequentes relacionadas ao contato -->
+    <div class="secao-faq-rapido">
+      
+      <h3 class="titulo-faq">Perguntas Frequentes</h3>
+      
+      <div class="grid-faq">
+        
+        <!-- FAQ 1 -->
+        <div class="item-faq" (click)="alternarFaq(1)" [class.ativo]="faqAtivo === 1">
+          <div class="pergunta-faq">
+            <h4>Qual o prazo para resposta?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="resposta-faq" *ngIf="faqAtivo === 1" [@slideInOut]>
+            <p>Nossa equipe responde todas as solicitações em até 24 horas úteis. 
+               Para casos urgentes, entre em contato por telefone.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div class="item-faq" (click)="alternarFaq(2)" [class.ativo]="faqAtivo === 2">
+          <div class="pergunta-faq">
+            <h4>A consulta inicial é gratuita?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="resposta-faq" *ngIf="faqAtivo === 2" [@slideInOut]>
+            <p>Sim! A primeira consulta é totalmente gratuita. Analisamos suas necessidades 
+               e apresentamos uma proposta personalizada sem compromisso.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 3 -->
+        <div class="item-faq" (click)="alternarFaq(3)" [class.ativo]="faqAtivo === 3">
+          <div class="pergunta-faq">
+            <h4>Atendem empresas de que porte?</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="resposta-faq" *ngIf="faqAtivo === 3" [@slideInOut]>
+            <p>Atendemos desde pequenas empresas até grandes corporações. 
+               Nossas soluções são escaláveis e adaptáveis a qualquer porte.</p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+

@@ -1,0 +1,304 @@
+<!-- Rodapé da Página -->
+<!-- Informações finais, links úteis e dados da empresa -->
+<!-- Layout organizado em colunas com design profissional -->
+<footer class="rodape-principal">
+  
+  <!-- Seção Principal do Rodapé -->
+  <div class="secao-principal-rodape">
+    <div class="container">
+      
+      <!-- Grid de Informações -->
+      <div class="grid-rodape">
+        
+        <!-- Coluna 1: Sobre a Empresa -->
+        <div class="coluna-rodape coluna-sobre">
+          
+          <!-- Logo da Empresa -->
+          <div class="logo-rodape">
+            <img src="assets/parametriz-logo-2.png" alt="Parametriz - Soluções Tecnológicas">
+          </div>
+          
+          <!-- Descrição da Empresa -->
+          <p class="descricao-empresa">
+            A Parametriz é especialista em soluções tecnológicas para 
+            parametrização contábil, oferecendo automação inteligente 
+            e consultoria especializada para empresas de todos os portes.
+          </p>
+          
+          <!-- Certificações e Selos -->
+          <div class="certificacoes">
+            <div class="selo-certificacao">
+              <i class="fas fa-shield-check"></i>
+              <span>ISO 27001</span>
+            </div>
+            <div class="selo-certificacao">
+              <i class="fas fa-award"></i>
+              <span>Certificado CFC</span>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Coluna 2: Serviços -->
+        <div class="coluna-rodape coluna-servicos">
+          
+          <h3 class="titulo-coluna">Nossos Serviços</h3>
+          
+          <ul class="lista-links">
+            <li>
+              <a href="#services" (click)="navegarParaSecao('services', $event)">
+                <i class="fas fa-cogs"></i>
+                Parametrização de Sistemas
+              </a>
+            </li>
+            <li>
+              <a href="#services" (click)="navegarParaSecao('services', $event)">
+                <i class="fas fa-user-tie"></i>
+                Consultoria Especializada
+              </a>
+            </li>
+            <li>
+              <a href="#services" (click)="navegarParaSecao('services', $event)">
+                <i class="fas fa-robot"></i>
+                Automação Inteligente
+              </a>
+            </li>
+            <li>
+              <a href="#" (click)="abrirModalServico('treinamento', $event)">
+                <i class="fas fa-graduation-cap"></i>
+                Treinamento e Capacitação
+              </a>
+            </li>
+            <li>
+              <a href="#" (click)="abrirModalServico('suporte', $event)">
+                <i class="fas fa-headset"></i>
+                Suporte Técnico 24/7
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+        
+        <!-- Coluna 3: Links Úteis -->
+        <div class="coluna-rodape coluna-links">
+          
+          <h3 class="titulo-coluna">Links Úteis</h3>
+          
+          <ul class="lista-links">
+            <li>
+              <a href="#home" (click)="navegarParaSecao('home', $event)">
+                <i class="fas fa-home"></i>
+                Início
+              </a>
+            </li>
+            <li>
+              <a href="#process" (click)="navegarParaSecao('process', $event)">
+                <i class="fas fa-tasks"></i>
+                Como Funciona
+              </a>
+            </li>
+            <li>
+              <a href="#benefits" (click)="navegarParaSecao('benefits', $event)">
+                <i class="fas fa-star"></i>
+                Benefícios
+              </a>
+            </li>
+            <li>
+              <a href="#" (click)="abrirPagina('blog', $event)">
+                <i class="fas fa-blog"></i>
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="#" (click)="abrirPagina('casos-sucesso', $event)">
+                <i class="fas fa-trophy"></i>
+                Casos de Sucesso
+              </a>
+            </li>
+            <li>
+              <a href="#" (click)="abrirPagina('downloads', $event)">
+                <i class="fas fa-download"></i>
+                Downloads
+              </a>
+            </li>
+          </ul>
+          
+        </div>
+        
+        <!-- Coluna 4: Contato e Newsletter -->
+        <div class="coluna-rodape coluna-contato">
+          
+          <h3 class="titulo-coluna">Fique por Dentro</h3>
+          
+          <!-- Informações de Contato Resumidas -->
+          <div class="contato-resumido">
+            <div class="item-contato">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+5511999999999">(11) 99999-9999</a>
+            </div>
+            <div class="item-contato">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contato@parametriz.com.br">contato@parametriz.com.br</a>
+            </div>
+            <div class="item-contato">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>São Paulo - SP</span>
+            </div>
+          </div>
+          
+          <!-- Newsletter -->
+          <div class="newsletter">
+            <h4 class="titulo-newsletter">Newsletter</h4>
+            <p class="descricao-newsletter">
+              Receba novidades e dicas sobre parametrização contábil
+            </p>
+            
+            <form class="formulario-newsletter" (ngSubmit)="inscreverNewsletter()" #formNewsletter="ngForm">
+              <div class="grupo-newsletter">
+                <input type="email" 
+                       class="campo-newsletter"
+                       [(ngModel)]="emailNewsletter"
+                       name="emailNewsletter"
+                       #emailField="ngModel"
+                       required
+                       email
+                       placeholder="Seu melhor email">
+                
+                <button type="submit" 
+                        class="botao-newsletter"
+                        [disabled]="formNewsletter.invalid || inscrevendoNewsletter">
+                  <i class="fas fa-paper-plane" *ngIf="!inscrevendoNewsletter"></i>
+                  <i class="fas fa-spinner fa-spin" *ngIf="inscrevendoNewsletter"></i>
+                </button>
+              </div>
+              
+              <!-- Mensagem de Sucesso -->
+              <div class="mensagem-newsletter-sucesso" *ngIf="newsletterInscrita">
+                <i class="fas fa-check"></i>
+                <span>Inscrição realizada com sucesso!</span>
+              </div>
+              
+              <!-- Mensagem de Erro -->
+              <div class="mensagem-newsletter-erro" *ngIf="emailField.invalid && emailField.touched">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span>Email deve ser válido</span>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Seção de Redes Sociais -->
+  <div class="secao-redes-sociais">
+    <div class="container">
+      
+      <div class="conteudo-redes">
+        
+        <!-- Texto de Chamada -->
+        <div class="chamada-redes">
+          <h4>Conecte-se Conosco</h4>
+          <p>Siga nossas redes sociais e fique por dentro das novidades</p>
+        </div>
+        
+        <!-- Links das Redes Sociais -->
+        <div class="lista-redes-sociais">
+          <a href="#" 
+             class="link-rede-social linkedin"
+             (click)="abrirRedeSocial('linkedin', $event)"
+             aria-label="LinkedIn da Parametriz">
+            <i class="fab fa-linkedin-in"></i>
+            <span>LinkedIn</span>
+          </a>
+          
+          <a href="#" 
+             class="link-rede-social instagram"
+             (click)="abrirRedeSocial('instagram', $event)"
+             aria-label="Instagram da Parametriz">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+          
+          <a href="#" 
+             class="link-rede-social facebook"
+             (click)="abrirRedeSocial('facebook', $event)"
+             aria-label="Facebook da Parametriz">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+          
+          <a href="#" 
+             class="link-rede-social youtube"
+             (click)="abrirRedeSocial('youtube', $event)"
+             aria-label="YouTube da Parametriz">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+          </a>
+          
+          <a href="#" 
+             class="link-rede-social whatsapp"
+             (click)="abrirWhatsApp($event)"
+             aria-label="WhatsApp da Parametriz">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Seção de Copyright e Links Legais -->
+  <div class="secao-copyright">
+    <div class="container">
+      
+      <div class="conteudo-copyright">
+        
+        <!-- Informações de Copyright -->
+        <div class="info-copyright">
+          <p>&copy; {{ anoAtual }} Parametriz Soluções Tecnológicas. Todos os direitos reservados.</p>
+          <p class="cnpj">CNPJ: 12.345.678/0001-90</p>
+        </div>
+        
+        <!-- Links Legais -->
+        <div class="links-legais">
+          <a href="#" (click)="abrirPagina('politica-privacidade', $event)">
+            Política de Privacidade
+          </a>
+          <span class="separador">|</span>
+          <a href="#" (click)="abrirPagina('termos-uso', $event)">
+            Termos de Uso
+          </a>
+          <span class="separador">|</span>
+          <a href="#" (click)="abrirPagina('cookies', $event)">
+            Política de Cookies
+          </a>
+        </div>
+        
+        <!-- Botão Voltar ao Topo -->
+        <button class="botao-voltar-topo" 
+                (click)="voltarAoTopo()"
+                [class.visivel]="mostrarBotaoTopo"
+                aria-label="Voltar ao topo">
+          <i class="fas fa-chevron-up"></i>
+        </button>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Elementos Decorativos -->
+  <div class="elementos-decorativos-rodape">
+    <div class="forma-decorativa forma-1"></div>
+    <div class="forma-decorativa forma-2"></div>
+    <div class="forma-decorativa forma-3"></div>
+  </div>
+  
+</footer>
+

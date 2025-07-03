@@ -1,0 +1,138 @@
+<!-- Seção de Apresentação Inicial -->
+<!-- Primeira seção que o usuário vê ao acessar o site -->
+<!-- Responsável por causar o primeiro impacto e apresentar a empresa -->
+<section id="home" class="apresentacao-inicial">
+  
+  <!-- Fundo Animado com Elementos Visuais -->
+  <!-- Formas geométricas flutuantes para criar dinamismo visual -->
+  <div class="fundo-animado">
+    <div class="formas-flutuantes">
+      <div class="forma forma-1"></div>
+      <div class="forma forma-2"></div>
+      <div class="forma forma-3"></div>
+      <div class="forma forma-4"></div>
+    </div>
+  </div>
+  
+  <!-- Conteúdo Principal da Apresentação -->
+  <div class="conteudo-apresentacao">
+    
+    <!-- Área de Texto Principal -->
+    <!-- Título, subtítulo, estatísticas e botões de ação -->
+    <div class="texto-principal">
+      
+      <!-- Título de Impacto -->
+      <!-- Título principal da empresa com destaque visual -->
+      <h1 class="titulo-impacto">
+        <span class="linha-titulo">Parametrização</span>
+        <span class="linha-titulo destaque">Contábil</span>
+        <span class="linha-titulo">Inteligente</span>
+      </h1>
+      
+      <!-- Descrição da Empresa -->
+      <!-- Texto explicativo sobre os serviços oferecidos -->
+      <p class="descricao-empresa">
+        Transforme a complexidade da configuração contábil em simplicidade. 
+        Nossa solução revoluciona a forma como você parametriza sistemas, 
+        integrando tecnologia avançada com expertise contábil.
+      </p>
+      
+      <!-- Estatísticas de Credibilidade -->
+      <!-- Números que demonstram a experiência e resultados da empresa -->
+      <div class="estatisticas-credibilidade">
+        <div class="estatistica">
+          <span class="numero-estatistica" [attr.data-target]="dadosEstatisticas.empresasAtendidas">
+            {{ contadorEmpresasAtendidas }}
+          </span>
+          <span class="label-estatistica">Empresas Atendidas</span>
+        </div>
+        <div class="estatistica">
+          <span class="numero-estatistica" [attr.data-target]="dadosEstatisticas.precisao">
+            {{ contadorPrecisao }}
+          </span>
+          <span class="label-estatistica">% Precisão</span>
+        </div>
+        <div class="estatistica">
+          <span class="numero-estatistica" [attr.data-target]="dadosEstatisticas.reducaoTempo">
+            {{ contadorReducaoTempo }}
+          </span>
+          <span class="label-estatistica">% Redução de Tempo</span>
+        </div>
+      </div>
+      
+      <!-- Botões de Call-to-Action -->
+      <!-- Ações principais que o usuário pode tomar -->
+      <div class="botoes-acao">
+        <button class="botao-primario" (click)="navegarParaContato()">
+          <span>Começar Agora</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <button class="botao-secundario" (click)="abrirDemonstracao()">
+          <i class="fas fa-play"></i>
+          <span>Ver Demonstração</span>
+        </button>
+      </div>
+      
+    </div>
+    
+    <!-- Área Visual do Sistema -->
+    <!-- Preview do dashboard/sistema para demonstrar o produto -->
+    <div class="area-visual-sistema">
+      <div class="preview-dashboard">
+        
+        <!-- Barra Superior do Dashboard -->
+        <!-- Simula a barra de título de uma aplicação -->
+        <div class="barra-superior-dashboard">
+          <div class="controles-janela">
+            <span class="controle vermelho"></span>
+            <span class="controle amarelo"></span>
+            <span class="controle verde"></span>
+          </div>
+          <div class="titulo-dashboard">Parametriz Dashboard</div>
+        </div>
+        
+        <!-- Conteúdo do Dashboard -->
+        <!-- Métricas e gráficos que demonstram o funcionamento do sistema -->
+        <div class="conteudo-dashboard">
+          
+          <!-- Cards de Métricas do Sistema -->
+          <!-- Indicadores principais do desempenho -->
+          <div class="cards-metricas">
+            <div class="card-metrica">
+              <div class="icone-metrica">📊</div>
+              <div class="valor-metrica">{{ metricasSistema.contasConfiguradas | number }}</div>
+              <div class="label-metrica">Contas Configuradas</div>
+            </div>
+            <div class="card-metrica">
+              <div class="icone-metrica">⚡</div>
+              <div class="valor-metrica">{{ metricasSistema.uptime }}%</div>
+              <div class="label-metrica">Uptime</div>
+            </div>
+          </div>
+          
+          <!-- Gráfico de Barras Animado -->
+          <!-- Visualização de dados em formato de gráfico -->
+          <div class="area-grafico">
+            <div class="barras-grafico">
+              <div class="barra" 
+                   *ngFor="let altura of dadosGraficoBarras; let i = index"
+                   [style.height.%]="altura"
+                   [style.animation-delay.ms]="i * 200">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- Indicador de Mais Conteúdo -->
+  <!-- Seta animada que indica que há mais conteúdo abaixo -->
+  <div class="indicador-scroll" (click)="rolarParaProximaSecao()">
+    <div class="seta-scroll"></div>
+  </div>
+  
+</section>
+

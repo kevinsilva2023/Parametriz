@@ -1,0 +1,670 @@
+/* ===================================
+   SEÇÃO DO PROCESSO - ESTILOS
+   =================================== */
+
+/**
+ * Container principal da seção do processo
+ * Fundo neutro para destacar a timeline
+ */
+.secao-processo {
+  background: var(--white);
+  padding: 5rem 0;
+  position: relative;
+}
+
+/* ===================================
+   CABEÇALHO DA SEÇÃO
+   =================================== */
+
+/**
+ * Cabeçalho centralizado da seção
+ * Título e descrição do processo
+ */
+.cabecalho-secao {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Título principal da seção
+ */
+.titulo-secao {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Subtítulo da seção
+ */
+.subtitulo-secao {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+/* ===================================
+   TIMELINE DO PROCESSO
+   =================================== */
+
+/**
+ * Container principal da timeline
+ * Layout vertical com linha conectora
+ */
+.timeline-processo {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 2rem 0;
+}
+
+/**
+ * Linha conectora da timeline
+ * Linha vertical que conecta todas as etapas
+ */
+.timeline-processo::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    var(--royal-blue-light) 0%,
+    var(--royal-blue) 50%,
+    var(--sand) 100%
+  );
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ===================================
+   ETAPAS DO PROCESSO
+   =================================== */
+
+/**
+ * Container de cada etapa individual
+ * Layout flexível para alternar lados
+ */
+.etapa-processo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+/**
+ * Etapas ímpares (1, 3) - conteúdo à esquerda
+ */
+.etapa-processo:nth-child(odd) {
+  flex-direction: row;
+}
+
+/**
+ * Etapas pares (2, 4) - conteúdo à direita
+ */
+.etapa-processo:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/**
+ * Estados da etapa - ativa
+ */
+.etapa-processo.ativa {
+  transform: scale(1.02);
+}
+
+/**
+ * Estados da etapa - concluída
+ */
+.etapa-processo.concluida .numero-etapa {
+  background: var(--gradient-secondary);
+  color: var(--royal-blue);
+}
+
+.etapa-processo.concluida .numero-etapa::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.etapa-processo.concluida .numero {
+  opacity: 0;
+}
+
+/**
+ * Estados da etapa - destacada (hover)
+ */
+.etapa-processo.destacada {
+  transform: scale(1.05);
+}
+
+.etapa-processo.destacada .icone-etapa {
+  transform: scale(1.2) rotate(10deg);
+  box-shadow: var(--shadow-royal);
+}
+
+/* ===================================
+   NÚMERO DA ETAPA (CENTRO DA TIMELINE)
+   =================================== */
+
+/**
+ * Container do número da etapa
+ * Posicionado no centro da timeline
+ */
+.numero-etapa {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  margin: 0 2rem;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+}
+
+/**
+ * Número dentro do círculo
+ */
+.numero {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  font-family: var(--font-display);
+  transition: var(--transition-fast);
+}
+
+/**
+ * Indicador de progresso animado
+ */
+.indicador-progresso {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--sand) 0deg,
+    var(--royal-blue) 180deg,
+    var(--sand) 360deg
+  );
+  opacity: 0;
+  transition: var(--transition-normal);
+}
+
+.etapa-processo.ativa .indicador-progresso {
+  opacity: 1;
+  animation: rotacao 3s linear infinite;
+}
+
+@keyframes rotacao {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===================================
+   CONTEÚDO DA ETAPA
+   =================================== */
+
+/**
+ * Container do conteúdo textual da etapa
+ * Flexível para acomodar diferentes tamanhos
+ */
+.conteudo-etapa {
+  flex: 1;
+  max-width: 350px;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid transparent;
+  transition: var(--transition-normal);
+  position: relative;
+}
+
+/**
+ * Seta conectora do conteúdo à timeline
+ */
+.conteudo-etapa::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  transform: translateY(-50%);
+}
+
+/**
+ * Seta para etapas ímpares (aponta para direita)
+ */
+.etapa-processo:nth-child(odd) .conteudo-etapa::before {
+  right: -20px;
+  border-left-color: var(--white);
+}
+
+/**
+ * Seta para etapas pares (aponta para esquerda)
+ */
+.etapa-processo:nth-child(even) .conteudo-etapa::before {
+  left: -20px;
+  border-right-color: var(--white);
+}
+
+/**
+ * Estados do conteúdo - ativo
+ */
+.etapa-processo.ativa .conteudo-etapa {
+  border-color: var(--royal-blue);
+  box-shadow: var(--shadow-royal);
+  background: linear-gradient(135deg, var(--white) 0%, var(--sand-light) 100%);
+}
+
+/**
+ * Título da etapa
+ */
+.titulo-etapa {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/**
+ * Descrição da etapa
+ */
+.descricao-etapa {
+  color: var(--gray-600);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* ===================================
+   DETALHES EXPANDIDOS DA ETAPA
+   =================================== */
+
+/**
+ * Container dos detalhes expandidos
+ * Aparece quando uma etapa está ativa
+ */
+.detalhes-etapa {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+/**
+ * Lista de atividades da etapa
+ */
+.lista-atividades {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.lista-atividades li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.lista-atividades li:hover {
+  background: rgba(30, 58, 138, 0.05);
+}
+
+.lista-atividades li i {
+  color: var(--royal-blue);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/**
+ * Tempo estimado da etapa
+ */
+.tempo-estimado {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  font-weight: 500;
+  background: var(--gray-50);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.tempo-estimado i {
+  color: var(--royal-blue);
+}
+
+/* ===================================
+   ÍCONE DA ETAPA
+   =================================== */
+
+/**
+ * Ícone decorativo da etapa
+ * Posicionado na extremidade oposta ao conteúdo
+ */
+.icone-etapa {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-secondary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--royal-blue);
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+}
+
+/* ===================================
+   RESUMO DO PROCESSO
+   =================================== */
+
+/**
+ * Seção de resumo com estatísticas e CTA
+ */
+.resumo-processo {
+  background: var(--gray-50);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-top: 4rem;
+}
+
+/* ===================================
+   ESTATÍSTICAS DO PROCESSO
+   =================================== */
+
+/**
+ * Grid das estatísticas do processo
+ */
+.estatisticas-processo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/**
+ * Item individual de estatística
+ */
+.estatistica-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.estatistica-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/**
+ * Ícone da estatística
+ */
+.icone-estatistica {
+  width: 50px;
+  height: 50px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/**
+ * Conteúdo da estatística
+ */
+.conteudo-estatistica {
+  display: flex;
+  flex-direction: column;
+}
+
+.numero-estatistica {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--royal-blue);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.label-estatistica {
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-top: 0.25rem;
+}
+
+/* ===================================
+   CALL-TO-ACTION DO PROCESSO
+   =================================== */
+
+/**
+ * Seção de call-to-action
+ */
+.cta-processo {
+  text-align: center;
+}
+
+/**
+ * Título do CTA
+ */
+.titulo-cta {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Descrição do CTA
+ */
+.descricao-cta {
+  font-size: 1.1rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+/**
+ * Container dos botões do CTA
+ */
+.botoes-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/**
+ * Botão primário do CTA
+ */
+.botoes-cta .botao-primario {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.botoes-cta .botao-primario:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-royal);
+}
+
+/**
+ * Botão secundário do CTA
+ */
+.botoes-cta .botao-secundario {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--royal-blue);
+  border: 2px solid var(--royal-blue);
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.botoes-cta .botao-secundario:hover {
+  background: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   ANIMAÇÕES DE ENTRADA
+   =================================== */
+
+/**
+ * Animação de entrada para as etapas
+ */
+.etapa-processo.animate-in {
+  animation: slideInTimeline 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInTimeline {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+
+/**
+ * Adaptações para tablets (768px e abaixo)
+ */
+@media (max-width: 768px) {
+  .timeline-processo::before {
+    left: 30px;
+  }
+  
+  .etapa-processo,
+  .etapa-processo:nth-child(even) {
+    flex-direction: row;
+    margin-left: 0;
+  }
+  
+  .numero-etapa {
+    margin: 0 1rem 0 0;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .numero {
+    font-size: 1.2rem;
+  }
+  
+  .conteudo-etapa {
+    max-width: none;
+  }
+  
+  .conteudo-etapa::before {
+    display: none;
+  }
+  
+  .icone-etapa {
+    display: none;
+  }
+  
+  .estatisticas-processo {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .botoes-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .botoes-cta .botao-primario,
+  .botoes-cta .botao-secundario {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/**
+ * Adaptações para smartphones (480px e abaixo)
+ */
+@media (max-width: 480px) {
+  .secao-processo {
+    padding: 3rem 0;
+  }
+  
+  .timeline-processo {
+    padding: 1rem 0;
+  }
+  
+  .etapa-processo {
+    margin-bottom: 2rem;
+  }
+  
+  .conteudo-etapa {
+    padding: 1.5rem;
+  }
+  
+  .resumo-processo {
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .titulo-cta {
+    font-size: 1.5rem;
+  }
+}
+

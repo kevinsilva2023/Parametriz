@@ -1,0 +1,588 @@
+/* ===================================
+   SEÇÃO DE SERVIÇOS - ESTILOS
+   =================================== */
+
+/**
+ * Container principal da seção de serviços
+ * Fundo claro para contrastar com a seção anterior
+ */
+.secao-servicos {
+  background: var(--gray-50);
+  padding: 5rem 0;
+  position: relative;
+}
+
+/* ===================================
+   CABEÇALHO DA SEÇÃO
+   =================================== */
+
+/**
+ * Cabeçalho centralizado da seção
+ * Título e subtítulo que introduzem os serviços
+ */
+.cabecalho-secao {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/**
+ * Título principal da seção
+ * Tipografia destacada para chamar atenção
+ */
+.titulo-secao {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/**
+ * Subtítulo explicativo da seção
+ * Complementa o título com informação adicional
+ */
+.subtitulo-secao {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===================================
+   GRID DE SERVIÇOS
+   =================================== */
+
+/**
+ * Layout em grid responsivo para os cards de serviços
+ * Adapta automaticamente o número de colunas
+ */
+.grid-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* ===================================
+   CARDS DE SERVIÇOS
+   =================================== */
+
+/**
+ * Card individual de serviço
+ * Design moderno com hover effects e transições suaves
+ */
+.card-servico {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/**
+ * Borda superior animada do card
+ * Aparece no hover para criar destaque visual
+ */
+.card-servico::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: var(--transition-normal);
+  transform-origin: left;
+}
+
+/**
+ * Estados de hover e ativo do card
+ * Elevação e destaque visual
+ */
+.card-servico:hover,
+.card-servico.ativo {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--royal-blue-light);
+}
+
+.card-servico:hover::before,
+.card-servico.ativo::before {
+  transform: scaleX(1);
+}
+
+/**
+ * Estado destacado do card
+ * Usado quando o mouse está sobre um card específico
+ */
+.card-servico.destacado {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: var(--shadow-royal);
+  border-color: var(--royal-blue);
+}
+
+/**
+ * Estado desfocado dos outros cards
+ * Reduz opacidade para destacar o card ativo
+ */
+.card-servico.desfocado {
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+/* ===================================
+   ELEMENTOS DO CARD
+   =================================== */
+
+/**
+ * Ícone do serviço
+ * Representação visual do tipo de serviço
+ */
+.icone-servico {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.card-servico:hover .icone-servico {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-royal);
+}
+
+/**
+ * Título do serviço
+ * Nome destacado do serviço oferecido
+ */
+.titulo-servico {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/**
+ * Descrição do serviço
+ * Texto explicativo sobre o que o serviço oferece
+ */
+.descricao-servico {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ===================================
+   CARACTERÍSTICAS DO SERVIÇO
+   =================================== */
+
+/**
+ * Container das características/tags do serviço
+ * Layout flexível para as tags
+ */
+.caracteristicas-servico {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/**
+ * Tag individual de característica
+ * Pequenos badges que destacam recursos específicos
+ */
+.caracteristica {
+  background: var(--sand-light);
+  color: var(--royal-blue);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.card-servico:hover .caracteristica {
+  transform: translateY(-2px);
+  background: var(--sand);
+}
+
+/* ===================================
+   BOTÃO DO SERVIÇO
+   =================================== */
+
+/**
+ * Botão de ação do card de serviço
+ * Call-to-action para mais informações
+ */
+.botao-servico {
+  background: none;
+  border: 2px solid var(--royal-blue);
+  color: var(--royal-blue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  width: 100%;
+  font-size: 1rem;
+}
+
+.botao-servico:hover {
+  background: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===================================
+   SEÇÃO DE DETALHES DO SERVIÇO
+   =================================== */
+
+/**
+ * Container dos detalhes expandidos do serviço
+ * Aparece quando um serviço é selecionado
+ */
+.detalhes-servico {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  position: relative;
+}
+
+/**
+ * Cabeçalho da seção de detalhes
+ * Título e botão de fechar
+ */
+.cabecalho-detalhes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+/**
+ * Título dos detalhes do serviço
+ */
+.titulo-detalhes {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin: 0;
+}
+
+/**
+ * Botão para fechar os detalhes
+ */
+.botao-fechar {
+  background: var(--gray-100);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  color: var(--gray-600);
+}
+
+.botao-fechar:hover {
+  background: var(--gray-200);
+  color: var(--gray-800);
+  transform: scale(1.1);
+}
+
+/* ===================================
+   CONTEÚDO DOS DETALHES
+   =================================== */
+
+/**
+ * Container do conteúdo detalhado
+ * Organiza as diferentes seções de informação
+ */
+.conteudo-detalhes {
+  display: grid;
+  gap: 2rem;
+}
+
+/**
+ * Descrição expandida do serviço
+ * Texto mais detalhado sobre o serviço
+ */
+.descricao-expandida {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+/**
+ * Seção de lista de benefícios
+ */
+.lista-beneficios h4,
+.processo-implementacao h4 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--royal-blue);
+  margin-bottom: 1rem;
+}
+
+/**
+ * Lista de benefícios do serviço
+ */
+.lista-beneficios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-beneficios li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.lista-beneficios li:hover {
+  background: var(--gray-50);
+}
+
+.lista-beneficios li i {
+  color: var(--royal-blue);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ===================================
+   PROCESSO DE IMPLEMENTAÇÃO
+   =================================== */
+
+/**
+ * Container das etapas do processo
+ * Layout das etapas de implementação
+ */
+.etapas-processo {
+  display: grid;
+  gap: 1rem;
+}
+
+/**
+ * Etapa individual do processo
+ * Cada passo da implementação
+ */
+.etapa {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--gray-50);
+  border-radius: 12px;
+  transition: var(--transition-fast);
+}
+
+.etapa:hover {
+  background: var(--sand-light);
+  transform: translateX(5px);
+}
+
+/**
+ * Número da etapa
+ * Indicador visual da sequência
+ */
+.numero-etapa {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/**
+ * Descrição da etapa
+ */
+.descricao-etapa {
+  color: var(--gray-700);
+  line-height: 1.5;
+}
+
+/* ===================================
+   AÇÕES DOS DETALHES
+   =================================== */
+
+/**
+ * Container dos botões de ação dos detalhes
+ * Call-to-actions específicos do serviço
+ */
+.acoes-detalhes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/**
+ * Botão primário das ações
+ */
+.acoes-detalhes .botao-primario {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+}
+
+.acoes-detalhes .botao-primario:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-royal);
+}
+
+/**
+ * Botão secundário das ações
+ */
+.acoes-detalhes .botao-secundario {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: var(--royal-blue);
+  border: 2px solid var(--royal-blue);
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  text-decoration: none;
+}
+
+.acoes-detalhes .botao-secundario:hover {
+  background: var(--royal-blue);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   ANIMAÇÕES DE ENTRADA
+   =================================== */
+
+/**
+ * Animação de entrada para os cards
+ * Aplicada quando os cards ficam visíveis
+ */
+.card-servico.animate-in {
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   RESPONSIVIDADE
+   =================================== */
+
+/**
+ * Adaptações para tablets (768px e abaixo)
+ */
+@media (max-width: 768px) {
+  .grid-servicos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .cabecalho-detalhes {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .acoes-detalhes {
+    flex-direction: column;
+  }
+  
+  .acoes-detalhes .botao-primario,
+  .acoes-detalhes .botao-secundario {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/**
+ * Adaptações para smartphones (480px e abaixo)
+ */
+@media (max-width: 480px) {
+  .secao-servicos {
+    padding: 3rem 0;
+  }
+  
+  .card-servico {
+    padding: 1.5rem;
+  }
+  
+  .detalhes-servico {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .caracteristicas-servico {
+    justify-content: center;
+  }
+  
+  .etapas-processo {
+    gap: 0.75rem;
+  }
+  
+  .etapa {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+

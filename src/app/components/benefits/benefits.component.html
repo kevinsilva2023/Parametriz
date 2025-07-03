@@ -1,0 +1,314 @@
+<!-- Seção de Benefícios da Parametriz -->
+<!-- Destaca as vantagens e diferenciais da empresa -->
+<!-- Layout em cards com ícones e animações atrativas -->
+<section id="benefits" class="secao-beneficios">
+  <div class="container">
+    
+    <!-- Cabeçalho da Seção -->
+    <!-- Título e descrição dos benefícios -->
+    <div class="cabecalho-secao">
+      <h2 class="titulo-secao">Por que Escolher a Parametriz?</h2>
+      <p class="subtitulo-secao">Diferenciais que fazem toda a diferença no seu negócio</p>
+    </div>
+    
+    <!-- Grid Principal de Benefícios -->
+    <!-- Layout responsivo com cards de benefícios -->
+    <div class="grid-beneficios">
+      
+      <!-- Benefício: Economia de Tempo -->
+      <div class="card-beneficio" 
+           [class.destacado]="beneficioDestacado === 'tempo'"
+           (mouseenter)="destacarBeneficio('tempo')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarBeneficio('tempo')">
+        
+        <!-- Ícone do Benefício -->
+        <div class="icone-beneficio">
+          <i class="fas fa-clock"></i>
+          <div class="efeito-pulso"></div>
+        </div>
+        
+        <!-- Conteúdo do Benefício -->
+        <div class="conteudo-beneficio">
+          <h3 class="titulo-beneficio">Economia de Tempo</h3>
+          <p class="descricao-beneficio">
+            Reduza em até 75% o tempo gasto com configurações manuais 
+            e processos repetitivos.
+          </p>
+          
+          <!-- Métrica Destacada -->
+          <div class="metrica-beneficio">
+            <span class="numero-metrica" [attr.data-target]="75">{{ contadorTempo }}</span>
+            <span class="simbolo-metrica">%</span>
+            <span class="label-metrica">menos tempo</span>
+          </div>
+        </div>
+        
+        <!-- Indicador de Seleção -->
+        <div class="indicador-selecao">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Benefício: Redução de Erros -->
+      <div class="card-beneficio" 
+           [class.destacado]="beneficioDestacado === 'erros'"
+           (mouseenter)="destacarBeneficio('erros')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarBeneficio('erros')">
+        
+        <!-- Ícone do Benefício -->
+        <div class="icone-beneficio">
+          <i class="fas fa-shield-check"></i>
+          <div class="efeito-pulso"></div>
+        </div>
+        
+        <!-- Conteúdo do Benefício -->
+        <div class="conteudo-beneficio">
+          <h3 class="titulo-beneficio">Redução de Erros</h3>
+          <p class="descricao-beneficio">
+            Elimine erros humanos com automação inteligente 
+            e validações rigorosas.
+          </p>
+          
+          <!-- Métrica Destacada -->
+          <div class="metrica-beneficio">
+            <span class="numero-metrica" [attr.data-target]="98">{{ contadorPrecisao }}</span>
+            <span class="simbolo-metrica">%</span>
+            <span class="label-metrica">de precisão</span>
+          </div>
+        </div>
+        
+        <!-- Indicador de Seleção -->
+        <div class="indicador-selecao">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Benefício: Compliance Garantido -->
+      <div class="card-beneficio" 
+           [class.destacado]="beneficioDestacado === 'compliance'"
+           (mouseenter)="destacarBeneficio('compliance')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarBeneficio('compliance')">
+        
+        <!-- Ícone do Benefício -->
+        <div class="icone-beneficio">
+          <i class="fas fa-balance-scale"></i>
+          <div class="efeito-pulso"></div>
+        </div>
+        
+        <!-- Conteúdo do Benefício -->
+        <div class="conteudo-beneficio">
+          <h3 class="titulo-beneficio">Compliance Garantido</h3>
+          <p class="descricao-beneficio">
+            Mantenha-se sempre em conformidade com as 
+            últimas regulamentações fiscais.
+          </p>
+          
+          <!-- Métrica Destacada -->
+          <div class="metrica-beneficio">
+            <span class="numero-metrica" [attr.data-target]="100">{{ contadorCompliance }}</span>
+            <span class="simbolo-metrica">%</span>
+            <span class="label-metrica">conformidade</span>
+          </div>
+        </div>
+        
+        <!-- Indicador de Seleção -->
+        <div class="indicador-selecao">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Benefício: Suporte Especializado -->
+      <div class="card-beneficio" 
+           [class.destacado]="beneficioDestacado === 'suporte'"
+           (mouseenter)="destacarBeneficio('suporte')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarBeneficio('suporte')">
+        
+        <!-- Ícone do Benefício -->
+        <div class="icone-beneficio">
+          <i class="fas fa-headset"></i>
+          <div class="efeito-pulso"></div>
+        </div>
+        
+        <!-- Conteúdo do Benefício -->
+        <div class="conteudo-beneficio">
+          <h3 class="titulo-beneficio">Suporte Especializado</h3>
+          <p class="descricao-beneficio">
+            Equipe de especialistas disponível para 
+            suporte técnico e orientação estratégica.
+          </p>
+          
+          <!-- Métrica Destacada -->
+          <div class="metrica-beneficio">
+            <span class="numero-metrica">24</span>
+            <span class="simbolo-metrica">/7</span>
+            <span class="label-metrica">disponível</span>
+          </div>
+        </div>
+        
+        <!-- Indicador de Seleção -->
+        <div class="indicador-selecao">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Seção de Comparação -->
+    <!-- Antes vs Depois da implementação -->
+    <div class="secao-comparacao">
+      
+      <!-- Título da Comparação -->
+      <h3 class="titulo-comparacao">Transformação Real</h3>
+      <p class="subtitulo-comparacao">Veja o impacto da Parametriz no seu negócio</p>
+      
+      <!-- Grid de Comparação -->
+      <div class="grid-comparacao">
+        
+        <!-- Coluna: Antes -->
+        <div class="coluna-comparacao antes">
+          <div class="cabecalho-coluna">
+            <i class="fas fa-times-circle"></i>
+            <h4>Antes da Parametriz</h4>
+          </div>
+          
+          <ul class="lista-comparacao">
+            <li *ngFor="let item of problemasAntes">
+              <i class="fas fa-times"></i>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Seta de Transformação -->
+        <div class="seta-transformacao">
+          <div class="circulo-seta">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+          <span class="texto-transformacao">Transformação</span>
+        </div>
+        
+        <!-- Coluna: Depois -->
+        <div class="coluna-comparacao depois">
+          <div class="cabecalho-coluna">
+            <i class="fas fa-check-circle"></i>
+            <h4>Depois da Parametriz</h4>
+          </div>
+          
+          <ul class="lista-comparacao">
+            <li *ngFor="let item of solucoesDepois">
+              <i class="fas fa-check"></i>
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Seção de Depoimentos -->
+    <!-- Testemunhos de clientes satisfeitos -->
+    <div class="secao-depoimentos">
+      
+      <!-- Título dos Depoimentos -->
+      <h3 class="titulo-depoimentos">O que nossos clientes dizem</h3>
+      
+      <!-- Carrossel de Depoimentos -->
+      <div class="carrossel-depoimentos">
+        
+        <!-- Depoimento Ativo -->
+        <div class="depoimento-ativo" *ngIf="depoimentoAtual">
+          
+          <!-- Aspas Decorativas -->
+          <div class="aspas-decorativas">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          
+          <!-- Texto do Depoimento -->
+          <blockquote class="texto-depoimento">
+            {{ depoimentoAtual.texto }}
+          </blockquote>
+          
+          <!-- Informações do Cliente -->
+          <div class="info-cliente">
+            <div class="avatar-cliente">
+              <img [src]="depoimentoAtual.avatar" [alt]="depoimentoAtual.nome">
+            </div>
+            <div class="dados-cliente">
+              <span class="nome-cliente">{{ depoimentoAtual.nome }}</span>
+              <span class="cargo-cliente">{{ depoimentoAtual.cargo }}</span>
+              <span class="empresa-cliente">{{ depoimentoAtual.empresa }}</span>
+            </div>
+          </div>
+          
+          <!-- Avaliação em Estrelas -->
+          <div class="avaliacao-estrelas">
+            <i class="fas fa-star" *ngFor="let estrela of obterEstrelas(depoimentoAtual.avaliacao)"></i>
+          </div>
+          
+        </div>
+        
+        <!-- Controles do Carrossel -->
+        <div class="controles-carrossel">
+          <button class="botao-anterior" (click)="depoimentoAnterior()" [disabled]="indiceDepoimentoAtual === 0">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <!-- Indicadores de Posição -->
+          <div class="indicadores-posicao">
+            <button class="indicador" 
+                    *ngFor="let depoimento of depoimentos; let i = index"
+                    [class.ativo]="i === indiceDepoimentoAtual"
+                    (click)="selecionarDepoimento(i)">
+            </button>
+          </div>
+          
+          <button class="botao-proximo" (click)="proximoDepoimento()" [disabled]="indiceDepoimentoAtual === depoimentos.length - 1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Call-to-Action Final -->
+    <!-- Convite para experimentar os benefícios -->
+    <div class="cta-beneficios">
+      <div class="conteudo-cta">
+        <h3 class="titulo-cta">Pronto para experimentar estes benefícios?</h3>
+        <p class="descricao-cta">
+          Junte-se a centenas de empresas que já transformaram 
+          seus processos contábeis com a Parametriz.
+        </p>
+        <div class="botoes-cta">
+          <button class="botao-primario" (click)="iniciarTransformacao()">
+            <i class="fas fa-rocket"></i>
+            Iniciar Transformação
+          </button>
+          <button class="botao-secundario" (click)="agendarDemonstracao()">
+            <i class="fas fa-calendar-alt"></i>
+            Agendar Demonstração
+          </button>
+        </div>
+      </div>
+      
+      <!-- Elementos Decorativos -->
+      <div class="elementos-decorativos">
+        <div class="forma-decorativa forma-1"></div>
+        <div class="forma-decorativa forma-2"></div>
+        <div class="forma-decorativa forma-3"></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+

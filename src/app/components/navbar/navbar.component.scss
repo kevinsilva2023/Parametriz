@@ -1,0 +1,119 @@
+.menu-flutuante {
+  position: fixed;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  backdrop-filter: blur(20px);
+  background: var(--royal-blue);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 8px;
+  transition: var(--transition-normal) !important;
+
+  &:hover {
+    background: var(--royal-blue);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 0px 16px;
+  }
+
+  @media (max-width: 768px) {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+    padding: 14px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+
+  &.active {
+    flex-direction: column;
+    position: absolute;
+    top: 120%;
+    left: 0;
+    right: 0;
+    background: var(--sand-light);
+    border-radius: 20px;
+    padding: 16px;
+    gap: 0.5rem;
+    z-index: 0;
+
+    .nav-link {
+      color: var(--royal-blue);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 25px;
+  border-radius: 25px;
+  transition: var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background: var(--royal-blue-dark-blur); 
+    border: 1px dashed var(--sand-light);
+    font-weight: 600;
+    color: var(--white) !important;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    width: 35px;
+    height: 3px;
+    background: var(--white);
+    transition: var(--transition-fast);
+  }
+
+  &.active {
+    span:nth-child(1) {
+      transform: rotate(45deg) translate(2px, 7px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: rotate(-45deg) translate(2px, -7px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}

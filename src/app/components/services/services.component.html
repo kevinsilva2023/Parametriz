@@ -1,0 +1,189 @@
+<!-- Seção de Serviços da Empresa -->
+<!-- Apresenta os principais serviços oferecidos pela Parametriz -->
+<!-- Layout em cards interativos com informações detalhadas -->
+<section id="services" class="secao-servicos">
+  <div class="container">
+    
+    <!-- Cabeçalho da Seção -->
+    <!-- Título e descrição geral dos serviços -->
+    <div class="cabecalho-secao">
+      <h2 class="titulo-secao">Nossos Serviços</h2>
+      <p class="subtitulo-secao">Soluções completas para cada necessidade da sua empresa</p>
+    </div>
+    
+    <!-- Grid de Serviços -->
+    <!-- Cards organizados em layout responsivo -->
+    <div class="grid-servicos">
+      
+      <!-- Card: Parametrização de Sistemas -->
+      <!-- Serviço principal de configuração de sistemas contábeis -->
+      <div class="card-servico" 
+           [class.ativo]="servicoSelecionado === 'parametrizacao'"
+           (mouseenter)="destacarServico('parametrizacao')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarServico('parametrizacao')">
+        
+        <!-- Ícone do Serviço -->
+        <div class="icone-servico">
+          <i class="fas fa-cogs"></i>
+        </div>
+        
+        <!-- Título do Serviço -->
+        <h3 class="titulo-servico">Parametrização de Sistemas</h3>
+        
+        <!-- Descrição do Serviço -->
+        <p class="descricao-servico">
+          Configuração completa e personalizada de sistemas contábeis, 
+          adequando planos de contas e regras fiscais às necessidades específicas da sua empresa.
+        </p>
+        
+        <!-- Características do Serviço -->
+        <!-- Tags que destacam os principais recursos -->
+        <div class="caracteristicas-servico">
+          <span class="caracteristica">Plano de Contas</span>
+          <span class="caracteristica">Regras Fiscais</span>
+          <span class="caracteristica">Integração ERP</span>
+        </div>
+        
+        <!-- Botão de Ação -->
+        <button class="botao-servico" (click)="abrirDetalhesServico('parametrizacao')">
+          Saiba Mais
+        </button>
+        
+      </div>
+      
+      <!-- Card: Consultoria Especializada -->
+      <!-- Serviço de orientação estratégica e suporte -->
+      <div class="card-servico" 
+           [class.ativo]="servicoSelecionado === 'consultoria'"
+           (mouseenter)="destacarServico('consultoria')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarServico('consultoria')">
+        
+        <!-- Ícone do Serviço -->
+        <div class="icone-servico">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        
+        <!-- Título do Serviço -->
+        <h3 class="titulo-servico">Consultoria Especializada</h3>
+        
+        <!-- Descrição do Serviço -->
+        <p class="descricao-servico">
+          Orientação estratégica com profissionais experientes para 
+          otimizar processos e garantir compliance fiscal e contábil.
+        </p>
+        
+        <!-- Características do Serviço -->
+        <div class="caracteristicas-servico">
+          <span class="caracteristica">Análise Técnica</span>
+          <span class="caracteristica">Treinamento</span>
+          <span class="caracteristica">Suporte 24/7</span>
+        </div>
+        
+        <!-- Botão de Ação -->
+        <button class="botao-servico" (click)="abrirDetalhesServico('consultoria')">
+          Saiba Mais
+        </button>
+        
+      </div>
+      
+      <!-- Card: Automação Inteligente -->
+      <!-- Serviço de implementação de soluções automatizadas -->
+      <div class="card-servico" 
+           [class.ativo]="servicoSelecionado === 'automacao'"
+           (mouseenter)="destacarServico('automacao')"
+           (mouseleave)="removerDestaque()"
+           (click)="selecionarServico('automacao')">
+        
+        <!-- Ícone do Serviço -->
+        <div class="icone-servico">
+          <i class="fas fa-robot"></i>
+        </div>
+        
+        <!-- Título do Serviço -->
+        <h3 class="titulo-servico">Automação Inteligente</h3>
+        
+        <!-- Descrição do Serviço -->
+        <p class="descricao-servico">
+          Implementação de soluções automatizadas que reduzem erros manuais 
+          e aceleram processos contábeis e fiscais.
+        </p>
+        
+        <!-- Características do Serviço -->
+        <div class="caracteristicas-servico">
+          <span class="caracteristica">IA Contábil</span>
+          <span class="caracteristica">Workflows</span>
+          <span class="caracteristica">Relatórios</span>
+        </div>
+        
+        <!-- Botão de Ação -->
+        <button class="botao-servico" (click)="abrirDetalhesServico('automacao')">
+          Saiba Mais
+        </button>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Seção de Detalhes do Serviço Selecionado -->
+    <!-- Informações expandidas que aparecem quando um serviço é selecionado -->
+    <div class="detalhes-servico" *ngIf="servicoSelecionado" [@slideInOut]>
+      
+      <!-- Cabeçalho dos Detalhes -->
+      <div class="cabecalho-detalhes">
+        <h3 class="titulo-detalhes">{{ obterTituloServicoSelecionado() }}</h3>
+        <button class="botao-fechar" (click)="fecharDetalhes()" aria-label="Fechar detalhes">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <!-- Conteúdo dos Detalhes -->
+      <div class="conteudo-detalhes">
+        
+        <!-- Descrição Expandida -->
+        <div class="descricao-expandida">
+          <p>{{ obterDescricaoExpandidaServico() }}</p>
+        </div>
+        
+        <!-- Lista de Benefícios -->
+        <div class="lista-beneficios">
+          <h4>Principais Benefícios:</h4>
+          <ul>
+            <li *ngFor="let beneficio of obterBeneficiosServico()">
+              <i class="fas fa-check-circle"></i>
+              {{ beneficio }}
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Processo de Implementação -->
+        <div class="processo-implementacao">
+          <h4>Como Funciona:</h4>
+          <div class="etapas-processo">
+            <div class="etapa" *ngFor="let etapa of obterEtapasProcesso(); let i = index">
+              <div class="numero-etapa">{{ i + 1 }}</div>
+              <div class="descricao-etapa">{{ etapa }}</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Botões de Ação dos Detalhes -->
+        <div class="acoes-detalhes">
+          <button class="botao-primario" (click)="solicitarOrcamento()">
+            <i class="fas fa-calculator"></i>
+            Solicitar Orçamento
+          </button>
+          <button class="botao-secundario" (click)="agendarConsulta()">
+            <i class="fas fa-calendar-alt"></i>
+            Agendar Consulta
+          </button>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+

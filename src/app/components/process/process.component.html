@@ -1,0 +1,258 @@
+<!-- Seção do Processo de Trabalho -->
+<!-- Explica como a Parametriz trabalha e quais são as etapas -->
+<!-- Layout em timeline visual para mostrar a sequência de trabalho -->
+<section id="process" class="secao-processo">
+  <div class="container">
+    
+    <!-- Cabeçalho da Seção -->
+    <!-- Título e descrição do processo de trabalho -->
+    <div class="cabecalho-secao">
+      <h2 class="titulo-secao">Como Funciona</h2>
+      <p class="subtitulo-secao">Um processo simples e eficiente em 4 etapas</p>
+    </div>
+    
+    <!-- Timeline do Processo -->
+    <!-- Linha do tempo visual mostrando cada etapa do processo -->
+    <div class="timeline-processo">
+      
+      <!-- Etapa 1: Análise Inicial -->
+      <div class="etapa-processo" 
+           [class.ativa]="etapaAtiva === 1"
+           [class.concluida]="etapaAtiva > 1"
+           (click)="selecionarEtapa(1)"
+           (mouseenter)="destacarEtapa(1)"
+           (mouseleave)="removerDestaque()">
+        
+        <!-- Número da Etapa -->
+        <div class="numero-etapa">
+          <span class="numero">01</span>
+          <div class="indicador-progresso"></div>
+        </div>
+        
+        <!-- Conteúdo da Etapa -->
+        <div class="conteudo-etapa">
+          <h3 class="titulo-etapa">Análise Inicial</h3>
+          <p class="descricao-etapa">
+            Avaliamos sua estrutura atual, identificamos necessidades 
+            e definimos o escopo da parametrização.
+          </p>
+          
+          <!-- Detalhes Expandidos da Etapa -->
+          <div class="detalhes-etapa" *ngIf="etapaAtiva === 1" [@expandirContrair]>
+            <ul class="lista-atividades">
+              <li *ngFor="let atividade of obterAtividadesEtapa(1)">
+                <i class="fas fa-check-circle"></i>
+                {{ atividade }}
+              </li>
+            </ul>
+            <div class="tempo-estimado">
+              <i class="fas fa-clock"></i>
+              <span>Tempo estimado: {{ obterTempoEtapa(1) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ícone da Etapa -->
+        <div class="icone-etapa">
+          <i class="fas fa-search"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Etapa 2: Configuração -->
+      <div class="etapa-processo" 
+           [class.ativa]="etapaAtiva === 2"
+           [class.concluida]="etapaAtiva > 2"
+           (click)="selecionarEtapa(2)"
+           (mouseenter)="destacarEtapa(2)"
+           (mouseleave)="removerDestaque()">
+        
+        <!-- Número da Etapa -->
+        <div class="numero-etapa">
+          <span class="numero">02</span>
+          <div class="indicador-progresso"></div>
+        </div>
+        
+        <!-- Conteúdo da Etapa -->
+        <div class="conteudo-etapa">
+          <h3 class="titulo-etapa">Configuração</h3>
+          <p class="descricao-etapa">
+            Implementamos as configurações necessárias, 
+            adaptando sistemas às suas regras de negócio.
+          </p>
+          
+          <!-- Detalhes Expandidos da Etapa -->
+          <div class="detalhes-etapa" *ngIf="etapaAtiva === 2" [@expandirContrair]>
+            <ul class="lista-atividades">
+              <li *ngFor="let atividade of obterAtividadesEtapa(2)">
+                <i class="fas fa-check-circle"></i>
+                {{ atividade }}
+              </li>
+            </ul>
+            <div class="tempo-estimado">
+              <i class="fas fa-clock"></i>
+              <span>Tempo estimado: {{ obterTempoEtapa(2) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ícone da Etapa -->
+        <div class="icone-etapa">
+          <i class="fas fa-tools"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Etapa 3: Testes & Validação -->
+      <div class="etapa-processo" 
+           [class.ativa]="etapaAtiva === 3"
+           [class.concluida]="etapaAtiva > 3"
+           (click)="selecionarEtapa(3)"
+           (mouseenter)="destacarEtapa(3)"
+           (mouseleave)="removerDestaque()">
+        
+        <!-- Número da Etapa -->
+        <div class="numero-etapa">
+          <span class="numero">03</span>
+          <div class="indicador-progresso"></div>
+        </div>
+        
+        <!-- Conteúdo da Etapa -->
+        <div class="conteudo-etapa">
+          <h3 class="titulo-etapa">Testes & Validação</h3>
+          <p class="descricao-etapa">
+            Realizamos testes rigorosos para garantir 
+            que tudo funcione perfeitamente.
+          </p>
+          
+          <!-- Detalhes Expandidos da Etapa -->
+          <div class="detalhes-etapa" *ngIf="etapaAtiva === 3" [@expandirContrair]>
+            <ul class="lista-atividades">
+              <li *ngFor="let atividade of obterAtividadesEtapa(3)">
+                <i class="fas fa-check-circle"></i>
+                {{ atividade }}
+              </li>
+            </ul>
+            <div class="tempo-estimado">
+              <i class="fas fa-clock"></i>
+              <span>Tempo estimado: {{ obterTempoEtapa(3) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ícone da Etapa -->
+        <div class="icone-etapa">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        
+      </div>
+      
+      <!-- Etapa 4: Entrega & Suporte -->
+      <div class="etapa-processo" 
+           [class.ativa]="etapaAtiva === 4"
+           [class.concluida]="etapaAtiva > 4"
+           (click)="selecionarEtapa(4)"
+           (mouseenter)="destacarEtapa(4)"
+           (mouseleave)="removerDestaque()">
+        
+        <!-- Número da Etapa -->
+        <div class="numero-etapa">
+          <span class="numero">04</span>
+          <div class="indicador-progresso"></div>
+        </div>
+        
+        <!-- Conteúdo da Etapa -->
+        <div class="conteudo-etapa">
+          <h3 class="titulo-etapa">Entrega & Suporte</h3>
+          <p class="descricao-etapa">
+            Entregamos o projeto finalizado com 
+            treinamento e suporte contínuo.
+          </p>
+          
+          <!-- Detalhes Expandidos da Etapa -->
+          <div class="detalhes-etapa" *ngIf="etapaAtiva === 4" [@expandirContrair]>
+            <ul class="lista-atividades">
+              <li *ngFor="let atividade of obterAtividadesEtapa(4)">
+                <i class="fas fa-check-circle"></i>
+                {{ atividade }}
+              </li>
+            </ul>
+            <div class="tempo-estimado">
+              <i class="fas fa-clock"></i>
+              <span>Tempo estimado: {{ obterTempoEtapa(4) }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Ícone da Etapa -->
+        <div class="icone-etapa">
+          <i class="fas fa-rocket"></i>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+    <!-- Resumo do Processo -->
+    <!-- Informações gerais sobre o processo completo -->
+    <div class="resumo-processo">
+      
+      <!-- Estatísticas do Processo -->
+      <div class="estatisticas-processo">
+        
+        <div class="estatistica-item">
+          <div class="icone-estatistica">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="conteudo-estatistica">
+            <span class="numero-estatistica">{{ tempoTotalProcesso }}</span>
+            <span class="label-estatistica">Tempo Total Médio</span>
+          </div>
+        </div>
+        
+        <div class="estatistica-item">
+          <div class="icone-estatistica">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="conteudo-estatistica">
+            <span class="numero-estatistica">{{ especialistasEnvolvidos }}</span>
+            <span class="label-estatistica">Especialistas Envolvidos</span>
+          </div>
+        </div>
+        
+        <div class="estatistica-item">
+          <div class="icone-estatistica">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div class="conteudo-estatistica">
+            <span class="numero-estatistica">{{ garantiaProcesso }}</span>
+            <span class="label-estatistica">Garantia de Qualidade</span>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Call-to-Action do Processo -->
+      <div class="cta-processo">
+        <h3 class="titulo-cta">Pronto para começar?</h3>
+        <p class="descricao-cta">
+          Inicie seu projeto de parametrização hoje mesmo e transforme 
+          a eficiência dos seus processos contábeis.
+        </p>
+        <div class="botoes-cta">
+          <button class="botao-primario" (click)="iniciarProcesso()">
+            <i class="fas fa-play"></i>
+            Iniciar Processo
+          </button>
+          <button class="botao-secundario" (click)="baixarGuiaProcesso()">
+            <i class="fas fa-download"></i>
+            Baixar Guia Completo
+          </button>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
