@@ -27,9 +27,9 @@ interface DadosServico {
  * - Integração com seção de contato
  */
 @Component({
-  selector: 'app-services',
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss'],
+  selector: 'app-servicos',
+  templateUrl: './servicos.component.html',
+  styleUrls: ['./servicos.component.scss'],
   animations: [
     // Animação para entrada e saída dos detalhes do serviço
     trigger('slideInOut', [
@@ -43,7 +43,7 @@ interface DadosServico {
     ])
   ]
 })
-export class ServicesComponent implements OnInit {
+export class ServicosComponent implements OnInit {
 
   /**
    * Serviço atualmente selecionado para exibir detalhes

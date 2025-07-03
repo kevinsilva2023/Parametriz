@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ApresentacaoInicialComponent } from './components/apresentacao-inicial/apresentacao-inicial.component';
-import { ServicesComponent } from './components/services/services.component';
+import { ServicosComponent } from './components/servicos/servicos.component';
 import { ProcessComponent } from './components/process/process.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
 import { ContactComponent } from './components/contact/contact.component';
@@ -24,7 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     NavbarComponent,
     ApresentacaoInicialComponent,
-    ServicesComponent,
+    ServicosComponent,
     ProcessComponent,
     BenefitsComponent,
     ContactComponent,

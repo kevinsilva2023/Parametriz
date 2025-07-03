@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: space-between;
   max-height: 70px;
+  max-width: 1000px;
   width: 90vw;
 
   &:hover {
@@ -83,7 +84,7 @@
 
 .nav-links {
   display: flex;
-  gap: 22px;
+  gap: 5px;
 
   &.active {
     flex-direction: column;
@@ -115,10 +116,10 @@
   color: var(--white);
   text-decoration: none !important;
   font-weight: 500;
-  padding: 8px 25px;
+  padding: 8px 15px;
   border: 1px solid var(--royal-blue);
   border-radius: 25px;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal) !important;
   position: relative;
   cursor: pointer;
 

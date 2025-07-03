@@ -1,15 +1,9 @@
-/* ===================================
-   SEÇÃO DE SERVIÇOS - ESTILOS
-   =================================== */
 
-/**
- * Container principal da seção de serviços
- * Fundo claro para contrastar com a seção anterior
- */
 .secao-servicos {
   background: var(--gray-50);
   padding: 5rem 0;
   position: relative;
+  min-height: 100vh;
 }
 
 /* ===================================
