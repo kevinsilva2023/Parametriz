@@ -1,4 +1,11 @@
 <nav class="menu-flutuante">
+  <div class="logo-parametriz">
+    <img src="/assets/logo-white.png">
+    <div class="content-texto">
+      <h1>PARAMETRIZ</h1>
+      <h2>SOLUÇÕES TECNOLÓGICAS</h2>
+    </div>
+  </div>
   <div class="nav-container">
     <div class="nav-links" [class.active]="estaMenuAberto">
       <a href="#home" class="nav-link" [class.active]="secaoAtiva === 'home'" (click)="navegarParaSecao('home')">Início</a>
@@ -6,6 +13,9 @@
       <a href="#process" class="nav-link" [class.active]="secaoAtiva === 'process'" (click)="navegarParaSecao('process')">Processo</a>
       <a href="#benefits" class="nav-link" [class.active]="secaoAtiva === 'benefits'"  (click)="navegarParaSecao('benefits')">Benefícios</a>
       <a href="#contact" class="nav-link" [class.active]="secaoAtiva === 'contact'" (click)="navegarParaSecao('contact')">Contato</a>
+
+      <div class="nav-link active" 
+        style="background-color: #fff; color: #1e3a8a !important; border: 1px dashed #1e3a8a;">Login</div>
     </div>
     
     <button class="menu-toggle" [class.active]="estaMenuAberto" (click)="alternarMenu()" aria-label="Alternar menu de navegação">
