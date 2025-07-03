@@ -1,12 +1,3 @@
-/* ===================================
-   APRESENTAÇÃO INICIAL - ESTILOS
-   =================================== */
-
-/**
- * Seção principal de apresentação da empresa
- * Primeira impressão que o visitante tem do site
- * Layout responsivo com fundo gradiente e elementos animados
- */
 .apresentacao-inicial {
   min-height: 100vh;
   background: var(--gradient-hero);
@@ -115,6 +106,10 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 }
 
 /* ===================================
