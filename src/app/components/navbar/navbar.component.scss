@@ -93,9 +93,10 @@
     left: 0;
     right: 0;
     background: var(--sand-light);
+    border: 1px dashed var(--royal-blue);
     border-radius: 20px;
     padding: 16px;
-    gap: 0.5rem;
+    gap: 8px;
     z-index: 0;
 
     .nav-link {
