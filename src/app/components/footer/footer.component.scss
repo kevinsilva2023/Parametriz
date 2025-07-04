@@ -1,672 +1,470 @@
-/* ===================================
-   RODAPÉ PRINCIPAL - ESTILOS
-   =================================== */
-
-/**
- * Container principal do rodapé
- * Fundo escuro para contrastar com o conteúdo
- */
-.rodape-principal {
-  background: linear-gradient(135deg, var(--royal-blue-dark) 0%, var(--royal-blue) 100%);
-  color: var(--white);
+.footer {
   position: relative;
+  background-color: var(--royal-blue);
+  color: #fff;
   overflow: hidden;
-}
 
-/* ===================================
-   SEÇÃO PRINCIPAL DO RODAPÉ
-   =================================== */
-
-/**
- * Seção principal com informações da empresa
- */
-.secao-principal-rodape {
-  padding: 4rem 0 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-/**
- * Grid responsivo das colunas
- */
-.grid-rodape {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-/* ===================================
-   COLUNAS DO RODAPÉ
-   =================================== */
-
-/**
- * Estilo base para todas as colunas
- */
-.coluna-rodape {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: var(--transition-normal);
-}
-
-.coluna-rodape.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/**
- * Títulos das colunas
- */
-.titulo-coluna {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--sand);
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.titulo-coluna::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: var(--sand);
-}
-
-/* ===================================
-   COLUNA SOBRE A EMPRESA
-   =================================== */
-
-/**
- * Logo da empresa no rodapé
- */
-.logo-rodape {
-  margin-bottom: 1.5rem;
-}
-
-.logo-rodape img {
-  max-width: 180px;
-  height: auto;
-  filter: brightness(0) invert(1); /* Torna o logo branco */
-}
-
-/**
- * Descrição da empresa
- */
-.descricao-empresa {
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 2rem;
-}
-
-/**
- * Certificações e selos
- */
-.certificacoes {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.selo-certificacao {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  transition: var(--transition-fast);
-}
-
-.selo-certificacao:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.selo-certificacao i {
-  color: var(--sand);
-}
-
-/* ===================================
-   LISTAS DE LINKS
-   =================================== */
-
-/**
- * Lista de links das colunas
- */
-.lista-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.lista-links li {
-  margin-bottom: 0.75rem;
-}
-
-.lista-links a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  transition: var(--transition-fast);
-  padding: 0.25rem 0;
-}
-
-.lista-links a:hover {
-  color: var(--sand);
-  transform: translateX(5px);
-}
-
-.lista-links a i {
-  width: 16px;
-  color: var(--sand);
-  font-size: 0.875rem;
-}
-
-/* ===================================
-   COLUNA DE CONTATO
-   =================================== */
-
-/**
- * Contato resumido
- */
-.contato-resumido {
-  margin-bottom: 2rem;
-}
-
-.item-contato {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.item-contato i {
-  width: 20px;
-  color: var(--sand);
-  font-size: 1rem;
-}
-
-.item-contato a {
-  color: rgba(255, 255, 255, 0.9);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.item-contato a:hover {
-  color: var(--sand);
-}
-
-/* ===================================
-   NEWSLETTER
-   =================================== */
-
-/**
- * Seção da newsletter
- */
-.newsletter {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/**
- * Título da newsletter
- */
-.titulo-newsletter {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--sand);
-  margin-bottom: 0.5rem;
-}
-
-/**
- * Descrição da newsletter
- */
-.descricao-newsletter {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-/**
- * Formulário da newsletter
- */
-.formulario-newsletter {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.grupo-newsletter {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/**
- * Campo de email da newsletter
- */
-.campo-newsletter {
-  flex: 1;
-  padding: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
-  font-size: 0.9rem;
-  transition: var(--transition-fast);
-}
-
-.campo-newsletter:focus {
-  outline: none;
-  border-color: var(--sand);
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.campo-newsletter::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/**
- * Botão da newsletter
- */
-.botao-newsletter {
-  padding: 0.75rem;
-  background: var(--sand);
-  color: var(--royal-blue);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: var(--transition-fast);
-  width: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.botao-newsletter:hover:not(:disabled) {
-  background: var(--sand-light);
-  transform: scale(1.05);
-}
-
-.botao-newsletter:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/**
- * Mensagens da newsletter
- */
-.mensagem-newsletter-sucesso,
-.mensagem-newsletter-erro {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
-  padding: 0.5rem;
-  border-radius: 6px;
-}
-
-.mensagem-newsletter-sucesso {
-  background: rgba(16, 185, 129, 0.2);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-.mensagem-newsletter-erro {
-  background: rgba(239, 68, 68, 0.2);
-  color: #ef4444;
-  border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-/* ===================================
-   SEÇÃO DE REDES SOCIAIS
-   =================================== */
-
-/**
- * Container da seção de redes sociais
- */
-.secao-redes-sociais {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/**
- * Conteúdo das redes sociais
- */
-.conteudo-redes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-/**
- * Chamada das redes sociais
- */
-.chamada-redes h4 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--sand);
-  margin-bottom: 0.5rem;
-}
-
-.chamada-redes p {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
-/**
- * Lista das redes sociais
- */
-.lista-redes-sociais {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/**
- * Link individual de rede social
- */
-.link-rede-social {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
-  color: var(--white);
-  text-decoration: none;
-  transition: var(--transition-fast);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.link-rede-social:hover {
-  transform: translateY(-2px);
-  color: var(--white);
-}
-
-/**
- * Cores específicas para cada rede social
- */
-.link-rede-social.linkedin:hover {
-  background: #0077b5;
-}
-
-.link-rede-social.instagram:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.link-rede-social.facebook:hover {
-  background: #1877f2;
-}
-
-.link-rede-social.youtube:hover {
-  background: #ff0000;
-}
-
-.link-rede-social.whatsapp:hover {
-  background: #25d366;
-}
-
-/* ===================================
-   SEÇÃO DE COPYRIGHT
-   =================================== */
-
-/**
- * Container da seção de copyright
- */
-.secao-copyright {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 1.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/**
- * Conteúdo do copyright
- */
-.conteudo-copyright {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  position: relative;
-}
-
-/**
- * Informações de copyright
- */
-.info-copyright {
-  flex: 1;
-}
-
-.info-copyright p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-.cnpj {
-  font-size: 0.8rem !important;
-  opacity: 0.7;
-  margin-top: 0.25rem !important;
-}
-
-/**
- * Links legais
- */
-.links-legais {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-size: 0.9rem;
-}
-
-.links-legais a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.links-legais a:hover {
-  color: var(--sand);
-}
-
-.separador {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-/* ===================================
-   BOTÃO VOLTAR AO TOPO
-   =================================== */
-
-/**
- * Botão voltar ao topo
- */
-.botao-voltar-topo {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: var(--gradient-secondary);
-  color: var(--royal-blue);
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: var(--transition-normal);
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  box-shadow: var(--shadow-lg);
-}
-
-.botao-voltar-topo.visivel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-.botao-voltar-topo:hover {
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: var(--shadow-xl);
-}
-
-/* ===================================
-   ELEMENTOS DECORATIVOS
-   =================================== */
-
-/**
- * Container dos elementos decorativos
- */
-.elementos-decorativos-rodape {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/**
- * Formas decorativas
- */
-.forma-decorativa {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  animation: flutuacaoLenta 8s ease-in-out infinite;
-}
-
-.forma-1 {
-  width: 200px;
-  height: 200px;
-  top: 10%;
-  left: -5%;
-  animation-delay: 0s;
-}
-
-.forma-2 {
-  width: 150px;
-  height: 150px;
-  bottom: 20%;
-  right: -3%;
-  animation-delay: 3s;
-}
-
-.forma-3 {
-  width: 100px;
-  height: 100px;
-  top: 60%;
-  left: 50%;
-  animation-delay: 6s;
-}
-
-@keyframes flutuacaoLenta {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-30px) rotate(180deg);
-  }
-}
-
-/* ===================================
-   RESPONSIVIDADE
-   =================================== */
-
-/**
- * Adaptações para tablets (768px e abaixo)
- */
-@media (max-width: 768px) {
-  .grid-rodape {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  
-  .coluna-sobre {
-    grid-column: 1 / -1;
-  }
-  
-  .conteudo-redes {
-    flex-direction: column;
-    text-align: center;
-    gap: 1.5rem;
-  }
-  
-  .lista-redes-sociais {
-    justify-content: center;
-  }
-  
-  .conteudo-copyright {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-  
-  .links-legais {
+  .footer-container {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 32px;
+    padding: 60px 0;
+
+    
+    
+
+    .footer-col {
+      flex: 1 1 220px;
+      min-width: 200px;
+
+      .titulo-coluna {
+        font-family: var(--font-display);
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--sand);
+        margin-bottom: 20px;
+        position: relative;
+
+        @media (max-width: 768px) {
+          text-align: start;
+        }
+
+        @media (min-width: 769px) {
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--sand);
+          }
+        }
+      }
+
+      .lista-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          margin-bottom: 8px;
+
+          a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition-fast) !important;
+            padding: 4px 0px;
+
+            @media (max-width: 768px) {
+              text-align: center;
+            }
+
+            &:hover {
+              color: var(--sand);
+              transform: translateX(5px);
+              text-decoration: underline;
+            }
+
+            i {
+              width: 16px;
+              color: var(--sand);
+              font-size: 10pxrem;
+            }
+          }
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex: 1 1 150px;
+        max-width: 500px;
+        text-align: center;
+      }
+
+      &.logo-sobre {
+        flex: 1 1 400px;
+
+        .logo-parametriz {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 16px;
+
+          img {
+            width: 100px;
+            height: auto;
+          }
+
+          .content-texto {
+            color: white;
+
+            h1 {
+              font-size: 36px;
+              font-weight: bold;
+              margin: 0;
+              line-height: 1;
+              font-family: var(--font-logo);
+
+              @media (max-width: 768px) {
+                font-size: 26px;
+              }
+            }
+
+            h2 {
+              font-size: 14px;
+              line-height: 1;
+              font-weight: 300;
+              margin: 0;
+              font-family: var(--font-logo);
+
+              @media (max-width: 768px) {
+                font-size: 12px;
+                margin-bottom: 16px;
+              }
+            }
+          }
+        }
+
+        .sobre {
+          p {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1.5;
+            margin: 0;
+
+            @media (max-width: 768px) {
+              padding: 0 20px;
+            }
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          flex: 1 1 100%;
+          text-align: center;
+
+          .logo-parametriz {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+      justify-content: center;
+    }
+  }
+
+  .footer-conecte {
+    background-color: var(--royal-blue-dark);
+
+    .conecte {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      padding: 30px 0;
+
+      @media (max-width: 768px) {
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .conecte-text {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-family: var(--font-display);
+          font-size: 18px;
+          font-weight: 600;
+          color: var(--sand);
+          margin-bottom: 8px;
+        }
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+      }
+
+      .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 10px !important;
+        margin: 0 auto;
+        gap: 8px;
+
+        @media (max-width: 768px) {
+          margin-top: 10px;
+          flex-direction: column;
+        }
+
+        .link-rede-social {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 20px;
+          border-radius: 25px;
+          background: rgba(255, 255, 255, 0.1);
+          color: var(--white);
+          text-decoration: none;
+          transition: var(--transition-normal) !important;
+          font-size: 14px;
+          font-weight: 500;
+
+          i {
+            font-size: 18px;
+          }
+
+          &:focus {
+            outline: none;
+          }
+
+        }
+
+        .link-rede-social:hover {
+          transform: translateY(-2px);
+          color: var(--white);
+        }
+
+        .link-rede-social.linkedin:hover {
+          background: #0077b5;
+        }
+
+        .link-rede-social.instagram:hover {
+          background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .link-rede-social.facebook:hover {
+          background: #1877f2;
+        }
+
+        .link-rede-social.youtube:hover {
+          background: #ff0000;
+        }
+
+        .link-rede-social.whatsapp:hover {
+          background: #25d366;
+        }
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+
+      a {
+        font-size: 1.3rem;
+        color: #ccc;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #bbb;
+    background-color: var(--royal-blue-dark);
+
+    .copyright {
+      // background-color: red;
+      display: flex;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      padding: 10px 0;
+
+      .info-copyright {
+        text-align: left;
+
+
+        p {
+          color: rgba(255, 255, 255, 0.8);
+
+          @media (max-width: 768px) {
+            text-align: center;
+          }
+        }
+
+        .cnpj {
+          font-size: 12px;
+          opacity: 0.7;
+
+        }
+      }
+
+      .links-legais {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        gap: 16px;
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+          margin-top: 20px;
+          flex-direction: column;
+        }
+
+        a {
+          color: rgba(255, 255, 255, 0.8);
+          text-decoration: none;
+          outline: none;
+          transition: var(--transition-normal) !important;
+
+          @media (max-width: 768px) {
+            text-decoration: underline;
+          }
+
+          &:hover {
+            color: var(--sand);
+          }
+        }
+
+        .separador {
+          color: rgba(255, 255, 255, 0.4);
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+
+    }
+
+    .linha {
+      background-color: #9ca3af87;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-bottom: 10px !important;
+      height: 1px;
+
+    }
+
+    @media (max-width: 768px) {
+      padding: 0px 20px;
+    }
+
+  }
+
+  .elementos-decorativos-rodape {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+
+    .forma-decorativa {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      animation: flutuacaoLenta 8s ease-in-out infinite !important;
+    }
+
+    .forma-1 {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: -5%;
+      animation-delay: 0s;
+    }
+
+    .forma-2 {
+      width: 150px;
+      height: 150px;
+      bottom: 20%;
+      right: -3%;
+      animation-delay: 3s;
+    }
+
+    .forma-3 {
+      width: 100px;
+      height: 100px;
+      top: 60%;
+      left: 50%;
+      animation-delay: 6s;
+    }
+
+    @keyframes flutuacaoLenta {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-30px) rotate(180deg);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .forma-1 {
+        width: 150px;
+        height: 150px;
+      }
+
+      .forma-2 {
+        width: 120px;
+        height: 120px;
+      }
+
+      .forma-3 {
+        width: 80px;
+        height: 80px;
+      }
+    }
   }
 }
 
-/**
- * Adaptações para smartphones (480px e abaixo)
- */
-@media (max-width: 480px) {
-  .secao-principal-rodape {
-    padding: 3rem 0 1.5rem;
-  }
-  
-  .grid-rodape {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .logo-rodape img {
-    max-width: 150px;
-  }
-  
-  .certificacoes {
-    justify-content: center;
-  }
-  
-  .lista-redes-sociais {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .link-rede-social {
-    width: 200px;
-    justify-content: center;
-  }
-  
-  .botao-voltar-topo {
-    bottom: 1rem;
-    right: 1rem;
-    width: 45px;
-    height: 45px;
-  }
-  
-  .links-legais {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .separador {
-    display: none;
+@media (max-width: 768px) {
+  .footer-container {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 75px; // distância da lateral da tela
+      top: 350px; // altura aproximada onde começam as colunas 2, 3 e 4
+      height: calc(100% - 420px); // só pega a parte das 3 colunas
+      width: 4px;
+      background-color: var(--sand);
+      z-index: 1;
+    }
+
+    .footer-col:not(.logo-sobre) {
+      padding-left: 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-col.logo-sobre {
+      padding-left: 0;
+      z-index: 3;
+    }
   }
 }
-
