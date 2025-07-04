@@ -1,164 +1,103 @@
-<!-- Seção de Benefícios da Parametriz -->
-<!-- Destaca as vantagens e diferenciais da empresa -->
-<!-- Layout em cards com ícones e animações atrativas -->
 <section id="benefits" class="secao-beneficios">
   <div class="container">
-    
-    <!-- Cabeçalho da Seção -->
-    <!-- Título e descrição dos benefícios -->
     <div class="cabecalho-secao">
       <h2 class="titulo-secao">Por que Escolher a Parametriz?</h2>
       <p class="subtitulo-secao">Diferenciais que fazem toda a diferença no seu negócio</p>
     </div>
     
-    <!-- Grid Principal de Benefícios -->
-    <!-- Layout responsivo com cards de benefícios -->
     <div class="grid-beneficios">
-      
-      <!-- Benefício: Economia de Tempo -->
-      <div class="card-beneficio" 
-           [class.destacado]="beneficioDestacado === 'tempo'"
-           (mouseenter)="destacarBeneficio('tempo')"
-           (mouseleave)="removerDestaque()"
-           (click)="selecionarBeneficio('tempo')">
-        
-        <!-- Ícone do Benefício -->
+
+      <!-- Economia de Tempo -->
+      <div class="card-beneficio">
         <div class="icone-beneficio">
           <i class="fas fa-clock"></i>
           <div class="efeito-pulso"></div>
         </div>
-        
-        <!-- Conteúdo do Benefício -->
         <div class="conteudo-beneficio">
           <h3 class="titulo-beneficio">Economia de Tempo</h3>
           <p class="descricao-beneficio">
             Reduza em até 75% o tempo gasto com configurações manuais 
             e processos repetitivos.
           </p>
-          
-          <!-- Métrica Destacada -->
           <div class="metrica-beneficio">
-            <span class="numero-metrica" [attr.data-target]="75">{{ contadorTempo }}</span>
+            <span class="numero-metrica">75</span>
             <span class="simbolo-metrica">%</span>
             <span class="label-metrica">menos tempo</span>
           </div>
         </div>
-        
-        <!-- Indicador de Seleção -->
         <div class="indicador-selecao">
           <i class="fas fa-arrow-right"></i>
         </div>
-        
       </div>
       
-      <!-- Benefício: Redução de Erros -->
-      <div class="card-beneficio" 
-           [class.destacado]="beneficioDestacado === 'erros'"
-           (mouseenter)="destacarBeneficio('erros')"
-           (mouseleave)="removerDestaque()"
-           (click)="selecionarBeneficio('erros')">
-        
-        <!-- Ícone do Benefício -->
+      <!-- Redução de Erros -->
+      <div class="card-beneficio" >
         <div class="icone-beneficio">
-          <i class="fas fa-shield-check"></i>
+          <i class="fas fa-user-shield"></i>
           <div class="efeito-pulso"></div>
         </div>
-        
-        <!-- Conteúdo do Benefício -->
         <div class="conteudo-beneficio">
           <h3 class="titulo-beneficio">Redução de Erros</h3>
           <p class="descricao-beneficio">
             Elimine erros humanos com automação inteligente 
             e validações rigorosas.
           </p>
-          
-          <!-- Métrica Destacada -->
           <div class="metrica-beneficio">
-            <span class="numero-metrica" [attr.data-target]="98">{{ contadorPrecisao }}</span>
+            <span class="numero-metrica">98</span>
             <span class="simbolo-metrica">%</span>
             <span class="label-metrica">de precisão</span>
           </div>
         </div>
-        
-        <!-- Indicador de Seleção -->
         <div class="indicador-selecao">
           <i class="fas fa-arrow-right"></i>
         </div>
-        
       </div>
       
-      <!-- Benefício: Compliance Garantido -->
-      <div class="card-beneficio" 
-           [class.destacado]="beneficioDestacado === 'compliance'"
-           (mouseenter)="destacarBeneficio('compliance')"
-           (mouseleave)="removerDestaque()"
-           (click)="selecionarBeneficio('compliance')">
-        
-        <!-- Ícone do Benefício -->
+      <!-- Compliance Garantido -->
+      <div class="card-beneficio" >
         <div class="icone-beneficio">
           <i class="fas fa-balance-scale"></i>
           <div class="efeito-pulso"></div>
         </div>
-        
-        <!-- Conteúdo do Benefício -->
         <div class="conteudo-beneficio">
           <h3 class="titulo-beneficio">Compliance Garantido</h3>
           <p class="descricao-beneficio">
             Mantenha-se sempre em conformidade com as 
             últimas regulamentações fiscais.
           </p>
-          
-          <!-- Métrica Destacada -->
           <div class="metrica-beneficio">
-            <span class="numero-metrica" [attr.data-target]="100">{{ contadorCompliance }}</span>
+            <span class="numero-metrica">100</span>
             <span class="simbolo-metrica">%</span>
             <span class="label-metrica">conformidade</span>
           </div>
         </div>
-        
-        <!-- Indicador de Seleção -->
         <div class="indicador-selecao">
           <i class="fas fa-arrow-right"></i>
         </div>
-        
       </div>
       
-      <!-- Benefício: Suporte Especializado -->
-      <div class="card-beneficio" 
-           [class.destacado]="beneficioDestacado === 'suporte'"
-           (mouseenter)="destacarBeneficio('suporte')"
-           (mouseleave)="removerDestaque()"
-           (click)="selecionarBeneficio('suporte')">
-        
-        <!-- Ícone do Benefício -->
+      <!-- Suporte Especializado -->
+      <div class="card-beneficio" >
         <div class="icone-beneficio">
           <i class="fas fa-headset"></i>
           <div class="efeito-pulso"></div>
         </div>
-        
-        <!-- Conteúdo do Benefício -->
         <div class="conteudo-beneficio">
           <h3 class="titulo-beneficio">Suporte Especializado</h3>
           <p class="descricao-beneficio">
             Equipe de especialistas disponível para 
             suporte técnico e orientação estratégica.
           </p>
-          
-          <!-- Métrica Destacada -->
           <div class="metrica-beneficio">
-            <span class="numero-metrica">24</span>
-            <span class="simbolo-metrica">/7</span>
+            <span class="numero-metrica">12</span>
+            <span class="simbolo-metrica">/5</span>
             <span class="label-metrica">disponível</span>
           </div>
         </div>
-        
-        <!-- Indicador de Seleção -->
         <div class="indicador-selecao">
           <i class="fas fa-arrow-right"></i>
         </div>
-        
       </div>
-      
     </div>
     
     <!-- Seção de Comparação -->
@@ -290,11 +229,11 @@
           seus processos contábeis com a Parametriz.
         </p>
         <div class="botoes-cta">
-          <button class="botao-primario" (click)="iniciarTransformacao()">
+          <button class="botao-primario">
             <i class="fas fa-rocket"></i>
             Iniciar Transformação
           </button>
-          <button class="botao-secundario" (click)="agendarDemonstracao()">
+          <button class="botao-secundario">
             <i class="fas fa-calendar-alt"></i>
             Agendar Demonstração
           </button>
