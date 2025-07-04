@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     if (this.formulario.valid) {
       console.log(this.formulario.value);
-      // Aqui você pode fazer o envio dos dados
+      // Aqui você posso fazer o envio dos dados
     }
   }
   
