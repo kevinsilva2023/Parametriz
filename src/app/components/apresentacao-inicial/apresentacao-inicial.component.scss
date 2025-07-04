@@ -57,15 +57,8 @@
   }
 
   @keyframes flutuacao {
-
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-      transform: translateY(-60px) rotate(180deg);
-    }
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-60px) rotate(180deg); }
   }
 }
 
@@ -85,7 +78,6 @@
   @media (max-width: 768px) {
     margin-top: 10px;
   }
-
 }
 
 .texto-principal {
@@ -222,8 +214,9 @@
 @media (max-width: 768px) {
   .conteudo-apresentacao {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: center !important;
     gap: 2rem;
+    margin: auto;
   }
 
   .estatisticas-credibilidade {
