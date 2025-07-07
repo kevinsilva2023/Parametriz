@@ -575,57 +575,56 @@
 
     }
 
-  }
-
-
-}
-
-
-.elementos-decorativos {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.forma-decorativa {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  animation: flutuacao 6s ease-in-out infinite !important;
-
-  @keyframes flutuacao {
-    0%,
-    100% {
-      transform: translateY(0px) rotate(0deg);
+    .elementos-decorativos {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    
+      .forma-decorativa {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: flutuacao 6s ease-in-out infinite !important;
+      
+        @keyframes flutuacao {
+          0%,
+          100% {
+            transform: translateY(0px) rotate(0deg);
+          }
+      
+          50% {
+            transform: translateY(-20px) rotate(180deg);
+          }
+        }
+      
+        &.forma-1 {
+          width: 100px;
+          height: 100px;
+          top: 10%;
+          left: 10%;
+          animation-delay: 0s;
+        }
+      
+        &.forma-2 {
+          width: 150px;
+          height: 150px;
+          bottom: 10%;
+          right: 10%;
+          animation-delay: 2s;
+        }
+      
+        &.forma-3 {
+          width: 80px;
+          height: 80px;
+          top: 60%;
+          left: 80%;
+          animation-delay: 4s;
+        }
+      
+      }
     }
-
-    50% {
-      transform: translateY(-20px) rotate(180deg);
-    }
   }
-
-  &.forma-1 {
-    width: 100px;
-    height: 100px;
-    top: 10%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-
-  &.forma-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 10%;
-    right: 10%;
-    animation-delay: 2s;
-  }
-
-  &.forma-3 {
-    width: 80px;
-    height: 80px;
-    top: 60%;
-    left: 80%;
-    animation-delay: 4s;
-  }
-
 }
+
+
+
