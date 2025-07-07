@@ -10,7 +10,6 @@ interface DadosDepoimento {
   avaliacao: number; // 1-5 estrelas
 }
 
-
 @Component({
   selector: 'app-benefits',
   templateUrl: './benefits.component.html',
@@ -46,7 +45,7 @@ export class BenefitsComponent implements OnInit, OnDestroy {
       cargo: 'Diretora Financeira',
       empresa: 'TechCorp Ltda',
       texto: 'A Parametriz revolucionou nossos processos contábeis. Reduzimos o tempo de fechamento mensal em 60% e eliminamos praticamente todos os erros manuais.',
-      avatar: 'assets/avatars/maria-silva.jpg',
+      avatar: '/assets/logo-white.png',
       avaliacao: 5
     },
     {
@@ -55,8 +54,8 @@ export class BenefitsComponent implements OnInit, OnDestroy {
       cargo: 'Controller',
       empresa: 'Indústria Moderna S.A.',
       texto: 'Implementação rápida e suporte excepcional. Nossa equipe contábil agora pode focar em análises estratégicas ao invés de configurações manuais.',
-      avatar: 'assets/avatars/joao-santos.jpg',
-      avaliacao: 5
+      avatar: '/assets/logo-white.png',
+      avaliacao: 4
     },
     {
       id: 3,
@@ -64,8 +63,8 @@ export class BenefitsComponent implements OnInit, OnDestroy {
       cargo: 'Gerente Contábil',
       empresa: 'Serviços Integrados',
       texto: 'O compliance fiscal nunca foi tão simples. A Parametriz mantém tudo atualizado automaticamente, dando-nos total tranquilidade.',
-      avatar: 'assets/avatars/ana-costa.jpg',
-      avaliacao: 5
+      avatar: '/assets/logo-white.png',
+      avaliacao: 3
     }
   ];
 
