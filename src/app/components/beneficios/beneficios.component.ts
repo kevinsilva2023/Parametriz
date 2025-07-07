@@ -11,11 +11,11 @@ interface DadosDepoimento {
 }
 
 @Component({
-  selector: 'app-benefits',
-  templateUrl: './benefits.component.html',
-  styleUrls: ['./benefits.component.scss']
+  selector: 'app-beneficios',
+  templateUrl: './beneficios.component.html',
+  styleUrls: ['./beneficios.component.scss']
 })
-export class BenefitsComponent implements OnInit, OnDestroy {
+export class BeneficiosComponent implements OnInit, OnDestroy {
 
   public indiceDepoimentoAtual = 0;
   public depoimentoAtual: DadosDepoimento | null = null;

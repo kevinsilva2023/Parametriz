@@ -9,10 +9,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ApresentacaoInicialComponent } from './components/apresentacao-inicial/apresentacao-inicial.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
-import { ProcessComponent } from './components/process/process.component';
-import { BenefitsComponent } from './components/benefits/benefits.component';
-import { ContactComponent } from './components/contact/contact.component';
+import { ProcessoComponent } from './components/processo/processo.component';
+import { BeneficiosComponent } from './components/beneficios/beneficios.component';
+import { EntreEmContato } from './components/entre-em-contato/entre-em-contato.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PerguntasRespostasComponent } from './components/perguntas-respostas/perguntas-respostas.component';
+import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
 
 /**
  * Módulo principal da aplicação Parametriz
@@ -26,17 +30,21 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     ApresentacaoInicialComponent,
     ServicosComponent,
-    ProcessComponent,
-    BenefitsComponent,
-    ContactComponent,
-    FooterComponent
+    ProcessoComponent,
+    BeneficiosComponent,
+    EntreEmContato,
+    FooterComponent,
+    PerguntasRespostasComponent,
+    NossosServicosComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, // Para animações
     FormsModule, // Para formulários
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -121,6 +121,28 @@ export class ServicosComponent implements OnInit {
         'Monitoramento e otimização contínua'
       ],
       icone: 'fas fa-robot'
+    },
+    {
+      id: 'compliance',
+      titulo: 'Compliance Fiscal e Tributário',
+      descricao: 'Garantia de conformidade com a legislação fiscal através de auditorias, cruzamentos eletrônicos e orientações atualizadas.',
+      descricaoExpandida: 'Oferecemos um serviço completo de compliance fiscal e tributário, que inclui auditorias preventivas, análise de obrigações acessórias, cruzamentos eletrônicos de dados e identificação de possíveis inconsistências. Nosso objetivo é manter sua empresa em total conformidade com as normas legais, evitando autuações e prejuízos financeiros.',
+      caracteristicas: ['Auditoria Fiscal', 'Cruzamento de Dados', 'Análise SPED'],
+      beneficios: [
+        'Redução de riscos de autuação fiscal',
+        'Identificação preventiva de inconsistências',
+        'Cumprimento rigoroso das obrigações acessórias',
+        'Economia com multas e juros',
+        'Atualização constante com base na legislação vigente'
+      ],
+      etapasProcesso: [
+        'Levantamento das obrigações fiscais da empresa',
+        'Execução de auditoria documental e digital',
+        'Análise de cruzamentos eletrônicos (SPED, DCTF, EFD)',
+        'Relatório com inconsistências e plano de ação',
+        'Acompanhamento e retificação quando necessário'
+      ],
+      icone: 'fas fa-balance-scale'
     }
   ];
 
@@ -205,7 +227,7 @@ export class ServicosComponent implements OnInit {
     } else {
       // Seleciona o novo serviço
       this.servicoSelecionado = idServico;
-      
+
       // Rola suavemente para a seção de detalhes
       setTimeout(() => {
         const secaoDetalhes = document.querySelector('.detalhes-servico');
@@ -234,7 +256,7 @@ export class ServicosComponent implements OnInit {
    */
   public obterTituloServicoSelecionado(): string {
     if (!this.servicoSelecionado) return '';
-    
+
     const servico = this.dadosServicos.find(s => s.id === this.servicoSelecionado);
     return servico ? servico.titulo : '';
   }
@@ -246,7 +268,7 @@ export class ServicosComponent implements OnInit {
    */
   public obterDescricaoExpandidaServico(): string {
     if (!this.servicoSelecionado) return '';
-    
+
     const servico = this.dadosServicos.find(s => s.id === this.servicoSelecionado);
     return servico ? servico.descricaoExpandida : '';
   }
@@ -258,7 +280,7 @@ export class ServicosComponent implements OnInit {
    */
   public obterBeneficiosServico(): string[] {
     if (!this.servicoSelecionado) return [];
-    
+
     const servico = this.dadosServicos.find(s => s.id === this.servicoSelecionado);
     return servico ? servico.beneficios : [];
   }
@@ -270,7 +292,7 @@ export class ServicosComponent implements OnInit {
    */
   public obterEtapasProcesso(): string[] {
     if (!this.servicoSelecionado) return [];
-    
+
     const servico = this.dadosServicos.find(s => s.id === this.servicoSelecionado);
     return servico ? servico.etapasProcesso : [];
   }
@@ -292,14 +314,14 @@ export class ServicosComponent implements OnInit {
   public solicitarOrcamento(): void {
     // Implementação futura: pode abrir modal, formulário ou navegar para página
     console.log(`Solicitando orçamento para: ${this.servicoSelecionado}`);
-    
+
     // Opções de implementação:
     // 1. Navegar para seção de contato com serviço pré-selecionado
     this.navegarParaContatoComServico();
-    
+
     // 2. Abrir modal específico de orçamento
     // this.abrirModalOrcamento();
-    
+
     // 3. Integrar com sistema externo
     // this.integrarSistemaOrcamento();
   }
@@ -310,7 +332,7 @@ export class ServicosComponent implements OnInit {
    */
   public agendarConsulta(): void {
     console.log(`Agendando consulta para: ${this.servicoSelecionado}`);
-    
+
     // Implementação futura: integração com calendário ou sistema de agendamento
     this.abrirModalAgendamento();
   }
@@ -326,7 +348,7 @@ export class ServicosComponent implements OnInit {
         behavior: 'smooth',
         block: 'start'
       });
-      
+
       // Pode disparar evento para pré-selecionar o serviço no formulário
       this.preencherFormularioContato();
     }
@@ -344,7 +366,7 @@ export class ServicosComponent implements OnInit {
         titulo: this.obterTituloServicoSelecionado()
       }
     });
-    
+
     window.dispatchEvent(evento);
   }
 

@@ -26,9 +26,9 @@ interface DadosEtapaProcesso {
  * - Call-to-actions para iniciar o processo
  */
 @Component({
-  selector: 'app-process',
-  templateUrl: './process.component.html',
-  styleUrls: ['./process.component.scss'],
+  selector: 'app-processo',
+  templateUrl: './processo.component.html',
+  styleUrls: ['./processo.component.scss'],
   animations: [
     // Animação para expandir/contrair detalhes das etapas
     trigger('expandirContrair', [
@@ -42,7 +42,7 @@ interface DadosEtapaProcesso {
     ])
   ]
 })
-export class ProcessComponent implements OnInit {
+export class ProcessoComponent implements OnInit {
 
   /**
    * Etapa atualmente ativa/selecionada

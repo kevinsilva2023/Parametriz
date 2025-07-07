@@ -1,25 +1,9 @@
-/* ===================================
-   SEÇÃO DO PROCESSO - ESTILOS
-   =================================== */
-
-/**
- * Container principal da seção do processo
- * Fundo neutro para destacar a timeline
- */
 .secao-processo {
   background: var(--white);
   padding: 5rem 0;
   position: relative;
 }
 
-/* ===================================
-   CABEÇALHO DA SEÇÃO
-   =================================== */
-
-/**
- * Cabeçalho centralizado da seção
- * Título e descrição do processo
- */
 .cabecalho-secao {
   text-align: center;
   margin-bottom: 4rem;

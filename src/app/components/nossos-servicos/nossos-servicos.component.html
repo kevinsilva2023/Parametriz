@@ -1,0 +1,79 @@
+<section id="services" class="secao-servicos">
+    <div class="container">
+        <div class="cabecalho-secao">
+            <h2 class="titulo-secao">Nossos Serviços</h2>
+            <p class="subtitulo-secao">Soluções completas para cada necessidade de sua empresa</p>
+        </div>
+        <div class="grid-servicos">
+            <div class="card-servico" [class.modal-aberta-card-ativo]="modalAbertaId === 'parametrizacao'">
+                <div class="icone-servico">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="titulo-servico">Parametrização de Sistemas</h3>
+                <p class="descricao-servico">
+                    Configuração completa e personalizada de sistemas contábeis,
+                    adequando planos de contas e regras fiscais às necessidades específicas da sua empresa.
+                </p>
+                <div class="caracteristicas-servico">
+                    <span class="caracteristica">Plano de Contas</span>
+                    <span class="caracteristica">Regras Fiscais</span>
+                    <span class="caracteristica">Integração ERP</span>
+                </div>
+                <button class="botao-servico" (click)="abrirModal('parametrizacao')">Saiba Mais</button>
+            </div>
+
+            <!-- Compliance Fiscal e Tributário -->
+            <div class="card-servico" [class.modal-aberta-card-ativo]="modalAbertaId === 'compliance'">
+                <div class="icone-servico">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3 class="titulo-servico">Compliance Fiscal e Tributário</h3>
+                <p class="descricao-servico">
+                    Garantia de conformidade com a legislação fiscal através de auditorias, cruzamentos eletrônicos e orientações atualizadas.
+                </p>
+                <br>
+                <div class="caracteristicas-servico">
+                    <span class="caracteristica">Auditoria Fiscal</span>
+                    <span class="caracteristica">Cruzamento de Dados</span>
+                    <span class="caracteristica">Análise SPED</span>
+                </div>
+                <button class="botao-servico" (click)="abrirModal('compliance')">Saiba Mais</button>
+            </div>
+
+            <!-- Card: Consultoria Especializada -->
+            <div class="card-servico" [class.modal-aberta-card-ativo]="modalAbertaId === 'consultoria'">
+                <div class="icone-servico">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="titulo-servico">Consultoria Especializada</h3>
+                <p class="descricao-servico">
+                    Orientação estratégica com profissionais experientes para otimizar processos e garantir compliance fiscal e contábil.
+                </p>
+                <div class="caracteristicas-servico">
+                    <span class="caracteristica">Análise Técnica</span>
+                    <span class="caracteristica">Treinamento</span>
+                    <span class="caracteristica">Suporte 24/7</span>
+                </div>
+                <button class="botao-servico" (click)="abrirModal('consultoria')">Saiba Mais</button>
+            </div>
+
+            <!-- Card: Automação Inteligente -->
+            <div class="card-servico" [class.modal-aberta-card-ativo]="modalAbertaId === 'automacao'">
+                <div class="icone-servico">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="titulo-servico">Automação Inteligente</h3>
+                <p class="descricao-servico">
+                    Implementação de soluções automatizadas que reduzem erros manuais
+                    e aceleram processos contábeis e fiscais.
+                </p>
+                <div class="caracteristicas-servico">
+                    <span class="caracteristica">IA Contábil</span>
+                    <span class="caracteristica">Workflows</span>
+                    <span class="caracteristica">Relatórios</span>
+                </div>
+                <button class="botao-servico" (click)="abrirModal('automacao')">Saiba Mais</button>
+            </div>
+        </div>
+    </div>
+</section>

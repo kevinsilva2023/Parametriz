@@ -3,12 +3,12 @@
 
     <!-- Seção de Detalhes do Serviço Selecionado -->
     <!-- Informações expandidas que aparecem quando um serviço é selecionado -->
-    <div class="detalhes-servico" *ngIf="servicoSelecionado" [@slideInOut]>
+    <div class="detalhes-servico" >
 
       <!-- Cabeçalho dos Detalhes -->
       <div class="cabecalho-detalhes">
-        <h3 class="titulo-detalhes">{{ obterTituloServicoSelecionado() }}</h3>
-        <button class="botao-fechar" (click)="fecharDetalhes()" aria-label="Fechar detalhes">
+        <h3 class="titulo-detalhes">{{ dados.titulo }}</h3>
+        <button class="botao-fechar" (click)="fecharModal()" aria-label="Fechar detalhes">
           <i class="fas fa-times"></i>
         </button>
       </div>
@@ -18,14 +18,14 @@
 
         <!-- Descrição Expandida -->
         <div class="descricao-expandida">
-          <p>{{ obterDescricaoExpandidaServico() }}</p>
+          <p>{{ dados.descricao }}</p>
         </div>
 
         <!-- Lista de Benefícios -->
         <div class="lista-beneficios">
           <h4>Principais Benefícios:</h4>
           <ul>
-            <li *ngFor="let beneficio of obterBeneficiosServico()">
+            <li *ngFor="let beneficio of dados.beneficios">
               <i class="fas fa-check-circle"></i>
               {{ beneficio }}
             </li>
@@ -36,7 +36,7 @@
         <div class="processo-implementacao">
           <h4>Como Funciona:</h4>
           <div class="etapas-processo">
-            <div class="etapa" *ngFor="let etapa of obterEtapasProcesso(); let i = index">
+            <div class="etapa" *ngFor="let etapa of dados.etapasProcesso ; let i = index">
               <div class="numero-etapa">{{ i + 1 }}</div>
               <div class="descricao-etapa">{{ etapa }}</div>
             </div>
@@ -45,11 +45,11 @@
 
         <!-- Botões de Ação dos Detalhes -->
         <div class="acoes-detalhes">
-          <button class="botao-primario" (click)="solicitarOrcamento()">
+          <button class="botao-primario">
             <i class="fas fa-calculator"></i>
             Solicitar Orçamento
           </button>
-          <button class="botao-secundario" (click)="agendarConsulta()">
+          <button class="botao-secundario">
             <i class="fas fa-calendar-alt"></i>
             Agendar Consulta
           </button>
