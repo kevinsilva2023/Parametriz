@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +16,6 @@ import { EntreEmContato } from './components/entre-em-contato/entre-em-contato.c
 import { FooterComponent } from './components/footer/footer.component';
 import { PerguntasRespostasComponent } from './components/perguntas-respostas/perguntas-respostas.component';
 import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
-import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
 import { LogoClientesComponent } from './components/logo-clientes/logo-clientes.component';
 
@@ -46,6 +46,7 @@ import { LogoClientesComponent } from './components/logo-clientes/logo-clientes.
     FormsModule, // Para formulários
     AppRoutingModule,
     ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
