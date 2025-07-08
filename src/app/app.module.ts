@@ -18,6 +18,7 @@ import { PerguntasRespostasComponent } from './components/perguntas-respostas/pe
 import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
 import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
 import { LogoClientesComponent } from './components/beneficios/logo-clientes/logo-clientes.component';
+import { ModalCalendlyComponent } from './components/apresentacao-inicial/modal-calendly/modal-calendly.component';
 
 /**
  * Módulo principal da aplicação Parametriz
@@ -38,7 +39,8 @@ import { LogoClientesComponent } from './components/beneficios/logo-clientes/log
     PerguntasRespostasComponent,
     NossosServicosComponent,
     ModalComponent,
-    LogoClientesComponent
+    LogoClientesComponent,
+    ModalCalendlyComponent
   ],
   imports: [
     BrowserModule,

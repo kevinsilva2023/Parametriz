@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCalendlyComponent } from '../apresentacao-inicial/modal-calendly/modal-calendly.component';
 
 interface DadosDepoimento {
   id: number;
@@ -16,7 +18,7 @@ interface DadosDepoimento {
   styleUrls: ['./beneficios.component.scss']
 })
 export class BeneficiosComponent implements OnInit, OnDestroy {
-
+  public secaoAtiva: string = '';
   public indiceDepoimentoAtual = 0;
   public depoimentoAtual: DadosDepoimento | null = null;
 
@@ -70,7 +72,7 @@ export class BeneficiosComponent implements OnInit, OnDestroy {
 
   private intervalosAtivos: any[] = [];
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.inicializarDepoimentos();
@@ -101,7 +103,7 @@ export class BeneficiosComponent implements OnInit, OnDestroy {
     } else {
       this.indiceDepoimentoAtual = 0; // Volta para o primeiro
     }
-    
+
     this.atualizarDepoimentoAtual();
   }
 
@@ -111,7 +113,7 @@ export class BeneficiosComponent implements OnInit, OnDestroy {
     } else {
       this.indiceDepoimentoAtual = this.depoimentos.length - 1; // Vai para o último
     }
-    
+
     this.atualizarDepoimentoAtual();
   }
 
@@ -140,6 +142,21 @@ export class BeneficiosComponent implements OnInit, OnDestroy {
 
   public obterTotalDepoimentos(): number {
     return this.depoimentos.length;
+  }
+  
+  public navegarParaSecaoContato() {
+    const elementoSecao = document.getElementById('contato');
+    if (elementoSecao) {
+      elementoSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  abrirCalendly() {
+    this.modalService.open(ModalCalendlyComponent, {
+      size: 'xl',
+      centered: true,
+      backdrop: 'static'
+    });
   }
 }
 

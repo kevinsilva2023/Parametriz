@@ -61,7 +61,7 @@ export class ProcessoComponent implements OnInit {
       titulo: 'Análise Inicial',
       descricao: 'Avaliamos sua estrutura atual, identificamos necessidades e definimos o escopo da parametrização.',
       atividades: [
-        'Levantamento da estrutura contábil atual',
+        'Levantamento da estrutura fiscal atual',
         'Identificação de necessidades específicas',
         'Análise de sistemas existentes',
         'Definição do escopo do projeto',
@@ -75,7 +75,6 @@ export class ProcessoComponent implements OnInit {
       titulo: 'Configuração',
       descricao: 'Implementamos as configurações necessárias, adaptando sistemas às suas regras de negócio.',
       atividades: [
-        'Configuração do plano de contas',
         'Implementação de regras fiscais',
         'Parametrização de workflows',
         'Configuração de integrações',
@@ -309,7 +308,7 @@ export class ProcessoComponent implements OnInit {
    * Pré-preenche formulário com interesse no processo
    */
   private navegarParaContatoComProcesso(): void {
-    const secaoContato = document.getElementById('contact');
+    const secaoContato = document.getElementById('contacto');
     if (secaoContato) {
       secaoContato.scrollIntoView({
         behavior: 'smooth',
@@ -386,6 +385,13 @@ export class ProcessoComponent implements OnInit {
    */
   public etapaEstaAtiva(numeroEtapa: number): boolean {
     return numeroEtapa === this.etapaAtiva;
+  }
+
+  public navegarParaSecaoContato() {
+    const elementoSecao = document.getElementById('contato');
+    if (elementoSecao) {
+      elementoSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
 

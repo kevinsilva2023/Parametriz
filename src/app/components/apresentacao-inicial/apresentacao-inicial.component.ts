@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCalendlyComponent } from './modal-calendly/modal-calendly.component';
 
 @Component({
   selector: 'app-apresentacao-inicial',
@@ -20,6 +22,8 @@ export class ApresentacaoInicialComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.limparIntervalos();
   }
+
+  constructor(private modalService: NgbModal) { }
 
   observarVisibilidade(): void {
     const options = { threshold: 0.5, rootMargin: '0px 0px -50px 0px' };
@@ -74,13 +78,18 @@ export class ApresentacaoInicialComponent implements OnInit, OnDestroy {
   }
 
   navegarParaContato(): void {
-    const contato = document.getElementById('contact');
+    const contato = document.getElementById('contato');
     if (contato) {
       contato.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
-  abrirDemonstracao(): void {
-    // em breve abrir modal
+    abrirCalendly() {
+    this.modalService.open(ModalCalendlyComponent, {
+      size: 'xl',
+      centered: true,
+      backdrop: 'static'
+    });
   }
+
 }

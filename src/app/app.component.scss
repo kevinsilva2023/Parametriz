@@ -1,11 +1,5 @@
-/* ===================================
-   COMPONENTE PRINCIPAL - ESTILOS
-   =================================== */
 
-/**
- * Container principal da aplicação
- * Remove margens e paddings padrão
- */
+
 :host {
   display: block;
   width: 100%;
@@ -307,3 +301,31 @@
   
 }
 
+.icone-whatsapp {
+  text-decoration: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: var(--transition-slow) !important;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+  }
+  
+  i {
+    color: white;
+    font-size: 60px;
+    text-shadow: var(--royal-blue) 1px 0 15px;
+
+    @media (max-width: 768px) {
+      font-size: 48px
+    }
+  }
+}
