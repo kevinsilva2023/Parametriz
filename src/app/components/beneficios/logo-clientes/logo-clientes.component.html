@@ -2,12 +2,13 @@
   <h2>Nossos Clientes</h2>
   <p>Empresas que confiam em nossos serviços</p>
 
-  <div class="carousel-container" [class.pause-on-hover]="pauseOnHover">
+  <div class="carousel-container">
     <div class="carousel-track" [attr.data-logo-count]="logos.length">
-
       <div class="logo-item" *ngFor="let logo of duplicatedLogos; trackBy: trackByLogoId" [attr.data-logo-id]="logo.id">
         <img [src]="logo.logoUrl" [alt]="logo.alt || logo.name + ' logo'" [title]="logo.name"
           (error)="onImageError($event)" (load)="onImageLoad($event)" loading="lazy">
       </div>
     </div>
   </div>
+</div>
+

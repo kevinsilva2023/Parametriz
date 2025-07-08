@@ -27,7 +27,6 @@
     @media (max-width: 768px) {
       font-size: 20px;
     }
-
   }
 }
 
@@ -54,7 +53,13 @@
   display: flex;
   align-items: center;
   gap: 3rem;
-  animation: scroll-infinite linear infinite !important;
+  animation-name: scroll-infinite;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
   will-change: transform;
 
   // Responsividade do gap
@@ -64,6 +69,11 @@
 
   @media (max-width: 480px) {
     gap: 1.5rem;
+  }
+
+  // Pausa no hover para melhor UX
+  &:hover {
+    animation-play-state: paused;
   }
 }
 
@@ -108,7 +118,6 @@
       max-height: 40px;
       max-width: 80px;
     }
-
   }
 
   // Responsividade do padding
@@ -121,23 +130,20 @@
   }
 }
 
-
 // Animação infinita
 @keyframes scroll-infinite {
-  0% {
+  from {
     transform: translateX(0);
   }
-
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
 
-
 // Acessibilidade
 @media (prefers-reduced-motion: reduce) {
   .carousel-track {
-    animation-duration: 20s !important;
+    animation-duration: 80s !important;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface ClientLogo {
   id: string;
@@ -12,7 +12,7 @@ export interface ClientLogo {
   templateUrl: './logo-clientes.component.html',
   styleUrls: ['./logo-clientes.component.scss']
 })
-export class LogoClientesComponent {
+export class LogoClientesComponent implements OnInit {
   logos: ClientLogo[] = [
     {
       id: 'microsoft',
@@ -75,9 +75,6 @@ export class LogoClientesComponent {
       alt: 'Logo do Airbnb'
     }
   ];
-  speed: number = 1;
-  pauseOnHover: boolean = true;
-  showGradient: boolean = true;
 
   // Duplicamos os logos para criar o efeito infinito
   duplicatedLogos: ClientLogo[] = [];
@@ -104,6 +101,5 @@ export class LogoClientesComponent {
   trackByLogoId(index: number, logo: ClientLogo): string {
     return `${logo.id}-${index}`;
   }
-
 }
 
