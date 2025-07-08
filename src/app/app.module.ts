@@ -17,7 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PerguntasRespostasComponent } from './components/perguntas-respostas/perguntas-respostas.component';
 import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
 import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
-import { LogoClientesComponent } from './components/logo-clientes/logo-clientes.component';
+import { LogoClientesComponent } from './components/beneficios/logo-clientes/logo-clientes.component';
 
 /**
  * Módulo principal da aplicação Parametriz
