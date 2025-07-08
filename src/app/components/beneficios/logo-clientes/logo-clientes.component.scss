@@ -122,7 +122,6 @@
 }
 
 
-
 // Animação infinita
 @keyframes scroll-infinite {
   0% {
@@ -134,11 +133,6 @@
   }
 }
 
-// Pausa na animação ao passar o mouse
-.carousel-container.pause-on-hover:hover .carousel-track {
-  animation-play-state: paused !important;
-  cursor: pointer;
-}
 
 // Acessibilidade
 @media (prefers-reduced-motion: reduce) {
