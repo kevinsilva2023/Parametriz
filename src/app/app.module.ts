@@ -17,6 +17,7 @@ import { PerguntasRespostasComponent } from './components/perguntas-respostas/pe
 import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
+import { LogoClientesComponent } from './components/logo-clientes/logo-clientes.component';
 
 /**
  * Módulo principal da aplicação Parametriz
@@ -36,7 +37,8 @@ import { ModalComponent } from './components/nossos-servicos/modal/modal.compone
     FooterComponent,
     PerguntasRespostasComponent,
     NossosServicosComponent,
-    ModalComponent
+    ModalComponent,
+    LogoClientesComponent
   ],
   imports: [
     BrowserModule,

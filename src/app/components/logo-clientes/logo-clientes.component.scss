@@ -1,0 +1,185 @@
+.example-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 80px !important;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 4px dashed;
+  border-radius: 20px;
+
+  h2 {
+    text-align: center;
+    color: var(--royal-blue);
+    font-size: 48px ;
+    font-weight: 700;
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  p {
+    text-align: center;
+    color: var(--gray-600);
+    margin-bottom: 3rem;
+    font-size: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+    
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  padding: 2rem 0;
+
+  // Responsividade
+  @media (max-width: 768px) {
+    padding: 1.5rem 0;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0;
+    border-radius: 6px;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  animation: scroll-infinite linear infinite !important;
+  will-change: transform;
+
+  // Responsividade do gap
+  @media (max-width: 768px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease !important;
+  border: 1px solid var(--gray-200);
+
+  // Hover effect
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--royal-blue-light);
+
+    img {
+      filter: grayscale(0%) opacity(1);
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    max-height: 60px;
+    max-width: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease !important;
+
+    // Responsividade das imagens
+    @media (max-width: 768px) {
+      max-height: 50px;
+      max-width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      max-height: 40px;
+      max-width: 80px;
+    }
+
+  }
+
+  // Responsividade do padding
+  @media (max-width: 768px) {
+    padding: 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
+}
+
+
+
+// Animação infinita
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// Pausa na animação ao passar o mouse
+.carousel-container.pause-on-hover:hover .carousel-track {
+  animation-play-state: paused !important;
+  cursor: pointer;
+}
+
+// Acessibilidade
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation-duration: 20s !important;
+  }
+}
+
+// Loading state
+.carousel-container.loading {
+  .logo-item {
+    background: var(--gray-100);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 40px;
+      background: linear-gradient(90deg,
+          var(--gray-200) 25%,
+          var(--gray-300) 50%,
+          var(--gray-200) 75%);
+      background-size: 200% 100%;
+      animation: loading-shimmer 1.5s infinite !important;
+      border-radius: 4px;
+    }
+
+    img {
+      display: none;
+    }
+  }
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
