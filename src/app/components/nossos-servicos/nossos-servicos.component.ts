@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
+
 
 @Component({
   selector: 'app-nossos-servicos',
   templateUrl: './nossos-servicos.component.html',
   styleUrls: ['./nossos-servicos.component.scss']
 })
-export class NossosServicosComponent {
+export class NossosServicosComponent implements OnInit{
 
   constructor(private modalService: NgbModal) { }
+
+  ngOnInit(): void {
+    this.abrirModal('parametrizacao')
+  }
 
   modalAbertaId: string | null = null;
 

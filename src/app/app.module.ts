@@ -15,7 +15,7 @@ import { EntreEmContato } from './components/entre-em-contato/entre-em-contato.c
 import { FooterComponent } from './components/footer/footer.component';
 import { PerguntasRespostasComponent } from './components/perguntas-respostas/perguntas-respostas.component';
 import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
 
 /**
@@ -44,7 +44,6 @@ import { ModalComponent } from './components/nossos-servicos/modal/modal.compone
     FormsModule, // Para formulários
     AppRoutingModule,
     ReactiveFormsModule,
-    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

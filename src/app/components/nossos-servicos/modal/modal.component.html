@@ -1,63 +1,37 @@
-<section id="services" class="secao-servicos">
-  <div class="container">
+<div class="modal-header">
+  <div class="cabecalho-detalhes">
+    <h3 class="titulo-detalhe">{{ dados?.titulo }}</h3>
+    <button type="button" class="btn-close" aria-label="Close" (click)="fecharModal()"></button>
+  </div>
+</div>
 
-    <!-- Seção de Detalhes do Serviço Selecionado -->
-    <!-- Informações expandidas que aparecem quando um serviço é selecionado -->
-    <div class="detalhes-servico" >
+<div class="modal-body">
 
-      <!-- Cabeçalho dos Detalhes -->
-      <div class="cabecalho-detalhes">
-        <h3 class="titulo-detalhes">{{ dados.titulo }}</h3>
-        <button class="botao-fechar" (click)="fecharModal()" aria-label="Fechar detalhes">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
+  <div class="conteudo-detalhes">
 
-      <!-- Conteúdo dos Detalhes -->
-      <div class="conteudo-detalhes">
+    <div class="descricao-expandida">
+      {{ dados?.descricaoExpandida }}
+    </div>
 
-        <!-- Descrição Expandida -->
-        <div class="descricao-expandida">
-          <p>{{ dados.descricao }}</p>
-        </div>
-
-        <!-- Lista de Benefícios -->
-        <div class="lista-beneficios">
-          <h4>Principais Benefícios:</h4>
-          <ul>
-            <li *ngFor="let beneficio of dados.beneficios">
-              <i class="fas fa-check-circle"></i>
-              {{ beneficio }}
-            </li>
-          </ul>
-        </div>
-
-        <!-- Processo de Implementação -->
-        <div class="processo-implementacao">
-          <h4>Como Funciona:</h4>
-          <div class="etapas-processo">
-            <div class="etapa" *ngFor="let etapa of dados.etapasProcesso ; let i = index">
-              <div class="numero-etapa">{{ i + 1 }}</div>
-              <div class="descricao-etapa">{{ etapa }}</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Botões de Ação dos Detalhes -->
-        <div class="acoes-detalhes">
-          <button class="botao-primario">
-            <i class="fas fa-calculator"></i>
-            Solicitar Orçamento
-          </button>
-          <button class="botao-secundario">
-            <i class="fas fa-calendar-alt"></i>
-            Agendar Consulta
-          </button>
-        </div>
-
-      </div>
-
+    <div class="lista-beneficios">
+      <h4>Principais Benefícios:</h4>
+      <ul>
+        <li *ngFor="let beneficio of dados?.beneficios">
+          <i class="fas fa-check-circle"></i>
+          {{ beneficio }}
+        </li>
+      </ul>
     </div>
 
   </div>
-</section>
+
+  <h5>Benefícios</h5>
+  <ul>
+    <li *ngFor="let beneficio of dados?.beneficios">{{ beneficio }}</li>
+  </ul>
+
+  <h5>Etapas do Processo</h5>
+  <ol>
+    <li *ngFor="let etapa of dados?.etapasProcesso">{{ etapa }}</li>
+  </ol>
+</div>
