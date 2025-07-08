@@ -1,30 +1,51 @@
 .modal-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   .cabecalho-detalhes {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
     gap: 10px;
 
-    h3 {
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+
+    span {
       color: var(--royal-blue);
-      font-size: 36px;
+      font-size: 36px !important;
       font-family: var(--font-display);
       font-weight: 600;
 
       @media (max-width: 768px) {
-        font-size: 20px;
+        font-size: 20px !important;
       }
     }
 
-    button {
+    i {
       background: var(--gradient-primary);
-      padding: 10px;
+      color: var(--white);
+      padding: 6px;
+      font-size: 28px;
       border-radius: 50%;
-      margin-left: auto;
-      margin-right: 5px;
+      transition: var(--transition-normal) !important;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--white);
+        color: var(--royal-blue);
+        border: 1px dashed var(--royal-blue);
+        transform: scale(1.1);
+      }
+
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
     }
   }
 }
@@ -34,11 +55,18 @@
   .conteudo-detalhes {
     display: grid;
     gap: 32px;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
 
     .descricao-expandida {
       font-size: 18px;
       line-height: 1.7;
       color: var(--gray-700);
+
+      @media (max-width: 768px) {
+        text-align: center;
+      }
     }
 
     .lista-beneficios {
@@ -65,8 +93,13 @@
           border-radius: 8px;
           transition: var(--transition-fast) !important;
 
+          @media (max-width: 768px) {
+            font-size: 14px;
+            
+          }
+
           &:hover {
-            background: var(--gray-50);
+            background: var(--gray-300);
           }
 
           i {
@@ -79,5 +112,124 @@
       }
 
     }
+
+    .processo-implantacao {
+      h4 {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--royal-blue);
+        margin-bottom: 16px;
+      }
+
+      .etapas-processo {
+        display: grid;
+        gap: 16px;
+
+        .etapa {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          padding: 16px;
+          background: var(--gray-300);
+          border-radius: 12px;
+          transition: var(--transition-normal) !important;
+
+          &:hover {
+            background: var(--sand-light);
+            transform: translateY(-2px);
+          }
+
+          .numero-etapa {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+              width: 30px;
+              height: 30px;
+            }
+          }
+
+          .descricao-etapa {
+            color: var(--gray-700);
+            line-height: 1.5;
+
+            @media (max-width: 768px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    .acoes-detalhes {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+
+      .botao-primario {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 16px 32px;
+        background: var(--gradient-primary);
+        color: var(--white);
+        border: none;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-normal !important);
+        text-decoration: none;
+        outline: none;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-royal);
+        }
+      }
+
+      .botao-secundario {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        padding: 16px 32px;
+        background: transparent;
+        color: var(--royal-blue);
+        border: 2px solid var(--royal-blue);
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition-normal) !important;
+        text-decoration: none;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
+        &:hover {
+          background: var(--royal-blue);
+          color: var(--white);
+          transform: translateY(-2px);
+        }
+      }
+
+
+    }
+
   }
 }

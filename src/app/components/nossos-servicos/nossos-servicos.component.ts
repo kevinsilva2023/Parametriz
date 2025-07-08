@@ -8,12 +8,11 @@ import { ModalComponent } from './modal/modal.component';
   templateUrl: './nossos-servicos.component.html',
   styleUrls: ['./nossos-servicos.component.scss']
 })
-export class NossosServicosComponent implements OnInit{
+export class NossosServicosComponent implements OnInit {
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.abrirModal('parametrizacao')
   }
 
   modalAbertaId: string | null = null;
@@ -122,19 +121,42 @@ export class NossosServicosComponent implements OnInit{
     });
     modalRef.componentInstance.dados = dados;
 
-    setTimeout(() => {
-      const modalScrollable = document.querySelector(
-        'ngb-modal-window .component-host-scrollable'
-      ) as HTMLElement;
+    // Bloqueia o scroll de fundo
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
 
-      if (modalScrollable) {
-        modalScrollable.style.overflow = 'auto';
+    // Ajuste da modal
+    setTimeout(() => {
+      // Aguarda a renderização da modal
+      const modalWindow = document.querySelector('ngb-modal-window') as HTMLElement;
+
+      if (modalWindow) {
+        const scrollable = modalWindow.querySelector('.component-host-scrollable') as HTMLElement;
+
+        if (scrollable) {
+          scrollable.style.overflowX = 'auto';
+          scrollable.style.overflowY = 'hidden';
+
+          // Também tenta forçar scroll para o topo
+          scrollable.scrollTo({ top: 0, behavior: 'auto' });
+
+          // Se houver um container interno com scroll (tipo modal-body)
+          const innerScrollable = scrollable.querySelector('.modal-body');
+          if (innerScrollable) {
+            (innerScrollable as HTMLElement).scrollTo({ top: 0, behavior: 'auto' });
+          }
+        }
       }
     });
 
+    // Libera o scroll de fundo ao fechar a modal
     modalRef.result.finally(() => {
       this.modalAbertaId = null;
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     });
   }
+
+
 
 }

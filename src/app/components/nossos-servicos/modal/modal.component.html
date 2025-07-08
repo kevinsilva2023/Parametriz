@@ -1,14 +1,12 @@
 <div class="modal-header">
   <div class="cabecalho-detalhes">
-    <h3 class="titulo-detalhe">{{ dados?.titulo }}</h3>
-    <button type="button" class="btn-close" aria-label="Close" (click)="fecharModal()"></button>
+    <span class="titulo-detalhe">{{ dados?.titulo }}</span>
+    <i class="fa-solid fa-circle-xmark" (click)="fecharModal()"></i>
   </div>
 </div>
 
 <div class="modal-body">
-
   <div class="conteudo-detalhes">
-
     <div class="descricao-expandida">
       {{ dados?.descricaoExpandida }}
     </div>
@@ -23,15 +21,26 @@
       </ul>
     </div>
 
+    <div class="processo-implantacao">
+      <h4>Como Funciona:</h4>
+      <div class="etapas-processo">
+        <div class="etapa" *ngFor="let etapa of dados?.etapasProcesso; let i = index">
+          <div class="numero-etapa">{{ i + 1}}</div>
+          <div class="descricao-etapa">{{ etapa }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="acoes-detalhes">
+      <button class="botao-primario">
+        <i class="fas fa-calculator"></i> &nbsp;
+        Solicitar Orçamento
+      </button>
+      <button class="botao-secundario">
+        <i class="fas fa-calendar-alt"></i> &nbsp;
+        <span>Agendar Consulta</span>
+      </button>
+    </div>
+
   </div>
-
-  <h5>Benefícios</h5>
-  <ul>
-    <li *ngFor="let beneficio of dados?.beneficios">{{ beneficio }}</li>
-  </ul>
-
-  <h5>Etapas do Processo</h5>
-  <ol>
-    <li *ngFor="let etapa of dados?.etapasProcesso">{{ etapa }}</li>
-  </ol>
 </div>
