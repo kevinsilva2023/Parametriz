@@ -27,16 +27,23 @@ export class ModalComponent {
     this.modalService.dismissAll()
   }
 
-  public navegarParaSecaoContato() {
-    this.fecharModal();
-    const elementoSecao = document.getElementById('contato');
-    if (elementoSecao) {
-      elementoSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  public navegarParaSecaoContato(event: Event) {
+    event.preventDefault(); // <- Isso impede a rolagem nativa
+    this.fecharModal()
+
+    setTimeout(() => {
+      const elementoSecao = document.getElementById('contato');
+      if (elementoSecao) {
+        elementoSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300); // pequeno delay para dar tempo de fechar a modal
   }
 
-  public abrirCalendly() {
-    this.fecharModal()
+  public async abrirCalendly() {
+    this.fecharModal();
+
+    await new Promise(resolve => setTimeout(resolve, 300));
+
     this.modalService.open(ModalCalendlyComponent, {
       size: 'xl',
       centered: true,
