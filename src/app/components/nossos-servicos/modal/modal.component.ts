@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalCalendlyComponent } from '../../apresentacao-inicial/modal-calendly/modal-calendly.component';
 
 interface Dados {
   id: string,
@@ -17,12 +18,30 @@ interface Dados {
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent  {
+export class ModalComponent {
   @Input() dados: Dados | undefined;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) { }
 
   fecharModal() {
     this.modalService.dismissAll()
   }
+
+  public navegarParaSecaoContato() {
+    this.fecharModal();
+    const elementoSecao = document.getElementById('contato');
+    if (elementoSecao) {
+      elementoSecao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  public abrirCalendly() {
+    this.fecharModal()
+    this.modalService.open(ModalCalendlyComponent, {
+      size: 'xl',
+      centered: true,
+      backdrop: 'static'
+    });
+  }
+
 }

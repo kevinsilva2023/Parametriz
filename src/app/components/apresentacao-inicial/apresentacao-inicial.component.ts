@@ -84,7 +84,7 @@ export class ApresentacaoInicialComponent implements OnInit, OnDestroy {
     }
   }
 
-    abrirCalendly() {
+  abrirCalendly() {
     this.modalService.open(ModalCalendlyComponent, {
       size: 'xl',
       centered: true,
