@@ -1,4 +1,6 @@
 /* Reset e Variáveis */
+@import 'bootstrap/scss/bootstrap';
+
 * {
   margin: 0;
   padding: 0;
@@ -219,3 +221,5 @@ section {
   font-size: 14px !important;
   text-align: center !important;
 }
+/* Importing Bootstrap SCSS file. */
+

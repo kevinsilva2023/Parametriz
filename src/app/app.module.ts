@@ -1,31 +1,32 @@
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { AppRoutingModule } from './app-routing.module';
+// Site
+import { SiteComponent } from './pages/site/site.component';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { ApresentacaoInicialComponent } from './components/apresentacao-inicial/apresentacao-inicial.component';
-import { ServicosComponent } from './components/servicos/servicos.component';
-import { ProcessoComponent } from './components/processo/processo.component';
-import { BeneficiosComponent } from './components/beneficios/beneficios.component';
-import { EntreEmContato } from './components/entre-em-contato/entre-em-contato.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PerguntasRespostasComponent } from './components/perguntas-respostas/perguntas-respostas.component';
-import { NossosServicosComponent } from './components/nossos-servicos/nossos-servicos.component';
-import { ModalComponent } from './components/nossos-servicos/modal/modal.component';
-import { LogoClientesComponent } from './components/beneficios/logo-clientes/logo-clientes.component';
-import { ModalCalendlyComponent } from './components/apresentacao-inicial/modal-calendly/modal-calendly.component';
+import { ApresentacaoInicialComponent } from './components/site/apresentacao-inicial/apresentacao-inicial.component';
+import { ModalCalendlyComponent } from './components/site/apresentacao-inicial/modal-calendly/modal-calendly.component';
+import { BeneficiosComponent } from './components/site/beneficios/beneficios.component';
+import { LogoClientesComponent } from './components/site/beneficios/logo-clientes/logo-clientes.component';
+import { EntreEmContato } from './components/site/entre-em-contato/entre-em-contato.component';
+import { FooterComponent } from './components/site/footer/footer.component';
+import { NavbarComponent } from './components/site/navbar/navbar.component';
+import { NossosServicosComponent } from './components/site/nossos-servicos/nossos-servicos.component';
+import { ModalComponent } from './components/site/nossos-servicos/modal/modal.component';
+import { PerguntasRespostasComponent } from './components/site/perguntas-respostas/perguntas-respostas.component';
+import { ServicosComponent } from './components/site/servicos/servicos.component';
+import { ProcessoComponent } from './components/site/processo/processo.component';
 
-/**
- * Módulo principal da aplicação Parametriz
- * 
- * Configura todos os componentes, módulos e dependências
- * necessárias para o funcionamento da aplicação.
- */
+// Reforma Tributária
+import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-tributaria.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollSpyModule } from 'ngx-scrollspy';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,10 @@ import { ModalCalendlyComponent } from './components/apresentacao-inicial/modal-
     NossosServicosComponent,
     ModalComponent,
     LogoClientesComponent,
-    ModalCalendlyComponent
+    ModalCalendlyComponent,
+    SiteComponent,
+    ReformaTributariaComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,9 @@ import { ModalCalendlyComponent } from './components/apresentacao-inicial/modal-
     FormsModule, // Para formulários
     AppRoutingModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgbModule,
+    ScrollSpyModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
