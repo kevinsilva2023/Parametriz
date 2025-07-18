@@ -3,7 +3,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+// Angular Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+// Ng bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbScrollSpyModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Site
 import { SiteComponent } from './pages/site/site.component';
@@ -23,8 +29,9 @@ import { ProcessoComponent } from './components/site/processo/processo.component
 
 // Reforma Tributária
 import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-tributaria.component';
+
+// Blog
 import { BlogComponent } from './pages/blog/blog.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -53,6 +60,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     MatSnackBarModule,
     NgbModule,
+    NgbScrollSpyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
