@@ -25,7 +25,6 @@ import { ProcessoComponent } from './components/site/processo/processo.component
 import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-tributaria.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ScrollSpyModule } from 'ngx-scrollspy';
 
 @NgModule({
   declarations: [
@@ -54,7 +53,6 @@ import { ScrollSpyModule } from 'ngx-scrollspy';
     ReactiveFormsModule,
     MatSnackBarModule,
     NgbModule,
-    ScrollSpyModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
