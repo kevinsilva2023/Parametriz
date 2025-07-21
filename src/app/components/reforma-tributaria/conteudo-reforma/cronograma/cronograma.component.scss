@@ -1,0 +1,235 @@
+.cronograma {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .titulo-intro {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+
+    i {
+      color: #3498db;
+    }
+  }
+
+  .subtitulo-intro {
+    color: #7f8c8d;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+
+  .timeline-container {
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .timeline-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  // Linha central vertical
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    display: flex;
+    align-items: center;
+
+    // Marcador central com data
+    .timeline-marker {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      
+      .timeline-year {
+        background: #3498db;
+        color: white;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1rem;
+        border: 4px solid white;
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+      }
+    }
+
+    // Conteúdo dos eventos
+    .timeline-content {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e8f4fd;
+      position: relative;
+      width: 45%;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border: 12px solid transparent;
+        transform: translateY(-50%);
+      }
+
+      .timeline-title {
+        color: #2c3e50;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+      }
+
+      .timeline-description {
+        color: #5a6c7d;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .timeline-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          color: #34495e;
+          margin-bottom: 0.5rem;
+          padding-left: 1rem;
+          position: relative;
+          line-height: 1.4;
+
+          &::before {
+            content: '•';
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+          }
+        }
+      }
+
+      .timeline-highlight {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+
+        strong {
+          color: #856404;
+        }
+      }
+
+      .timeline-final-box {
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+
+        .final-box-content {
+          color: #155724;
+          font-weight: 500;
+        }
+      }
+    }
+
+    // Posicionamento à esquerda
+    &.timeline-left {
+      justify-content: flex-start;
+
+      .timeline-content {
+        margin-right: 6rem;
+        
+        &::before {
+          right: -24px;
+          border-left-color: white;
+          border-right: none;
+        }
+      }
+    }
+
+    // Posicionamento à direita
+    &.timeline-right {
+      justify-content: flex-end;
+
+      .timeline-content {
+        margin-left: 6rem;
+        
+        &::before {
+          left: -24px;
+          border-right-color: white;
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  // Responsividade para telas menores
+  @media (max-width: 768px) {
+    .timeline-wrapper {
+      padding: 0 1rem;
+    }
+
+    .timeline-line {
+      left: 2rem;
+    }
+
+    .timeline-item {
+      .timeline-marker {
+        left: 2rem;
+        transform: none;
+
+        .timeline-year {
+          width: 60px;
+          height: 60px;
+          font-size: 0.9rem;
+        }
+      }
+
+      .timeline-content {
+        width: calc(100% - 5rem);
+        margin-left: 5rem !important;
+        margin-right: 0 !important;
+
+        &::before {
+          left: -24px !important;
+          right: auto !important;
+          border-right-color: white !important;
+          border-left: none !important;
+        }
+      }
+
+      &.timeline-left,
+      &.timeline-right {
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+

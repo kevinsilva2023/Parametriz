@@ -29,6 +29,8 @@ import { ProcessoComponent } from './components/site/processo/processo.component
 
 // Reforma Tributária
 import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-tributaria.component';
+import { NgxTimelineModule } from '@frxjs/ngx-timeline';
+
 
 // Blog
 import { BlogComponent } from './pages/blog/blog.component';
@@ -92,7 +94,8 @@ import { BaseLegalComponent } from './components/reforma-tributaria/conteudo-ref
     ReactiveFormsModule,
     MatSnackBarModule,
     NgbModule,
-    NgbScrollSpyModule
+    NgbScrollSpyModule,
+    NgxTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

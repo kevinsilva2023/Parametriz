@@ -1,1 +1,49 @@
-<p>cronograma works!</p>
+<div class="cronograma">
+    <div class="titulo-intro">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span>Cronograma de Implantação (2026-2033)</span>
+    </div>
+    <div class="subtitulo-intro">
+        A implementação do novo modelo de tributação sobre o consumo terá início em 2026, com um período de transição
+        progressiva até 2033. Durante esse intervalo, o sistema atual coexistirá com o novo regime, até que tributos
+        como ICMS e ISS sejam totalmente substituídos pelas novas contribuições.
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-wrapper">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item" *ngFor="let event of timelineEvents; let i = index"
+                [ngClass]="{'timeline-left': event.position === 'left', 'timeline-right': event.position === 'right'}">
+
+                <div class="timeline-marker">
+                    <div class="timeline-year">{{ event.year }}</div>
+                </div>
+
+                <div class="timeline-content">
+                    <h3 class="timeline-title">{{ event.title }}</h3>
+
+                    <div class="timeline-description" *ngIf="event.description">
+                        {{ event.description }}
+                    </div>
+
+                    <ul class="timeline-details" *ngIf="event.details.length > 0">
+                        <li *ngFor="let detail of event.details">{{ detail }}</li>
+                    </ul>
+
+                    <div class="timeline-highlight" *ngIf="event.highlight">
+                        <strong>{{ event.highlight.split(':')[0] }}:</strong>
+                        {{ event.highlight.split(':')[1] }}
+                    </div>
+
+                    <div class="timeline-final-box" *ngIf="event.year === '2033'">
+                        <div class="final-box-content">
+                            Novo sistema plenamente implantado:
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

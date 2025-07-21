@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 20px;
     
-
     .titulo-intro {
         color: var(--royal-blue);
         font-weight: 700;
@@ -13,7 +12,7 @@
         font-size: 36px;
     }
     .subtitulo-intro {
-        font-size: 24px;
+        font-size: 20px;
         color: var(--gray-600);
     }
 
@@ -115,7 +114,7 @@
 
     .novos-tributos {
         display: flex;
-        gap: 10px;
+        gap: 15px;
 
         .card_novos-tributos {
             flex: 1;
