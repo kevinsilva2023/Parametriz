@@ -6,12 +6,17 @@
   
   .main-wrapper {
     flex: 1;
-    margin-left: 70px;
+    margin-left: 280px;
     transition: margin-left var(--transition-normal);
     overflow-x: hidden;
   
       &.sidebar-collapsed {
       margin-left: 70px;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0;
+      
     }
   }
   
