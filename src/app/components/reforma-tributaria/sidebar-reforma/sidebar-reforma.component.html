@@ -1,0 +1,38 @@
+<div class="sidebar" 
+     [class.collapsed]="isCollapsed" 
+     (mouseenter)="openOnHover()" 
+     (mouseleave)="closeOnLeave()">
+    <div class="sidebar-header">
+      <div class="logo-parametriz">
+        <img src="/assets/logo-white.png">
+        <div class="content-texto" *ngIf="!isCollapsed">
+          <h1>PARAMETRIZ</h1>
+          <h2>SOLUÇÕES TECNOLÓGICAS</h2>
+        </div>
+      </div>
+    </div>
+  
+    <nav class="sidebar-nav">
+      <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let item of menuItems$ | async">
+          <a 
+            class="nav-link" 
+            href="javascript:void(0)"
+            [class.active]="item.active"
+            (click)="onMenuItemClick(item)"
+            [attr.title]="item.label">
+            <i class="fa-solid" [class]="'fa-' + item.icon"></i>
+            <span class="nav-text" *ngIf="!isCollapsed">{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <div class="sidebar-footer" *ngIf="!isCollapsed">
+      <div class="version-info">
+        <small>v1.0.0</small>
+      </div>
+    </div>
+  </div>
+  
+  

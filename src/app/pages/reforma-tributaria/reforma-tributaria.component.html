@@ -1,0 +1,7 @@
+<div class="app-container">
+    <app-sidebar-reforma (sidebarToggled)="onSidebarToggled($event)"></app-sidebar-reforma>
+
+    <div class="main-wrapper" [class.sidebar-collapsed]="isSidebarCollapsed">
+        <app-conteudo-reforma></app-conteudo-reforma>
+    </div>
+</div>

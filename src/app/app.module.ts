@@ -32,6 +32,22 @@ import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-t
 
 // Blog
 import { BlogComponent } from './pages/blog/blog.component';
+import { SidebarReformaComponent } from './components/reforma-tributaria/sidebar-reforma/sidebar-reforma.component';
+import { ConteudoReformaComponent } from './components/reforma-tributaria/conteudo-reforma/conteudo-reforma.component';
+import { IntroducaoComponent } from './components/reforma-tributaria/conteudo-reforma/introducao/introducao.component';
+import { CronogramaComponent } from './components/reforma-tributaria/conteudo-reforma/cronograma/cronograma.component';
+import { FatoGeradorComponent } from './components/reforma-tributaria/conteudo-reforma/fato-gerador/fato-gerador.component';
+import { CalculoComponent } from './components/reforma-tributaria/conteudo-reforma/calculo/calculo.component';
+import { CreditoComponent } from './components/reforma-tributaria/conteudo-reforma/credito/credito.component';
+import { RecolhimentoComponent } from './components/reforma-tributaria/conteudo-reforma/recolhimento/recolhimento.component';
+import { RestituicaoCashbackComponent } from './components/reforma-tributaria/conteudo-reforma/restituicao-cashback/restituicao-cashback.component';
+import { SplitPaymentComponent } from './components/reforma-tributaria/conteudo-reforma/split-payment/split-payment.component';
+import { IpiComponent } from './components/reforma-tributaria/conteudo-reforma/ipi/ipi.component';
+import { SimplesNacionalComponent } from './components/reforma-tributaria/conteudo-reforma/simples-nacional/simples-nacional.component';
+import { ImpostoSeletivoComponent } from './components/reforma-tributaria/conteudo-reforma/imposto-seletivo/imposto-seletivo.component';
+import { NotaFiscalComponent } from './components/reforma-tributaria/conteudo-reforma/nota-fiscal/nota-fiscal.component';
+import { DuvidasComponent } from './components/reforma-tributaria/conteudo-reforma/duvidas/duvidas.component';
+import { BaseLegalComponent } from './components/reforma-tributaria/conteudo-reforma/base-legal/base-legal.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +66,23 @@ import { BlogComponent } from './pages/blog/blog.component';
     ModalCalendlyComponent,
     SiteComponent,
     ReformaTributariaComponent,
-    BlogComponent
+    BlogComponent,
+    SidebarReformaComponent,
+    ConteudoReformaComponent,
+    IntroducaoComponent,
+    CronogramaComponent,
+    FatoGeradorComponent,
+    CalculoComponent,
+    CreditoComponent,
+    RecolhimentoComponent,
+    RestituicaoCashbackComponent,
+    SplitPaymentComponent,
+    IpiComponent,
+    SimplesNacionalComponent,
+    ImpostoSeletivoComponent,
+    NotaFiscalComponent,
+    DuvidasComponent,
+    BaseLegalComponent,
   ],
   imports: [
     BrowserModule,
