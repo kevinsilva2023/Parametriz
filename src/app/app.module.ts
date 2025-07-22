@@ -19,7 +19,7 @@ import { ModalCalendlyComponent } from './components/site/apresentacao-inicial/m
 import { BeneficiosComponent } from './components/site/beneficios/beneficios.component';
 import { LogoClientesComponent } from './components/site/beneficios/logo-clientes/logo-clientes.component';
 import { EntreEmContato } from './components/site/entre-em-contato/entre-em-contato.component';
-import { FooterComponent } from './components/site/footer/footer.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './components/site/navbar/navbar.component';
 import { NossosServicosComponent } from './components/site/nossos-servicos/nossos-servicos.component';
 import { ModalComponent } from './components/site/nossos-servicos/modal/modal.component';

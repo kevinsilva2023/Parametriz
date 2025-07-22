@@ -10,7 +10,7 @@ import { ScrollNavigateService } from 'src/app/services/scroll-navigate.service'
 })
 export class SidebarReformaComponent {
   menuItems$: Observable<MenuItem[]>;
-  isCollapsed = true;
+  isCollapsed = false;
 
   @Output() sidebarToggled = new EventEmitter<boolean>();
 
@@ -25,20 +25,6 @@ export class SidebarReformaComponent {
     this.sidebarToggled.emit(this.isCollapsed);
   }
   
-  openOnHover() {
-    if (this.isCollapsed) {
-      this.isCollapsed = false;
-    }
-    this.sidebarToggled.emit(this.isCollapsed);
-  }
-  
-  closeOnLeave() {
-    if (!this.isCollapsed) {
-      this.isCollapsed = true;
-    }
-    this.sidebarToggled.emit(this.isCollapsed);
-}
-
   onMenuItemClick(item: MenuItem): void {
     this.scrollNavigationService.scrollToSection(item.id);
   }

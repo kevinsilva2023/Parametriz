@@ -1,0 +1,105 @@
+.credito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .titulo-intro {
+        color: var(--royal-blue);
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 36px;
+    }
+
+    .subtitulo-intro {
+        font-size: 20px;
+        color: var(--gray-600);
+    }
+
+    .intro {
+        font-size: 24px;
+        color: var(--royal-blue);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    p {
+        color: var(--gray-600);
+    }
+
+    .card-info {
+        border: 2px solid var(--royal-blue-light);
+        border-radius: 10px;
+        padding: 20px 40px;
+        background: var(--gradient-blur);
+        box-shadow: var(--shadow-xl);
+
+        li {
+            color: var(--gray-600);
+
+            b {
+                color: var(--gray-800);
+            }
+        }
+    }
+
+    .tipos-creditos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+
+        .card_tipos-creditos {
+            border-top: 6px solid var(--royal-blue);
+            background: var(--gradient-blur);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 0;
+            border-radius: 10px;
+
+            i {
+                color: var(--royal-blue);
+                font-size: 32px;
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 20px;
+                color: var(--gray-600);
+            }
+
+        }
+    }
+
+    .card-alert {
+        background: var(--sand);
+        border: 2px solid var(--sand-dark);
+        border-radius: 10px;
+        padding: 20px;
+
+        .titulo_card-alert {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--sand-dark-two);
+            margin-bottom: 8px;
+        }
+        
+        li {
+            color: var(--gray-600);
+    
+            b {
+                color: var(--gray-800);
+            }
+        }
+    }
+}

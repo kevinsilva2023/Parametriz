@@ -1,7 +1,18 @@
 <div class="app-container">
-    <app-sidebar-reforma (sidebarToggled)="onSidebarToggled($event)"></app-sidebar-reforma>
-
-    <div class="main-wrapper" [class.sidebar-collapsed]="isSidebarCollapsed">
-        <app-conteudo-reforma></app-conteudo-reforma>
+  <div class="nav" [class.sidebar-collapsed]="isSidebarCollapsed">
+    <div class="botao-voltar" (click)="goBack()">
+      <i class="fa-solid fa-angles-left"></i>
+      Voltar
     </div>
+    <div class="rota-atual">
+      <p>Reforma Tributária /</p>
+      <p class="rota-ativa">{{ activeSectionLabel }}</p>
+    </div>
+  </div>
+
+  <app-sidebar-reforma (sidebarToggled)="onSidebarToggled($event)"></app-sidebar-reforma>
+
+  <div class="main-wrapper" [class.sidebar-collapsed]="isSidebarCollapsed">
+    <app-conteudo-reforma></app-conteudo-reforma>
+  </div>
 </div>

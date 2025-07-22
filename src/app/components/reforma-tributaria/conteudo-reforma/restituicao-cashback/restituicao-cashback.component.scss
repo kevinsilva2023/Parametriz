@@ -1,0 +1,197 @@
+.restituicao-cashback {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .titulo-intro {
+        color: var(--royal-blue);
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 36px;
+    }
+
+    .subtitulo-intro {
+        font-size: 20px;
+        color: var(--gray-600);
+    }
+
+    .intro {
+        font-size: 24px;
+        color: var(--royal-blue);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .processo-restituicao {
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .card_processo-restituicao {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            border-top: 5px solid var(--royal-blue);
+            box-shadow: var(--shadow-md);
+            background: var(--gradient-blur);
+
+            i {
+                font-size: 32px;
+            }
+
+            h1 {
+                font-size: 40px;
+                font-weight: 700;
+                color: var(--royal-blue);
+            }
+
+            h2 {
+                font-size: 18px;
+                font-weight: 500;
+                text-align: center;
+                color: var(--gray-700);
+            }
+
+        }
+    }
+
+    .cashback {
+        display: flex;
+        flex-direction: column;
+        background: var(--gradient-blur);
+        border: 2px solid var(--royal-blue-light);
+        border-radius: 10px;
+        padding: 20px 30px;
+        box-shadow: var(--shadow-md);
+
+        .introducao {
+            color: var(--gray-600);
+            margin-bottom: 10px;
+        }
+
+        .impostos {
+            display: flex;
+
+            .card_impostos {
+                flex: 1;
+
+                .titulo_card-impostos {
+                    display: flex;
+                    align-items: center;
+                    color: var(--royal-blue);
+                    font-weight: 600;
+                    font-size: 24px;
+                    gap: 10px;
+                }
+
+                p {
+                    color: var(--gray-600);
+                }
+
+            }
+        }
+    }
+
+    .criterios {
+        display: flex;
+        gap: 15px;
+
+        .card_criterios {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--royal-blue-light);
+            border-radius: 10px;
+            padding: 15px;
+
+            h1 {
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--royal-blue);
+            }
+
+            ul li {
+                font-size: 18px;
+                color: var(--gray-600);
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    p {
+        font-size: 18px;
+        color: var(--gray-600);
+    }
+
+    .ressarcimento {
+        display: flex;
+        gap: 15px;
+
+        .card_ressarcimento {
+            flex: 1;
+            border: 2px solid var(--royal-blue-light);
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: var(--gradient-blur);
+
+
+            .titulo_card-ressarcimento {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font-size: 24px;
+                font-weight: 600;
+                color: var(--royal-blue);
+
+            }
+
+            p {
+                color: var(--gray-600);
+                font-weight: 500;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .card-alert {
+        background: var(--sand);
+        border: 2px solid var(--sand-dark);
+        border-radius: 10px;
+        padding: 20px;
+
+        .titulo_card-alert {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--sand-dark-two);
+            margin-bottom: 8px;
+        }
+
+        li {
+            color: var(--gray-600);
+
+            b {
+                color: var(--gray-800);
+            }
+        }
+    }
+}

@@ -1,1 +1,127 @@
-<p>calculo works!</p>
+<div class="calculo">
+    <div class="titulo-intro">
+        <i class="fa-solid fa-calculator"></i>
+        <span>Base de Cálculo e Alíquotas</span>
+    </div>
+
+    <div class="intro">
+        <h2>Base de Cálculo</h2>
+        <p>A base de cálculo da CBS e do IBS é, como regra geral,
+            <span>o valor total da operação.</span>
+        </p>
+    </div>
+
+    <div class="card-info">
+        <h2>O que está incluído na base de cálculo:</h2>
+        <ul>
+            <li>Valor do bem ou serviço</li>
+            <li>Acréscimos por ajuste de valor da operação</li>
+            <li>Juros, multas e encargos financeiros</li>
+            <li>Descontos concedidos sob condição (condicionais)</li>
+            <li>Valor do frete (quando cobrado pelo fornecedor)</li>
+            <li>Tributos e tarifas incidentes sobre a operação</li>
+            <li>Seguros, taxas e outras cobranças acessórias</li>
+        </ul>
+    </div>
+
+    <div class="card-alert">
+        <div class="titulo_card-alert">
+            <i class="fa-solid fa-circle-minus"></i>
+            <span>Exclusões</span>
+        </div>
+        <div class="subtitulo_card-alert">
+            Não entram na base de cálculo os <b>descontos incondicionais</b> e o <b>próprio valor do imposto</b>, pois o
+            modelo agora é de cálculo por fora.
+        </div>
+    </div>
+
+    <div class="intro">
+        <h2>Cálculo "Por Fora"</h2>
+    </div>
+
+    <div class="calculo-fora">
+        <div class="card_calculo-fora ">
+            <h1 class="antes">Antes (por dentro)</h1>
+            <p>O imposto era embutido no preço, gerando efeito cascata</p>
+        </div>
+        <div class="card_calculo-fora ">
+            <h1 class="depois">Agora (por fora)</h1>
+            <p>O imposto é acrescido separadamente → o imposto não incide sobre ele mesmo</p>
+        </div>
+    </div>
+
+    <div class="intro">
+        <h2>Aliquotas</h2>
+        <p><b>Diferença entre Alíquota de Referência e Alíquota Padrão</b></p>
+    </div>
+
+    <div class="aliquotas">
+        <div class="card-aliquotas">
+            <h4>Alíquota de Referência</h4>
+            <h3>26,5%</h3>
+
+            <ul>
+                <li><b>O que é: </b>Um parâmetro nacional estimado</li>
+                <li><b>Para que serve:</b> Manter a carga tributária neutra e orientar os entes na definição das suas
+                    alíquotas</li>
+                <li><b>Quem define:</b> Governo federal por lei complementar</li>
+                <li><b>Não é aplicada diretamente nas operações</b></li>
+            </ul>
+        </div>
+        <div class="card-aliquotas">
+            <h4>Alíquota Padrão (Estimada)</h4>
+            <h3>CBS: 9,25% </h3>
+            <h3>IBS: 17,25%</h3>
+            <h3>Total: 26,5%</h3>
+            <ul>
+                <li><b>O que é:</b> A alíquota efetiva usada no cálculo do imposto na nota fiscal</li>
+                <li><b>Quem Define:</b> Cada ente federativo (Estados e Municípios) definem o IBS</li>
+                <li><b>Aplicada diretamente em cada operação</b></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="intro">
+        <h2>Exemplo de cálculo</h2>
+    </div>
+
+    <div class="memoria-calculo">
+        <div class="titulo_memoria-calculo">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Memória de Cálculo - CBS e IBS</span>
+        </div>
+
+        <div class="operacao-completa">
+            <div class="col">
+                <div class="operacao">
+                    <h1>1. BASE DE CÁLCULO</h1>
+                    <p>Valor do Produto: <b>R$ 1.000,00</b></p>
+                    <p>Frete: <b>R$ 100,00</b></p>
+                    <p>Juros: <b>R$ 50,00</b></p>
+                    <p>Base de cálculo: <b>R$ 1.150,00</b></p>
+                </div>
+                <div class="operacao">
+                    <h1>2. ALÍQUOTAS APLICADAS</h1>
+                    <p>CBS: <b>9,25%</b></p>
+                    <p>IBS (Estadual + Municipal): <b>17,25%</b></p>
+                    <p>Total: <b>26,5%</b></p>
+                </div>
+                
+            </div>
+            <div class="col">
+                <div class="operacao">
+                    <h1>3. CÁLCULO DOS TRIBUTOS</h1>
+                    <p>CBS: R$ 1.150,00 × 9,25% = <b>R$ 106,38</b></p>
+                    <p>IBS: R$ 1.150,00 × 17,25% = <b>R$ 198,38</b></p>
+                </div>
+                <div class="operacao">
+                    <h1>4. TOTAL DA OPERAÇÃO</h1>
+                    <p>Valor da operação: <b>R$ 1.150,00</b></p>
+                    <p>CBS: <b>R$ 106,38</b></p>
+                    <p>IBS: <b>R$ 198,38</b></p>
+                    <p class="total">Total: R$ 1.454,76</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

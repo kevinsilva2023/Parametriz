@@ -1,7 +1,4 @@
-<div class="sidebar" 
-     [class.collapsed]="isCollapsed" 
-     (mouseenter)="openOnHover()" 
-     (mouseleave)="closeOnLeave()">
+<div class="sidebar" [class.collapsed]="isCollapsed">
     <div class="sidebar-header">
       <div class="logo-parametriz">
         <img src="/assets/logo-white.png">
@@ -11,8 +8,13 @@
         </div>
       </div>
     </div>
-  
     <nav class="sidebar-nav">
+
+      <button class="botao-sidebar" (click)="toggleSidebar()">
+        <i class="fa-solid fa-angles-left" *ngIf="!isCollapsed"></i>
+        <i class="fa-solid fa-angles-right" *ngIf="isCollapsed"></i>
+      </button>
+
       <ul class="nav flex-column">
         <li class="nav-item" *ngFor="let item of menuItems$ | async">
           <a 
