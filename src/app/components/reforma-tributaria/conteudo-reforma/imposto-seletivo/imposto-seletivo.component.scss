@@ -1,0 +1,118 @@
+.imposto-seletivo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .titulo-intro {
+        color: var(--royal-blue);
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-size: 36px;
+    }
+
+    .subtitulo-intro {
+        font-size: 20px;
+        color: var(--gray-600);
+    }
+
+    .separacao {
+        display: flex;
+        gap: 15px;
+
+        .card_separacao {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-top: 4px solid var(--royal-blue-light);
+            border-radius: 10px;
+            background: var(--gradient-blur);
+            padding: 25px 0px;
+            box-shadow: var(--shadow-md);
+
+            i {
+                font-size: 40px;
+                color: var(--royal-blue);
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 20px;
+                color: var(--gray-800);
+            }
+
+            p {
+                text-align: center;
+                color: var(--gray-600);
+                margin: 0;
+            }
+        }
+    }
+
+    .intro {
+        font-size: 24px;
+        color: var(--royal-blue);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .produtos-grid {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        .produto-card {
+            flex: 1;
+            background: var(--gradient-blur);
+            border: 1px dashed var(--royal-blue-light);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+
+            .icone {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                color: var(--royal-blue);
+            }
+
+            h3 {
+                margin: 10px 0;
+                color: var(--royal-blue);
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 14px;
+                color: var(--gray-700);
+            }
+        }
+    }
+
+    .card-info {
+        border: 2px solid var(--royal-blue-light);
+        border-radius: 10px;
+        padding: 20px 40px;
+        background: var(--gradient-blur);
+
+        .titulo_card-info {
+            display: flex;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            align-items: center;
+            color: var(--royal-blue-light);
+        }
+
+        span {
+            font-weight: 700;
+        }
+        p {
+            color: var(--gray-600);
+            margin: 0;
+        }
+    }
+}

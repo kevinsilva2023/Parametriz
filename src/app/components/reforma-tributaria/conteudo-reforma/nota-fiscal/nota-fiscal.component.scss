@@ -1,0 +1,121 @@
+.timeline {
+  position: relative;
+  width: 50vw;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #256FAD;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      left: 0;
+      text-align: right;
+
+      .timeline-year {
+        right: -10px;
+      }
+    }
+
+    &:nth-child(even) {
+      left: 50%;
+      text-align: left;
+
+      .timeline-year {
+        left: -10px;
+        transform: translateX(-50%);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      background: #0D2D54;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      left: 100%;
+      transform: translateX(-50%);
+    }
+
+    &:nth-child(even)::before {
+      left: 0%;
+      transform: translateX(-50%);
+    }
+
+    .timeline-year {
+      position: absolute;
+      top: 20px;
+      background: #0D2D54;
+      color: #fff;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transform: translateX(-50%);
+    }
+
+    .timeline-content {
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        margin: 0 0 10px;
+        color: #0D2D54;
+        font-size: 18px;
+      }
+
+      p {
+        margin: 0;
+        color: #333;
+      }
+    }
+  }
+
+  /* Responsivo */
+  @media (max-width: 768px) {
+    padding-left: 20px;
+
+    &::before {
+      left: 0;
+    }
+
+    .timeline-item {
+      width: 100%;
+      padding: 10px 20px 10px 40px;
+      text-align: left;
+      left: 0;
+
+      &::before {
+        left: 0;
+        transform: translateX(0);
+      }
+
+      &:nth-child(even),
+      &:nth-child(odd) {
+        left: 0;
+        text-align: left;
+      }
+
+      .timeline-year {
+        left: 0;
+        transform: none;
+      }
+    }
+  }
+}

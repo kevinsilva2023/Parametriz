@@ -7,6 +7,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 // Angular Material
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+// primeng
+import { TimelineModule } from 'primeng/timeline';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { AccordionModule } from 'primeng/accordion';
+
 // Ng bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbScrollSpyModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,7 +35,6 @@ import { ProcessoComponent } from './components/site/processo/processo.component
 
 // Reforma Tributária
 import { ReformaTributariaComponent } from './pages/reforma-tributaria/reforma-tributaria.component';
-import { NgxTimelineModule } from '@frxjs/ngx-timeline';
 
 
 // Blog
@@ -95,7 +100,10 @@ import { BaseLegalComponent } from './components/reforma-tributaria/conteudo-ref
     MatSnackBarModule,
     NgbModule,
     NgbScrollSpyModule,
-    NgxTimelineModule
+    TimelineModule,
+    CardModule,
+    ButtonModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
