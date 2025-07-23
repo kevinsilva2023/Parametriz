@@ -1,20 +1,21 @@
 .single-page-content {
-  margin: 80px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 40px;
+  padding: 80px 0px;
 
   section {
     min-height: 100vh;
-    min-width: 80vw;
-    max-width: 1200px;
+    min-width: 80%;
+    max-width: 1200px !important;
     border-top: 4px solid var(--royal-blue);
     display: flex;
     padding: 60px;
-    margin: 0 auto;
     border-radius: 20px;
-
-
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.108), 0 10px 10px -5px rgba(0, 0, 0, 0.19);
+    justify-content: center;
   }
 }
