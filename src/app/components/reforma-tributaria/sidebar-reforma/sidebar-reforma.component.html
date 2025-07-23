@@ -22,11 +22,13 @@
             href="javascript:void(0)"
             [class.active]="item.active"
             (click)="onMenuItemClick(item)"
-            [attr.title]="item.label">
+            [attr.title]="item.label"
+            [attr.data-menu-id]="item.id">
             <i class="fa-solid" [class]="'fa-' + item.icon"></i>
             <span class="nav-text" *ngIf="!isCollapsed">{{ item.label }}</span>
           </a>
         </li>
+        
       </ul>
     </nav>
   

@@ -8,7 +8,7 @@
     left: 0;
     height: 100vh;
     width: 280px;
-    background: var(--gradient-primary);
+    background: var(--royal-blue-dark);
     color: var(--white);
     transition: all var(--transition-normal) !important;
     z-index: 1000;
@@ -82,6 +82,7 @@
     overflow-y: auto;
   
     .botao-sidebar {
+      position: sticky;
       border: none;
       display: flex;
       align-items: center;

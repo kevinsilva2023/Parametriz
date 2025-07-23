@@ -82,7 +82,6 @@ export class ScrollNavigateService {
       this.setActiveItem(sectionId);
     }
   }
-
   public setActiveItem(itemId: string): void {
     const updatedItems = this.menuItemsSubject.value.map(item => ({
       ...item,
@@ -91,6 +90,18 @@ export class ScrollNavigateService {
 
     this.menuItemsSubject.next(updatedItems);
     this.activeItemSubject.next(itemId);
+
+    // Garantir que o item ativo fique visível no menu
+    setTimeout(() => {
+      const menuElement = document.querySelector(`[data-menu-id="${itemId}"]`);
+      if (menuElement) {
+        menuElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',  // mantém a posição próxima
+          inline: 'center'   // útil se for horizontal
+        });
+      }
+    }, 50);
   }
 
   public getMenuItems(): MenuItem[] {
