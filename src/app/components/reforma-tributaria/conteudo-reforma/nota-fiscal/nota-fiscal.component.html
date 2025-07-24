@@ -1,16 +1,202 @@
-<div class="timeline">
-    <div class="timeline-item">
-        <div class="timeline-content">
-            <h3>2029-2032</h3>
-            <h4>Transição Gradual do IBS</h4>
-            <p>IBS começa a substituir ICMS e ISS de forma escalonada:</p>
+<div class="notas-fiscais">
+    <div class="titulo-intro">
+        <i class="fa-solid fa-file-invoice"></i>
+        <span>Notas Fiscais e Ajustes Técnicos</span>
+    </div>
+    <div class="subtitulo-intro">
+        A Nota Técnica NFe 2025.002 v.1.01, publicada pela Receita Federal, traz importantes ajustes nos leiautes da
+        NF-e (Nota Fiscal Eletrônica) e NFC-e (Nota Fiscal de Consumidor Eletrônica) para adequação às mudanças da
+        Reforma Tributária, que introduziu três novos tributos:
+    </div>
+
+    <div class="separacao">
+        <div class="card_separacao">
+            <i class="fa-solid fa-file-alt" style="color: var(--blue);"></i>
+            <h2>IBS</h2>
+            <p>Imposto sobre Bens e Serviços</p>
+        </div>
+        <div class="card_separacao">
+            <i class="fa-solid fa-globe" style="color: var(--success);"></i>
+            <h2>CBS</h2>
+            <p>Contribuição sobre Bens e Serviços</p>
+        </div>
+        <div class="card_separacao">
+            <i class="fa-solid fa-arrow-down" style="color: var(--warning);"></i>
+            <h2>IS</h2>
+            <p>Imposto Seletivo</p>
+            <p style="font-size: 12px;">(Imposto do Pecado)</p>
+        </div>
+
+    </div>
+
+    <h3 class="intro">Principais Mudanças Técnicas</h3>
+
+    <div class="d-flex gap-4">
+        <div class="highlight-box">
+            <h5>1. Detalhamento por Item</h5>
+            <p>Cada item da nota fiscal deverá informar IBS, CBS e IS, com totalização por item e no resumo do
+                documento.</p>
+        </div>
+        <div class="highlight-box">
+            <h5>2. Novos Campos Tributários</h5>
+            <p>Foram adicionados campos específicos para refletir diferentes regimes,ampliam a precisão do cálculo
+                dos novos tributos conforme o tipo de operação</p>
         </div>
     </div>
-    <div class="timeline-item">
-        <div class="timeline-content">
-            <h3>2029-2032</h3>
-            <h4>Transição Gradual do IBS</h4>
-            <p>IBS começa a substituir ICMS e ISS de forma escalonada:</p>
+
+    <div class="important-box">
+        <h5> 3. Nota de Crédito (Novo Modelo) </h5>
+        <p>Passa a ser possível a emissão de Notas de Crédito, utilizadas para:</p>
+        <ul>
+            <li>Ajustar operações anteriores</li>
+            <li>Registrar devoluções, bonificações e descontos</li>
+            <li>Corrigir valores sem afetar o documento original</li>
+        </ul>
+        <p>Este modelo segue práticas internacionais e está alinhado aos princípios da nova legislação.</p>
+    </div>
+
+    <div class="highlight-box">
+        <h5>
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            4. Validação Obrigatória dos Tributos
+        </h5>
+        <p>
+            <strong>A partir de janeiro de 2026</strong>
+            , qualquer NF-e ou NFC-e:
+        </p>
+        <ul>
+            <li>Que não contenha IBS e CBS quando exigido</li>
+            <li>Ou que apresente alíquota incorreta</li>
+        </ul>
+        <p>
+            Será automaticamente
+            <strong>rejeitada pelo sistema da Receita Federal</strong>
+            , impedindo sua autorização.
+        </p>
+    </div>
+
+    <h3 class="intro">Cronograma de Implantação</h3>
+
+    <div class="d-flex justify-content-center align-center">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div style="margin: 15px 0px;">
+                        <span class="ano">Jul/2025</span>
+                    </div>
+                    <h5 class="intro">Homologação</h5>
+                    <p>Adaptação e testes em ambiente de validação</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div style="margin: 15px 0px;">
+                        <span class="ano">Out/2025</span>
+                    </div>
+                    <h5 class="intro">Produção</h5>
+                    <p>Ambiente oficial com emissão válida de documentos</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div style="margin: 15px 0px;">
+                        <span class="ano">Jan/2026</span>
+                    </div>
+                    <h5 class="intro">Obrigatório</h5>
+                    <p>Rejeição de notas em desacordo com os novos leiautes</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-info">
+        <h4 class="titulo_card-info">
+            <i class="fas fa-code me-2"></i>
+            Principais Grupos Alterados no Leiaute
+        </h4>
+        <ul>
+            <li>
+                <strong>Grupo UB:</strong>
+                Detalhamento de IBS, CBS e IS por item da nota
+            </li>
+            <li>
+                <strong>Grupo VB:</strong>
+                Totalização de valores por item, com os novos tributos
+            </li>
+            <li>
+                <strong>Grupo W03:</strong>
+                Totalização geral dos tributos no documento fiscal
+            </li>
+        </ul>
+
+        <h5 class="titulo_card-info">
+            Além disso, os novos campos contemplam:
+        </h5>
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Alíquota efetiva
+                    </li>
+                    <li>
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Devolução
+                    </li>
+                    <li>
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Diferimento
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Crédito presumido
+                    </li>
+                    <li>
+                        <i class="fas fa-arrow-right me-2"></i>
+                        Monofasia
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Finalidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Alíquota efetiva</strong></td>
+                        <td>Indica a carga tributária real aplicada ao item</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Diferimento</strong></td>
+                        <td>Posterga a exigência do tributo para momento futuro</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Devolução</strong></td>
+                        <td>Relaciona devoluções parciais ou totais de mercadorias</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monofasia</strong></td>
+                        <td>Tributação concentrada em uma etapa da cadeia</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Crédito presumido</strong></td>
+                        <td>Aponta situações com direito a crédito indireto</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

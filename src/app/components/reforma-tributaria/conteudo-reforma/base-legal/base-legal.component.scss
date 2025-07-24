@@ -1,0 +1,85 @@
+.base-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .intro {
+        font-size: 24px;
+        color: var(--royal-blue);
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 10px !important;
+    }
+
+    .tax-box {
+        flex: 1;
+        padding: 20px;
+        border: 2px solid var(--royal-blue); 
+        border-radius: 10px;
+        box-shadow: var(--shadow-md);
+    }
+
+    .implantacao {
+        display: flex;
+        gap: 15px;
+
+        .implantacao_card {
+            flex: 1;
+            text-align: center;
+            border-top: 4px solid var(--royal-blue-light);
+            border-radius: 10px;
+            background: var(--gradient-blur);
+            padding: 25px 10px;
+
+            .stat-number {
+                font-size: 40px;
+                font-weight: 700;
+                color: var(--royal-blue);
+            }
+
+            .stat-label {
+                color: #2c3e50;
+                font-weight: 500;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .card-alert {
+        background: var(--sand);
+        border: 2px solid var(--sand-dark);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: start;
+
+        .titulo_card-alert {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--sand-dark-two);
+        }
+
+        p {
+            color: var(--gray-600);
+        }
+
+        ul li {
+            color: var(--gray-700);
+        }
+    }
+
+    .card-info {
+        flex: 1;
+        border: 2px solid var(--royal-blue-light);
+        border-radius: 10px;
+        padding: 20px 40px;
+        background: var(--gradient-blur);
+
+        .titulo_card-info {
+            font-size: 20px;
+            font-weight: 600;
+            align-items: center;
+            color: var(--royal-blue-light);
+            margin-bottom: 20px !important;
+        }
+    }
+}

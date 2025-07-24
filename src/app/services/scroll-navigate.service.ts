@@ -4,7 +4,9 @@ import { BehaviorSubject, map } from 'rxjs';
 export interface MenuItem {
   id: string;
   label: string;
+  
   icon?: string;
+  
   route?: string;
   component?: any;
   active?: boolean;
@@ -35,20 +37,91 @@ export class ScrollNavigateService {
 
   private initializeMenuItems(): void {
     const defaultItems: MenuItem[] = [
-      { id: 'introducao', label: 'O que é Reforma Tributária?', icon: 'circle-info', route: '#introducao', active: true },
-      { id: 'cronograma', label: 'Cronograma (2026 - 2033)', icon: 'calendar-week', route: '#cronograma' },
-      { id: 'fato-gerador', label: 'Fato Gerador/ Incidência', icon: 'gavel', route: '#fato-gerador' },
-      { id: 'calculo', label: 'Base X Alíquota', icon: 'calculator', route: '#calculo' },
-      { id: 'credito', label: 'Apropriação de Créditos', icon: 'hand-holding-dollar', route: '#credito' },
-      { id: 'recolhimento', label: 'Recolhimentos', icon: 'arrow-right-arrow-left', route: '#recolhimento' },
-      { id: 'restituicao-cashback', label: 'Restituição e Cashback', icon: 'arrow-rotate-left', route: '#restituicao-cashback' },
-      { id: 'split-payment', label: 'Split Payment', icon: 'brazilian-real-sign', route: '#split-payment' },
-      { id: 'ipi', label: 'IPI vai acabar?', icon: 'industry', route: '#ipi' },
-      { id: 'simples-nacional', label: 'Simples Nacional', icon: 'building', route: '#simples-nacional' },
-      { id: 'imposto-seletivo', label: 'Imposto Seletivo', icon: 'triangle-exclamation', route: '#imposto-seletivo' },
-      { id: 'nota-fiscal', label: 'Notas Fiscais', icon: 'file-invoice', route: '#nota-fiscal' },
-      { id: 'duvidas', label: 'Duvidas Frequentes', icon: 'circle-question', route: '#duvidas' },
-      { id: 'base-legal', label: 'Embasamento Legal', icon: 'scale-balanced', route: '#base-legal' },
+      { 
+        id: 'introducao', 
+        label: 'O que é Reforma Tributária?', 
+        icon: 'circle-info', 
+        route: '#introducao',
+        active: 
+        true },
+      { 
+        id: 'cronograma', 
+        label: 'Cronograma (2026 - 2033)', 
+        icon: 'calendar-week', 
+        route: '#cronograma' 
+      },
+      // { 
+      //   id: 'fato-gerador', 
+      //   label: 'Fato Gerador/ Incidência', 
+      //   icon: 'gavel', 
+      //   route: '#fato-gerador' 
+      // },
+      { 
+        id: 'calculo', 
+        label: 'Base X Alíquota', 
+        icon: 'calculator', 
+        route: '#calculo' 
+      },
+      { 
+        id: 'credito', 
+        label: 'Apropriação de Créditos', 
+        icon: 'hand-holding-dollar', 
+        route: '#credito' 
+      },
+      { 
+        id: 'recolhimento', 
+        label: 'Recolhimentos', 
+        icon: 'arrow-right-arrow-left', 
+        route: '#recolhimento' 
+      },
+      { 
+        id: 'restituicao-cashback', 
+        label: 'Restituição e Cashback', 
+        icon: 'arrow-rotate-left', 
+        route: '#restituicao-cashback' 
+      },
+      { 
+        id: 'split-payment', 
+        label: 'Split Payment', 
+        icon: 'brazilian-real-sign', 
+        route: '#split-payment' 
+      },
+      { 
+        id: 'ipi', 
+        label: 'IPI vai acabar?', 
+        icon: 'industry', 
+        route: '#ipi' 
+      },
+      { 
+        id: 'simples-nacional', 
+        label: 'Simples Nacional', 
+        icon: 'building', 
+        route: '#simples-nacional' 
+      },
+      { 
+        id: 'imposto-seletivo', 
+        label: 'Imposto Seletivo', 
+        icon: 'triangle-exclamation', 
+        route: '#imposto-seletivo' 
+      },
+      { 
+        id: 'nota-fiscal', 
+        label: 'Notas Fiscais', 
+        icon: 'file-invoice', 
+        route: '#nota-fiscal' 
+      },
+      { 
+        id: 'duvidas', 
+        label: 'Duvidas Frequentes', 
+        icon: 'circle-question', 
+        route: '#duvidas' 
+      },
+      { 
+        id: 'base-legal', 
+        label: 'Embasamento Legal', 
+        icon: 'scale-balanced', 
+        route: '#base-legal' 
+      },
     ];
 
     this.menuItemsSubject.next(defaultItems);
