@@ -9,6 +9,11 @@ export class PerguntasRespostasComponent {
   faqAtivo = 0;
 
   alternarFaq(faq: number) {
+
+    if (faq === this.faqAtivo) {
+      faq = 0;
+    }
+
     this.faqAtivo = faq
     return this.faqAtivo;
   }
