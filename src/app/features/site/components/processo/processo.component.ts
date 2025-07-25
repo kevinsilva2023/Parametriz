@@ -188,6 +188,11 @@ export class ProcessoComponent implements OnInit {
    * @param numeroEtapa - Número da etapa a ser selecionada (1-4)
    */
   public selecionarEtapa(numeroEtapa: number): void {
+    if (numeroEtapa === this.etapaAtiva) {
+      this.etapaAtiva = 0;
+      numeroEtapa = this.etapaAtiva;
+    } 
+    
     if (numeroEtapa >= 1 && numeroEtapa <= 4) {
       this.etapaAtiva = numeroEtapa;
       this.atualizarIndicadoresVisuais(numeroEtapa);

@@ -36,6 +36,7 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 
     img {
       margin-left: 10px;
@@ -45,6 +46,7 @@
         width: 40px;
       }
     }
+    
     .content-texto {
       color: white;
 

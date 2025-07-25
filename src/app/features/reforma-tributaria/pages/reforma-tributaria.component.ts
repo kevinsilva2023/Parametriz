@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ScrollNavigateService } from 'src/app/services/scroll-navigate.service';
+import { ScrollNavigateService } from 'src/app/features/reforma-tributaria/services/scroll-navigate.service';
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
 
@@ -13,8 +13,12 @@ export class ReformaTributariaComponent implements OnInit, OnDestroy {
   activeSectionLabel = '';
   private subscription = new Subscription();
 
-  constructor(private scrollService: ScrollNavigateService, private location : Location) {}
+  constructor(private scrollService: ScrollNavigateService, private location: Location) { 
+        console.log('ReformaTributariaComponent carregado!');
+  }
 
+
+  
   ngOnInit(): void {
     this.subscription.add(
       this.scrollService.activeItemLabel$.subscribe(label => {

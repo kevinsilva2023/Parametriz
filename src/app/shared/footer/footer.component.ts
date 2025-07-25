@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, Input } from '@angular/core';
+import { Component} from '@angular/core';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',

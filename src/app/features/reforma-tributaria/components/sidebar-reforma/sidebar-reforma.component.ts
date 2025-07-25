@@ -1,7 +1,7 @@
-import { MenuItem } from './../../../services/scroll-navigate.service';
+import { MenuItem } from 'src/app/features/reforma-tributaria/services/scroll-navigate.service';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ScrollNavigateService } from 'src/app/services/scroll-navigate.service';
+import { ScrollNavigateService } from 'src/app/features/reforma-tributaria/services/scroll-navigate.service';
 
 @Component({
   selector: 'app-sidebar-reforma',
@@ -18,13 +18,13 @@ export class SidebarReformaComponent {
     this.menuItems$ = this.scrollNavigationService.menuItems$;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toggleSidebar(): void {
     this.isCollapsed = !this.isCollapsed;
     this.sidebarToggled.emit(this.isCollapsed);
   }
-  
+
   onMenuItemClick(item: MenuItem): void {
     this.scrollNavigationService.scrollToSection(item.id);
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EmailService } from 'src/app/services/email.service';
+import { EmailService } from 'src/app/features/site/services/email.service';
 
 @Component({
   selector: 'app-entre-em-contato',
