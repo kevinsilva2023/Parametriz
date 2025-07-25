@@ -51,6 +51,11 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--royal-blue-dark);
   }
+
+  * {
+  scrollbar-width: thin; /* opções: auto | thin | none */
+  scrollbar-color: var(--royal-blue) var(--gray-100);
+}
   
   /**
    * Foco acessível para elementos interativos

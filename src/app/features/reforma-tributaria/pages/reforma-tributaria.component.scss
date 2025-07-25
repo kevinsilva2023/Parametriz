@@ -18,9 +18,18 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: var(--transition-normal) !important;
 
-
   &.sidebar-collapsed {
     left: 70px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    left: 0px;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
   }
 
   .botao-voltar {
@@ -36,6 +45,13 @@
     &:hover {
       transform: scale(1.1);
       color: var(--sand-dark);
+    }
+
+    @media (max-width: 768px) {
+      background: var(--sand-dark-two);
+      margin-bottom: 10px;
+      padding: 2px 20px;
+      border-radius: 10px;
     }
   }
 
@@ -68,13 +84,6 @@
   }
 
   @media (max-width: 768px) {
-    margin: 0;
-  }
-}
-
-// Responsividade
-@media (max-width: 768px) {
-  .main-wrapper {
-    margin-left: 0;
+    margin-left: 0px;
   }
 }
