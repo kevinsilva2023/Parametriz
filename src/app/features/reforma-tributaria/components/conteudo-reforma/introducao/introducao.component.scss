@@ -2,21 +2,27 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    
+
     .titulo-intro {
         color: var(--royal-blue);
         font-weight: 700;
         gap: 10px;
         font-size: 36px;
 
-          @media (max-width: 768px) {
+        @media (max-width: 768px) {
             font-size: 24px;
-          }
+            text-align: center;
+        }
     }
-    
+
     .subtitulo-intro {
         font-size: 20px;
         color: var(--gray-600);
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            text-align: center;
+        }
     }
 
     .card-info {
@@ -25,18 +31,29 @@
         padding: 20px 40px;
         background: var(--gradient-blur);
 
+        @media (max-width: 768px) { 
+            padding: 20px 10px;
+        }
+
         .titulo_card-info {
-            display: flex;
-            gap: 10px;
             font-size: 24px;
             font-weight: 600;
-            align-items: center;
             color: var(--royal-blue-light);
+
+            @media (max-width: 768px) {
+                font-size: 18px;
+            }
         }
 
         span {
             font-weight: 700;
             line-height: 2;
+        }
+
+        ul li {
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
         }
     }
 
@@ -45,19 +62,29 @@
         color: var(--royal-blue);
         font-weight: 700;
         margin: 10px 0;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            text-align: center;
+        }
     }
 
     p {
-        color: var(--text-dark);
-        font-family: 'Inter', sans-serif;
+        color: var(--gray-600);
         font-weight: 500;
-        color: #2c3e50;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 
     .modelo-dual {
         display: flex;
         gap: 10px;
-        width: 100%;
+
+        @media (max-width: 768px) { 
+            flex-direction: column;
+        }
 
         .card_modelo-dual {
             flex: 1;
@@ -74,7 +101,11 @@
                 font-size: 26px;
                 color: var(--royal-blue-light);
                 font-weight: 700;
-                margin-top: 10px
+                margin-top: 10px;
+
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                } 
             }
 
             h2 {
@@ -82,12 +113,20 @@
                 font-weight: 600;
                 font-size: 18px;
                 text-align: center;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
             }
 
             p {
-                font-size: 18px;    
+                font-size: 18px;
                 color: var(--gray-500);
                 text-align: center;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
             }
         }
     }
@@ -119,6 +158,10 @@
         display: flex;
         gap: 15px;
 
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
         .card_novos-tributos {
             flex: 1;
             display: flex;
@@ -134,12 +177,21 @@
                 font-size: 40px;
                 font-weight: 700;
                 color: var(--royal-blue);
+
+                @media (max-width: 768px) {
+                    font-size: 32px;
+                }
             }
+
             span {
                 margin: 10px 0;
                 color: #2c3e50;
                 font-weight: 500;
                 font-size: 18px;
+
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
             }
         }
     }

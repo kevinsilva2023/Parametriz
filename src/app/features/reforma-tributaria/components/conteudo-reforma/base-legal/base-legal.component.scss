@@ -9,6 +9,10 @@
         font-weight: 700;
         margin: 0;
         margin-bottom: 10px !important;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+        }
     }
 
     .tax-box {

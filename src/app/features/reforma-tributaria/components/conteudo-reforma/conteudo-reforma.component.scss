@@ -7,9 +7,13 @@
   gap: 40px;
   padding: 80px 0px;
 
+  @media (max-width: 768px) { 
+    padding: 120px 20px;
+  }
+
   section {
     min-width: 80%;
-    max-width: 1200px !important;
+    max-width: 1200px;
     border-top: 4px solid var(--royal-blue);
     display: flex;
     padding: 60px;
@@ -17,5 +21,11 @@
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.108), 0 10px 10px -5px rgba(0, 0, 0, 0.19);
     justify-content: center;
     background: #fff;
+
+    @media (max-width: 768px) { 
+      min-width: 100%;
+      max-width: auto;
+      padding: 0px;
+    }
   }
 }
