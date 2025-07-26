@@ -96,6 +96,7 @@
             justify-content: center;
             flex-direction: column;
             background: var(--gradient-blur);
+            text-align: center;
 
             h1 {
                 font-size: 26px;
@@ -171,7 +172,8 @@
             border-top: 4px solid var(--royal-blue-light);
             border-radius: 10px;
             background: var(--gradient-blur);
-            padding: 25px 0;
+            padding: 25px 10px;
+            text-align: center;
 
             .title-card_novos-tributos {
                 font-size: 40px;
