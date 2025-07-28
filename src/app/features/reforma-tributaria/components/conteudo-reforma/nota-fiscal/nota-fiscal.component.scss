@@ -7,20 +7,31 @@
   .titulo-intro {
     color: var(--royal-blue);
     font-weight: 700;
-    display: flex;
-    gap: 10px;
-    align-items: center;
     font-size: 36px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      text-align: center;
+    }
   }
 
   .subtitulo-intro {
     font-size: 20px;
     color: var(--gray-600);
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      text-align: center;
+    }
   }
 
   .separacao {
     display: flex;
     gap: 15px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
 
     .card_separacao {
       flex: 1;
@@ -59,6 +70,10 @@
     position: relative;
     width: 65vw;
 
+    @media (max-width: 768px) { 
+      width: auto;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -68,6 +83,10 @@
       width: 4px;
       background: var(--royal-blue);
       transform: translateX(-50%);
+
+      @media (max-width: 768px) {
+        left: 0;
+      }
     }
 
     .timeline-item {
@@ -78,6 +97,13 @@
       display: flex;
       justify-content: center;
 
+      @media (max-width: 768px) { 
+        width: 100%;
+        padding: 0px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+      }
+
       &:nth-child(odd) {
         left: 0;
         text-align: right;
@@ -86,6 +112,10 @@
       &:nth-child(even) {
         left: 50%;
         text-align: left;
+
+        @media (max-width: 768px) { 
+          left: 0;
+        }
       }
 
       &::before {
@@ -99,6 +129,10 @@
         border: 3px solid #fff;
         left: 100%;
         transform: translateX(-50%);
+
+        @media (max-width: 768px) { 
+          left: 0;
+        }
       }
 
       &:nth-child(even)::before {
@@ -116,6 +150,12 @@
         border-top: 5px solid var(--royal-blue);
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
+        @media (max-width: 768px) { 
+          padding: 10px;
+          justify-content: center;
+          text-align: center;
+        }
+
         .ano {
           background: var(--gradient-primary);
           border: 2px solid white;
@@ -127,39 +167,7 @@
 
         p {
           margin: 0;
-          color: #333;
-        }
-      }
-    }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      padding-left: 20px;
-
-      &::before {
-        left: 0;
-      }
-
-      .timeline-item {
-        width: 100%;
-        padding: 10px 20px 10px 40px;
-        text-align: left;
-        left: 0;
-
-        &::before {
-          left: 0;
-          transform: translateX(0);
-        }
-
-        &:nth-child(even),
-        &:nth-child(odd) {
-          left: 0;
-          text-align: left;
-        }
-
-        .timeline-year {
-          left: 0;
-          transform: none;
+          color: var(--gray-600);
         }
       }
     }
@@ -178,6 +186,24 @@
       font-weight: 600;
       color: var(--sand-dark-two);
       margin-bottom: 8px;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    p {
+      @media (max-width: 768px) {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+
+    li {
+      @media (max-width: 768px) { 
+        font-size: 14px;
+      }
     }
 
     i {
@@ -190,6 +216,17 @@
     color: var(--royal-blue);
     font-weight: 700;
     margin: 0;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .highlight {
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .highlight-box {
@@ -205,6 +242,20 @@
       font-size: 22px;
       color: var(--success);
       font-weight: 600;
+
+      @media (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+
+    p {
+      color: var(--gray-600);
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        text-align: center;
+      }
     }
   }
 
@@ -215,20 +266,40 @@
     padding: 20px 40px;
     background: var(--gradient-blur);
 
+    @media (max-width: 768px) { 
+      padding: 20px;
+    }
+    
     .titulo_card-info {
       font-size: 20px;
       font-weight: 600;
-      align-items: center;
       color: var(--royal-blue-light);
       margin-bottom: 20px !important;
 
+      @media (max-width: 768px) { 
+        font-size: 18px;
+        text-align: center;
+      }
+
       i {
         margin: 0;
+      }
+    }
+
+    li {
+      color: var(--gray-600);
+
+      @media (max-width: 768px) { 
+        font-size: 14px;
       }
     }
   }
 
   table {
     border: 2px solid var(--royal-blue);
+
+    @media (max-width: 768px) { 
+      font-size: 14px;
+    }
   }
 }

@@ -1,11 +1,11 @@
 <div class="duvidas">
-    <div class="titulo-intro">
-        <i class="fa-solid fa-question-circle"></i>
+    <h1 class="titulo-intro">
+        <i class="fa-solid fa-question-circle"></i> &nbsp;
         <span>Perguntas Frequentes</span>
-    </div>
+    </h1>
 
-    <p-accordion class="teste">
-        <p-accordionTab class="teste2" *ngFor="let pergunta of perguntas" [header]="pergunta.pergunta">
+    <p-accordion>
+        <p-accordionTab  *ngFor="let pergunta of perguntas" [header]="pergunta.pergunta">
             {{ pergunta.resposta }}
         </p-accordionTab>
     </p-accordion>

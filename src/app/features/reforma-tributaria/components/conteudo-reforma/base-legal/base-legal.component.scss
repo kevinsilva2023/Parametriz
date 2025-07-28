@@ -3,6 +3,13 @@
     flex-direction: column;
     gap: 30px;
 
+    .section-title {
+        @media (max-width: 768px) { 
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
     .intro {
         font-size: 24px;
         color: var(--royal-blue);
@@ -12,6 +19,13 @@
 
         @media (max-width: 768px) {
             font-size: 18px;
+            text-align: center;
+        }
+    }
+
+    .tax {
+        @media (max-width: 768px) { 
+            flex-direction: column;
         }
     }
 
@@ -21,11 +35,23 @@
         border: 2px solid var(--royal-blue); 
         border-radius: 10px;
         box-shadow: var(--shadow-md);
+
+        p {
+            color: var(--gray-600);
+            @media (max-width: 768px) { 
+                font-size: 14px;
+                text-align: center;
+            }
+        }
     }
 
     .implantacao {
         display: flex;
         gap: 15px;
+
+        @media (max-width: 768px) { 
+            flex-direction: column;
+        }
 
         .implantacao_card {
             flex: 1;
@@ -39,12 +65,23 @@
                 font-size: 40px;
                 font-weight: 700;
                 color: var(--royal-blue);
+
+                @media (max-width: 768px) {
+                    font-size: 24px;
+                    text-align: center;
+                 }
             }
 
             .stat-label {
-                color: #2c3e50;
+                color: var(--gray-600);
                 font-weight: 500;
                 font-size: 18px;
+                text-align: center;
+
+                @media (max-width: 768px) { 
+                    font-size: 16px;
+                    text-align: center;
+                }
             }
         }
     }
@@ -60,14 +97,24 @@
             font-size: 20px;
             font-weight: 600;
             color: var(--sand-dark-two);
+
+            @media (max-width: 768px) { 
+                font-size: 18px;
+                text-align: center;
+            }
         }
 
         p {
             color: var(--gray-600);
+            @media (max-width: 768px) { 
+                font-size: 14px;
+                text-align: center;
+            }
         }
 
         ul li {
             color: var(--gray-700);
+            font-size: 14px;
         }
     }
 
@@ -78,12 +125,37 @@
         padding: 20px 40px;
         background: var(--gradient-blur);
 
+        @media (max-width: 768px) { 
+            padding: 20px;
+        }
+
         .titulo_card-info {
             font-size: 20px;
             font-weight: 600;
-            align-items: center;
             color: var(--royal-blue-light);
             margin-bottom: 20px !important;
+
+            @media (max-width: 768px) { 
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+
+        p {
+            color: var(--gray-600);
+
+            @media (max-width: 768px) { 
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+     
+        li {
+            color: var(--gray-600);
+            @media (max-width: 768px) {
+                font-size: 14px;
+                               
+            }
         }
     }
 }
