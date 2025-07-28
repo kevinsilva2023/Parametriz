@@ -15,15 +15,14 @@
     }
 
     .intro {
-        h2 {
-            font-size: 24px;
-            color: var(--royal-blue);
-            font-weight: 700;
-            margin: 0;
+        font-size: 24px;
+        color: var(--royal-blue);
+        font-weight: 700;
+        margin: 0;
 
-            @media (max-width: 768px) {
-                font-size: 20px;
-            }
+        @media (max-width: 768px) {
+            font-size: 20px;
+            text-align: center;
         }
 
         p {
@@ -32,6 +31,7 @@
 
             @media (max-width: 768px) {
                 font-size: 14px;
+                text-align: center;
             }
         }
     }
@@ -43,10 +43,11 @@
         background: var(--gradient-blur);
 
         @media (max-width: 768px) {
-            padding: 20px;    
+            padding: 20px;
         }
-        
+
         ul li {
+            margin-top: 10px;
             color: var(--gray-600);
 
             @media (max-width: 768px) {
@@ -133,7 +134,7 @@
         @media (max-width: 768px) {
             flex-direction: column;
         }
-        
+
         .card-aliquotas {
             flex: 1;
             border: 2px solid var(--royal-blue-light);
@@ -162,12 +163,14 @@
             ul {
                 text-align: start;
                 margin-top: 20px;
+
                 li {
                     color: var(--gray-600);
-                    
+
                     @media (max-width: 768px) {
                         font-size: 14px;
                     }
+
                     b {
                         color: var(--gray-900);
                     }
@@ -239,7 +242,7 @@
                         font-size: 18px;
                         font-weight: 500;
                         color: var(--gray-600);
-                        
+
                         @media (max-width: 768px) {
                             font-size: 14px;
                             margin: 0;

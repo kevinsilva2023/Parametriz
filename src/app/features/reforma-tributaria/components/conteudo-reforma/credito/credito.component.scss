@@ -6,15 +6,22 @@
     .titulo-intro {
         color: var(--royal-blue);
         font-weight: 700;
-        display: flex;
-        gap: 10px;
-        align-items: center;
         font-size: 36px;
+
+        @media (max-width: 768px) {
+            font-size: 24px;
+            text-align: center;
+        }
     }
 
     .subtitulo-intro {
         font-size: 20px;
         color: var(--gray-600);
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+            text-align: center;
+        }
     }
 
     .intro {
@@ -22,10 +29,19 @@
         color: var(--royal-blue);
         font-weight: 700;
         margin: 0;
+
+        @media (max-width: 768px) {
+            font-size: 20px;
+            text-align: center;
+        }
     }
 
     p {
         color: var(--gray-600);
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 
     .card-info {
@@ -35,8 +51,17 @@
         background: var(--gradient-blur);
         box-shadow: var(--shadow-xl);
 
+        @media (max-width: 768px) {
+            padding: 20px 10px;
+        }
+
         li {
             color: var(--gray-600);
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
 
             b {
                 color: var(--gray-800);
@@ -84,6 +109,9 @@
         border-radius: 10px;
         padding: 20px;
 
+        @media (max-width: 768px) {}
+        padding: 20px 10px;
+
         .titulo_card-alert {
             display: flex;
             gap: 10px;
@@ -93,10 +121,15 @@
             color: var(--sand-dark-two);
             margin-bottom: 8px;
         }
-        
+
         li {
             color: var(--gray-600);
-    
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
             b {
                 color: var(--gray-800);
             }
