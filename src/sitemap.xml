@@ -11,4 +11,9 @@
     <loc>https://parametriz.com.br/reforma-tributaria</loc>
     <priority>0.9</priority>
   </url>
+  <!-- App Parametriz -->
+  <url>
+    <loc>https://app.parametriz.com.br</loc>
+    <priority>0.9</priority>
+  </url>
 </urlset>
