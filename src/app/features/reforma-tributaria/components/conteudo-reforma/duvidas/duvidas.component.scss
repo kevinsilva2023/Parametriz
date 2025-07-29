@@ -6,12 +6,13 @@
     .titulo-intro {
         color: var(--royal-blue);
         font-weight: 700;
-        display: flex;
-        gap: 10px;
-        align-items: center;
         font-size: 36px;
-    }
 
+        @media (max-width: 768px) { 
+            font-size: 24px;
+            text-align: center;
+        }
+    }
 }
 
 
@@ -24,12 +25,22 @@
     margin-top: 10px;
     outline: none;
 
+    @media (max-width: 768px) { 
+        padding: 10px 20px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
     .p-accordion-toggle-icon {
         order: 2;
         margin-left: auto;
         color: var(--white);
         transform: scale(1.5);
         transition: var(--transition-slow) !important;
+
+        @media (max-width: 768px) {
+            transform: scale(1.0);
+         }
     }
 }
 
@@ -39,5 +50,10 @@
     border-left: 2px solid var(--royal-blue);
     border-right: 2px solid var(--royal-blue);
     border-bottom: 2px solid var(--royal-blue);
+
+    @media (max-width: 768px) { 
+        padding: 10px 20px;
+        font-size: 12px;
+    }
     
 }

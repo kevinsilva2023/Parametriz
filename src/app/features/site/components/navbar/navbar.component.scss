@@ -10,7 +10,7 @@
   border-radius: 50px;
   padding: 8px;
   transition: var(--transition-normal) !important;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,38 +41,38 @@
     img {
       margin-left: 10px;
       width: 60px;
-      
+
       @media (max-width: 768px) {
         width: 40px;
       }
     }
-    
+
     .content-texto {
       color: white;
 
-        h1 {
-          font-size: 28px;
-          font-weight: bolder;
-          margin: 0 !important;
-          line-height: 1;
-          font-family: var(--font-logo);
+      h1 {
+        font-size: 28px;
+        font-weight: bolder;
+        margin: 0 !important;
+        line-height: 1;
+        font-family: var(--font-logo);
 
-          @media (max-width: 768px) {
-            font-size: 18px;
-          }
+        @media (max-width: 768px) {
+          font-size: 18px;
         }
-        
-        h2 {
-          font-size: 12px;
-          line-height: 1;
-          font-weight: 100;
-          margin: 0 !important;
-          font-family: var(--font-logo);
+      }
 
-            @media (max-width: 768px) {
-              font-size: 8px;
-            }
+      h2 {
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 100;
+        margin: 0 !important;
+        font-family: var(--font-logo);
+
+        @media (max-width: 768px) {
+          font-size: 8px;
         }
+      }
     }
   }
 
@@ -81,6 +81,23 @@
     align-items: center;
     gap: 36px;
     padding: 0px 16px;
+  }
+}
+
+.reforma {
+  background: var(--gradient-blur);
+  border: 1px dashed var(--white) !important;
+  transition: var(--transition-slow) !important;
+
+  @media (max-width: 768px) {
+    background: var(--gradient-secondary);
+    color: white;
+    border: 1px dashed var(--sand-dark-two) !important;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background: var(--gradient-hero) !important;
   }
 }
 
@@ -135,7 +152,7 @@
   }
 
   &.active {
-    background: var(--royal-blue-dark-blur); 
+    background: var(--royal-blue-dark-blur);
     border: 1px dashed var(--sand-light);
     font-weight: 600;
     color: var(--white) !important;
