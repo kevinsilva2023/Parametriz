@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'site', pathMatch: 'full'},
+  {path: '', redirectTo: '/', pathMatch: 'full'},
   {
-    path: 'site',
+    path: '',
     loadChildren: () => import('./features/site/site.module').then(m => m.SiteModule)
   },
   {
     path: 'reforma-tributaria',
     loadChildren: () => import('./features/reforma-tributaria/reforma-tributaria.module').then(m => m.ReformaTributariaModule)
   },
-  { path: '**', redirectTo: 'site' }
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
